@@ -1,5 +1,5 @@
 package co.edu.unbosque.beans;
 
-public class nada {
+public class Articulo {
 
 }
