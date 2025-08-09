@@ -1,5 +1,8 @@
 package co.edu.unbosque.beans;
 
-public class Papeleria {
+public class Papeleria extends Articulo {
+	
+
+	
 
 }
