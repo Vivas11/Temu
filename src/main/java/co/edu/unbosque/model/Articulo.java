@@ -6,6 +6,7 @@ public class Articulo {
 	private int id;
 	private String descripcion;
 	private float precio;
+	private String imagen;
 	
 	
 	
@@ -15,16 +16,14 @@ public class Articulo {
 
 
 
-	public Articulo(String nombre, int id, String descripcion, float precio) {
+	public Articulo(String nombre, int id, String descripcion, float precio, String imagen) {
 		super();
 		this.nombre = nombre;
 		this.id = id;
 		this.descripcion = descripcion;
 		this.precio = precio;
+		this.imagen = imagen;
 	}
-
-
-
 
 
 
@@ -76,11 +75,26 @@ public class Articulo {
 
 
 
+	public String getImagen() {
+		return imagen;
+	}
+
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Articulo [nombre=" + nombre + ", id=" + id + ", descripcion=" + descripcion + ", precio=" + precio
-				+ "]";
+				+ ", imagen=" + imagen + "]";
 	}
+
+
+
 	
 	
 	
