@@ -15,14 +15,15 @@ public class Maquillaje extends Articulo {
 		this.contenidoEnGramo = contenidoEnGramo;
 	}
 
-	public Maquillaje(String nombre, int id, String descripcion, float precio, String color, float contenidoEnGramo) {
-		super(nombre, id, descripcion, precio);
+	public Maquillaje(String nombre, int id, String descripcion, float precio, String imagen, String color,
+			float contenidoEnGramo) {
+		super(nombre, id, descripcion, precio, imagen);
 		this.color = color;
 		this.contenidoEnGramo = contenidoEnGramo;
 	}
 
-	public Maquillaje(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public Maquillaje(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -46,6 +47,8 @@ public class Maquillaje extends Articulo {
 	public String toString() {
 		return "Maquillaje [color=" + color + ", contenidoEnGramo=" + contenidoEnGramo + "]";
 	}
+	
+	
 	
 	
 }

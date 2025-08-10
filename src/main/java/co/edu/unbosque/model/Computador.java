@@ -19,9 +19,9 @@ public class Computador extends DispositivosElectronico{
 	}
 
 
-	public Computador(String nombre, int id, String descripcion, float precio, String marca, int ram,
+	public Computador(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
 			int almacenamiento, int procesador, String tipo, boolean tieneTargetaGrafica) {
-		super(nombre, id, descripcion, precio, marca, ram, almacenamiento);
+		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		this.procesador = procesador;
 		this.tipo = tipo;
 		this.tieneTargetaGrafica = tieneTargetaGrafica;
@@ -34,15 +34,9 @@ public class Computador extends DispositivosElectronico{
 	}
 
 
-	public Computador(String nombre, int id, String descripcion, float precio, String marca, int ram,
+	public Computador(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
 			int almacenamiento) {
-		super(nombre, id, descripcion, precio, marca, ram, almacenamiento);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public Computador(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -83,6 +77,9 @@ public class Computador extends DispositivosElectronico{
 				+ tieneTargetaGrafica + "]";
 	}
 	
+	
+
+
 	
 	
 

@@ -17,16 +17,16 @@ public class Ropa extends Articulo {
 		this.material = material;
 	}
 
-	public Ropa(String nombre, int id, String descripcion, float precio, String tipoPrenda, String talla,
+	public Ropa(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda, String talla,
 			String material) {
-		super(nombre, id, descripcion, precio);
+		super(nombre, id, descripcion, precio, imagen);
 		this.tipoPrenda = tipoPrenda;
 		this.talla = talla;
 		this.material = material;
 	}
 
-	public Ropa(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public Ropa(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -58,6 +58,7 @@ public class Ropa extends Articulo {
 	public String toString() {
 		return "Ropa [tipoPrenda=" + tipoPrenda + ", talla=" + talla + ", material=" + material + "]";
 	}
+	
 	
 	
 	

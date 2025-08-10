@@ -20,17 +20,17 @@ public class Papeleria extends Articulo {
 	}
 
 
-	public Papeleria(String nombre, int id, String descripcion, float precio, String tipo, String tamano,
+	public Papeleria(String nombre, int id, String descripcion, float precio, String imagen, String tipo, String tamano,
 			String forma) {
-		super(nombre, id, descripcion, precio);
+		super(nombre, id, descripcion, precio, imagen);
 		this.tipo = tipo;
 		this.tamano = tamano;
 		this.forma = forma;
 	}
 
 
-	public Papeleria(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public Papeleria(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -71,16 +71,9 @@ public class Papeleria extends Articulo {
 	}
 	
 	
-	
 
 
-	
-	
-	
-	
-	
-	
-	
+
 
 	
 

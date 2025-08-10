@@ -14,9 +14,9 @@ public class MaquillajeCapilar extends Maquillaje{
 		this.duracionHora = duracionHora;
 	}
 
-	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String color,
+	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo, boolean resistenciaAgua, int duracionHora) {
-		super(nombre, id, descripcion, precio, color, contenidoEnGramo);
+		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
 		this.resistenciaAgua = resistenciaAgua;
 		this.duracionHora = duracionHora;
 	}
@@ -26,14 +26,14 @@ public class MaquillajeCapilar extends Maquillaje{
 		// TODO Auto-generated constructor stub
 	}
 
-	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String color,
+	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo) {
-		super(nombre, id, descripcion, precio, color, contenidoEnGramo);
+		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
 		// TODO Auto-generated constructor stub
 	}
 
-	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -57,8 +57,6 @@ public class MaquillajeCapilar extends Maquillaje{
 	public String toString() {
 		return "MaquillajeCapilar [resistenciaAgua=" + resistenciaAgua + ", duracionHora=" + duracionHora + "]";
 	}
-	
-	
 	
 	
 	

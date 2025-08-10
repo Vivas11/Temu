@@ -9,7 +9,7 @@ public class Peluche extends Articulo{
 	public Peluche() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Peluche(String tamano, String color, String material) {
 		super();
 		this.tamano = tamano;
@@ -17,16 +17,16 @@ public class Peluche extends Articulo{
 		this.material = material;
 	}
 
-	public Peluche(String nombre, int id, String descripcion, float precio, String tamano, String color,
+	public Peluche(String nombre, int id, String descripcion, float precio, String imagen, String tamano, String color,
 			String material) {
-		super(nombre, id, descripcion, precio);
+		super(nombre, id, descripcion, precio, imagen);
 		this.tamano = tamano;
 		this.color = color;
 		this.material = material;
 	}
 
-	public Peluche(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public Peluche(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 

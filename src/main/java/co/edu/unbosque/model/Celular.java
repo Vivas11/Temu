@@ -18,9 +18,9 @@ public class Celular extends DispositivosElectronico {
 	}
 
 
-	public Celular(String nombre, int id, String descripcion, float precio, String marca, int ram, int almacenamiento,
-			String procesador, int resolucionCamra) {
-		super(nombre, id, descripcion, precio, marca, ram, almacenamiento);
+	public Celular(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
+			int almacenamiento, String procesador, int resolucionCamra) {
+		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		this.procesador = procesador;
 		this.resolucionCamra = resolucionCamra;
 	}
@@ -32,14 +32,9 @@ public class Celular extends DispositivosElectronico {
 	}
 
 
-	public Celular(String nombre, int id, String descripcion, float precio, String marca, int ram, int almacenamiento) {
-		super(nombre, id, descripcion, precio, marca, ram, almacenamiento);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public Celular(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public Celular(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
+			int almacenamiento) {
+		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -69,6 +64,9 @@ public class Celular extends DispositivosElectronico {
 		return "Celular [procesador=" + procesador + ", resolucionCamra=" + resolucionCamra + "]";
 	}
 	
+	
+
+
 	
 	
 	

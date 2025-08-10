@@ -12,20 +12,20 @@ public class RopaMujer extends Ropa{
 		this.largoPrenda = largoPrenda;
 	}
 
-	public RopaMujer(String nombre, int id, String descripcion, float precio, String tipoPrenda, String talla,
-			String material, String largoPrenda) {
-		super(nombre, id, descripcion, precio, tipoPrenda, talla, material);
+	public RopaMujer(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda,
+			String talla, String material, String largoPrenda) {
+		super(nombre, id, descripcion, precio, imagen, tipoPrenda, talla, material);
 		this.largoPrenda = largoPrenda;
 	}
 
-	public RopaMujer(String nombre, int id, String descripcion, float precio, String tipoPrenda, String talla,
-			String material) {
-		super(nombre, id, descripcion, precio, tipoPrenda, talla, material);
+	public RopaMujer(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda,
+			String talla, String material) {
+		super(nombre, id, descripcion, precio, imagen, tipoPrenda, talla, material);
 		// TODO Auto-generated constructor stub
 	}
 
-	public RopaMujer(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public RopaMujer(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -46,6 +46,8 @@ public class RopaMujer extends Ropa{
 	public String toString() {
 		return "RopaMujer [largoPrenda=" + largoPrenda + "]";
 	}
+	
+	
 	
 	
 	

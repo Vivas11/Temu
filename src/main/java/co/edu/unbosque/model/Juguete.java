@@ -18,15 +18,16 @@ public class Juguete  extends Articulo{
 	}
 
 
-	public Juguete(String nombre, int id, String descripcion, float precio, String tamano, String material) {
-		super(nombre, id, descripcion, precio);
+	public Juguete(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+			String material) {
+		super(nombre, id, descripcion, precio, imagen);
 		this.tamano = tamano;
 		this.material = material;
 	}
 
 
-	public Juguete(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public Juguete(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -56,6 +57,9 @@ public class Juguete  extends Articulo{
 		return "Juguete [tamano=" + tamano + ", material=" + material + "]";
 	}
 	
+	
+
+
 	
 	
 	

@@ -15,21 +15,21 @@ public class FiguraColeccionable  extends Juguete{
 		this.valorEnMercado = valorEnMercado;
 	}
 
-	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String tamano, String material,
-			String tipoDeFigura, float valorEnMercado) {
-		super(nombre, id, descripcion, precio, tamano, material);
+	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+			String material, String tipoDeFigura, float valorEnMercado) {
+		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		this.tipoDeFigura = tipoDeFigura;
 		this.valorEnMercado = valorEnMercado;
 	}
 
-	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String tamano,
+	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String material) {
-		super(nombre, id, descripcion, precio, tamano, material);
+		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		// TODO Auto-generated constructor stub
 	}
 
-	public FiguraColeccionable(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -59,6 +59,8 @@ public class FiguraColeccionable  extends Juguete{
 		return "FiguraColeccionable [tipoDeFigura=" + tipoDeFigura + ", valorEnMercado=" + valorEnMercado + "]";
 	}
 	
+	
+
 	
 	
 	

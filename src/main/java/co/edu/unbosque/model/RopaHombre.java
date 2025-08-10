@@ -13,20 +13,20 @@ public class RopaHombre  extends  Ropa{
 		this.corte = corte;
 	}
 
-	public RopaHombre(String nombre, int id, String descripcion, float precio, String tipoPrenda, String talla,
-			String material, String corte) {
-		super(nombre, id, descripcion, precio, tipoPrenda, talla, material);
+	public RopaHombre(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda,
+			String talla, String material, String corte) {
+		super(nombre, id, descripcion, precio, imagen, tipoPrenda, talla, material);
 		this.corte = corte;
 	}
 
-	public RopaHombre(String nombre, int id, String descripcion, float precio, String tipoPrenda, String talla,
-			String material) {
-		super(nombre, id, descripcion, precio, tipoPrenda, talla, material);
+	public RopaHombre(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda,
+			String talla, String material) {
+		super(nombre, id, descripcion, precio, imagen, tipoPrenda, talla, material);
 		// TODO Auto-generated constructor stub
 	}
 
-	public RopaHombre(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public RopaHombre(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -47,6 +47,8 @@ public class RopaHombre  extends  Ropa{
 	public String toString() {
 		return "RopaHombre [corte=" + corte + "]";
 	}
+	
+	
 	
 	
 }

@@ -21,24 +21,25 @@ public class JuegoDeMesa extends Juguete{
 
 
 
-	public JuegoDeMesa(String nombre, int id, String descripcion, float precio, String tamano, String material,
-			int numeroJugadore, String tipoDeJuego) {
-		super(nombre, id, descripcion, precio, tamano, material);
+	public JuegoDeMesa(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+			String material, int numeroJugadore, String tipoDeJuego) {
+		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		this.numeroJugadore = numeroJugadore;
 		this.tipoDeJuego = tipoDeJuego;
 	}
 
 
 
-	public JuegoDeMesa(String nombre, int id, String descripcion, float precio, String tamano, String material) {
-		super(nombre, id, descripcion, precio, tamano, material);
+	public JuegoDeMesa(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+			String material) {
+		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		// TODO Auto-generated constructor stub
 	}
 
 
 
-	public JuegoDeMesa(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public JuegoDeMesa(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -79,6 +80,10 @@ public class JuegoDeMesa extends Juguete{
 	public String toString() {
 		return "JuegoDeMesa [numeroJugadore=" + numeroJugadore + ", tipoDeJuego=" + tipoDeJuego + "]";
 	}
+	
+	
+
+
 	
 	
 	

@@ -17,23 +17,23 @@ public class UtilesEscolare extends Papeleria {
 	}
 
 
-	public UtilesEscolare(String nombre, int id, String descripcion, float precio, String tipo, String tamano,
-			String forma, String color, int edadRecomendada) {
-		super(nombre, id, descripcion, precio, tipo, tamano, forma);
+	public UtilesEscolare(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
+			String tamano, String forma, String color, int edadRecomendada) {
+		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		this.color = color;
 		this.edadRecomendada = edadRecomendada;
 	}
 
 
-	public UtilesEscolare(String nombre, int id, String descripcion, float precio, String tipo, String tamano,
-			String forma) {
-		super(nombre, id, descripcion, precio, tipo, tamano, forma);
+	public UtilesEscolare(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
+			String tamano, String forma) {
+		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilesEscolare(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public UtilesEscolare(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -70,7 +70,7 @@ public class UtilesEscolare extends Papeleria {
 	}
 	
 	
-	
+
 	
 
 }

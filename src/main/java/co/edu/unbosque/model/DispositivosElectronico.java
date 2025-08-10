@@ -20,18 +20,12 @@ public class DispositivosElectronico  extends Articulo{
 	}
 
 
-	public DispositivosElectronico(String nombre, int id, String descripcion, float precio, String marca, int ram,
-			int almacenamiento) {
-		super(nombre, id, descripcion, precio);
+	public DispositivosElectronico(String nombre, int id, String descripcion, float precio, String imagen, String marca,
+			int ram, int almacenamiento) {
+		super(nombre, id, descripcion, precio, imagen);
 		this.marca = marca;
 		this.ram = ram;
 		this.almacenamiento = almacenamiento;
-	}
-
-
-	public DispositivosElectronico(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -69,6 +63,10 @@ public class DispositivosElectronico  extends Articulo{
 	public String toString() {
 		return "DispositivosElectronico [marca=" + marca + ", ram=" + ram + ", almacenamiento=" + almacenamiento + "]";
 	}
+	
+	
+
+
 	
 	
 	

@@ -16,22 +16,22 @@ public class PeluchePersonaje extends Peluche {
 	}
 
 
-	public PeluchePersonaje(String nombre, int id, String descripcion, float precio, String tamano, String color,
-			String material, String personaje) {
-		super(nombre, id, descripcion, precio, tamano, color, material);
+	public PeluchePersonaje(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+			String color, String material, String personaje) {
+		super(nombre, id, descripcion, precio, imagen, tamano, color, material);
 		this.personaje = personaje;
 	}
 
 
-	public PeluchePersonaje(String nombre, int id, String descripcion, float precio, String tamano, String color,
-			String material) {
-		super(nombre, id, descripcion, precio, tamano, color, material);
+	public PeluchePersonaje(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+			String color, String material) {
+		super(nombre, id, descripcion, precio, imagen, tamano, color, material);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public PeluchePersonaje(String nombre, int id, String descripcion, float precio) {
-		super(nombre, id, descripcion, precio);
+	public PeluchePersonaje(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -56,6 +56,8 @@ public class PeluchePersonaje extends Peluche {
 	public String toString() {
 		return "PeluchePersonaje [personaje=" + personaje + "]";
 	}
+	
+	
 	
 	
 	
