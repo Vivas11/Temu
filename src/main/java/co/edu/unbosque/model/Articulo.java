@@ -25,6 +25,9 @@ public class Articulo {
 
 
 
+
+
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -78,11 +81,6 @@ public class Articulo {
 		return "Articulo [nombre=" + nombre + ", id=" + id + ", descripcion=" + descripcion + ", precio=" + precio
 				+ "]";
 	}
-	
-	
-	
-	
-	
 	
 	
 	
