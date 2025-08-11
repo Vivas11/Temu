@@ -1,6 +1,6 @@
 package co.edu.unbosque.model;
 
-public class Juguete  extends Articulo{
+public abstract class Juguete  extends Articulo{
 
 	private String tamano;
 	private String material;

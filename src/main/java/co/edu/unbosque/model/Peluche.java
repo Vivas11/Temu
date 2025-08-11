@@ -1,6 +1,6 @@
 package co.edu.unbosque.model;
 
-public class Peluche extends Articulo{
+public abstract class Peluche extends Articulo{
 	
 	private String tamano;
 	private String color;

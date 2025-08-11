@@ -1,6 +1,6 @@
 package co.edu.unbosque.model;
 
-public class Ropa extends Articulo {
+public abstract  class Ropa extends Articulo {
 	
 	private String tipoPrenda;
 	private String talla;

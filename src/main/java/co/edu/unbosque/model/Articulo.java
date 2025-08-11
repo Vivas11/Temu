@@ -1,6 +1,6 @@
 package co.edu.unbosque.model;
 
-public class Articulo {
+public abstract class  Articulo {
 	
 	private String nombre;
 	private int id;
