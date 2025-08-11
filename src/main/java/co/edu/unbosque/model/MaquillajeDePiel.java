@@ -1,39 +1,45 @@
 package co.edu.unbosque.model;
 
-public class MaquillaDepiel extends Maquillaje {
+import java.io.Serializable;
 
+public class MaquillajeDePiel extends Maquillaje implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int tipo;
 	private boolean esEcoamigable;
 
-	public MaquillaDepiel() {
+	public MaquillajeDePiel() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MaquillaDepiel(int tipo, boolean esEcoamigable) {
+	public MaquillajeDePiel(int tipo, boolean esEcoamigable) {
 		super();
 		this.tipo = tipo;
 		this.esEcoamigable = esEcoamigable;
 	}
 
-	public MaquillaDepiel(String nombre, int id, String descripcion, float precio, String imagen, String color,
+	public MaquillajeDePiel(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo, int tipo, boolean esEcoamigable) {
 		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
 		this.tipo = tipo;
 		this.esEcoamigable = esEcoamigable;
 	}
 
-	public MaquillaDepiel(String color, float contenidoEnGramo) {
+	public MaquillajeDePiel(String color, float contenidoEnGramo) {
 		super(color, contenidoEnGramo);
 		// TODO Auto-generated constructor stub
 	}
 
-	public MaquillaDepiel(String nombre, int id, String descripcion, float precio, String imagen, String color,
+	public MaquillajeDePiel(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo) {
 		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
 		// TODO Auto-generated constructor stub
 	}
 
-	public MaquillaDepiel(String nombre, int id, String descripcion, float precio, String imagen) {
+	public MaquillajeDePiel(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}

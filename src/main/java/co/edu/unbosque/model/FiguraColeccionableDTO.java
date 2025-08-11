@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class FiguraColeccionable  extends Juguete implements Serializable{
+public class FiguraColeccionableDTO  extends Juguete implements Serializable{
 	
 	/**
 	 * 
@@ -11,35 +11,35 @@ public class FiguraColeccionable  extends Juguete implements Serializable{
 	private String tipoDeFigura;
 	private float valorEnMercado;
 	
-	public FiguraColeccionable() {
+	public FiguraColeccionableDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public FiguraColeccionable(String tipoDeFigura, float valorEnMercado) {
+	public FiguraColeccionableDTO(String tipoDeFigura, float valorEnMercado) {
 		super();
 		this.tipoDeFigura = tipoDeFigura;
 		this.valorEnMercado = valorEnMercado;
 	}
 
-	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+	public FiguraColeccionableDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String material, String tipoDeFigura, float valorEnMercado) {
 		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		this.tipoDeFigura = tipoDeFigura;
 		this.valorEnMercado = valorEnMercado;
 	}
 
-	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+	public FiguraColeccionableDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String material) {
 		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		// TODO Auto-generated constructor stub
 	}
 
-	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String imagen) {
+	public FiguraColeccionableDTO(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
-	public FiguraColeccionable(String tamano, String material) {
+	public FiguraColeccionableDTO(String tamano, String material) {
 		super(tamano, material);
 		// TODO Auto-generated constructor stub
 	}

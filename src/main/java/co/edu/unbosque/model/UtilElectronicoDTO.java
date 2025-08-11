@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class UtilElectronico extends Papeleria implements Serializable{
+public class UtilElectronicoDTO extends Papeleria implements Serializable{
 	/**
 	 * 
 	 */
@@ -11,19 +11,19 @@ public class UtilElectronico extends Papeleria implements Serializable{
 	private boolean bateriaIncluida;
 	
 	
-	public UtilElectronico() {
+	public UtilElectronicoDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilElectronico(String tipoDispositivo, boolean bateriaIncluida) {
+	public UtilElectronicoDTO(String tipoDispositivo, boolean bateriaIncluida) {
 		super();
 		this.tipoDispositivo = tipoDispositivo;
 		this.bateriaIncluida = bateriaIncluida;
 	}
 
 
-	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
+	public UtilElectronicoDTO(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
 			String tamano, String forma, String tipoDispositivo, boolean bateriaIncluida) {
 		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		this.tipoDispositivo = tipoDispositivo;
@@ -31,20 +31,20 @@ public class UtilElectronico extends Papeleria implements Serializable{
 	}
 
 
-	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
+	public UtilElectronicoDTO(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
 			String tamano, String forma) {
 		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen) {
+	public UtilElectronicoDTO(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilElectronico(String tipo, String tamano, String forma) {
+	public UtilElectronicoDTO(String tipo, String tamano, String forma) {
 		super(tipo, tamano, forma);
 		// TODO Auto-generated constructor stub
 	}

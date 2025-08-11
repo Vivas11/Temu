@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class PelucheAnimal extends Peluche implements Serializable{
+public class PelucheAnimalDTO extends Peluche implements Serializable{
 	/**
 	 * 
 	 */
@@ -11,19 +11,19 @@ public class PelucheAnimal extends Peluche implements Serializable{
 	private boolean sonidoIncluido;
 	
 	
-	public PelucheAnimal() {
+	public PelucheAnimalDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public PelucheAnimal(String especie, boolean sonidoIncluido) {
+	public PelucheAnimalDTO(String especie, boolean sonidoIncluido) {
 		super();
 		this.especie = especie;
 		this.sonidoIncluido = sonidoIncluido;
 	}
 
 
-	public PelucheAnimal(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+	public PelucheAnimalDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String color, String material, String especie, boolean sonidoIncluido) {
 		super(nombre, id, descripcion, precio, imagen, tamano, color, material);
 		this.especie = especie;
@@ -31,20 +31,20 @@ public class PelucheAnimal extends Peluche implements Serializable{
 	}
 
 
-	public PelucheAnimal(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+	public PelucheAnimalDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String color, String material) {
 		super(nombre, id, descripcion, precio, imagen, tamano, color, material);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public PelucheAnimal(String nombre, int id, String descripcion, float precio, String imagen) {
+	public PelucheAnimalDTO(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public PelucheAnimal(String tamano, String color, String material) {
+	public PelucheAnimalDTO(String tamano, String color, String material) {
 		super(tamano, color, material);
 		// TODO Auto-generated constructor stub
 	}

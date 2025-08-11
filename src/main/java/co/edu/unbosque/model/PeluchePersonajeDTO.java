@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class PeluchePersonaje extends Peluche implements Serializable{
+public class PeluchePersonajeDTO extends Peluche implements Serializable{
 	
 	/**
 	 * 
@@ -11,38 +11,38 @@ public class PeluchePersonaje extends Peluche implements Serializable{
 	private String personaje;
 	
 	
-	public PeluchePersonaje() {
+	public PeluchePersonajeDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public PeluchePersonaje(String personaje) {
+	public PeluchePersonajeDTO(String personaje) {
 		super();
 		this.personaje = personaje;
 	}
 
 
-	public PeluchePersonaje(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+	public PeluchePersonajeDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String color, String material, String personaje) {
 		super(nombre, id, descripcion, precio, imagen, tamano, color, material);
 		this.personaje = personaje;
 	}
 
 
-	public PeluchePersonaje(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+	public PeluchePersonajeDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String color, String material) {
 		super(nombre, id, descripcion, precio, imagen, tamano, color, material);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public PeluchePersonaje(String nombre, int id, String descripcion, float precio, String imagen) {
+	public PeluchePersonajeDTO(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public PeluchePersonaje(String tamano, String color, String material) {
+	public PeluchePersonajeDTO(String tamano, String color, String material) {
 		super(tamano, color, material);
 		// TODO Auto-generated constructor stub
 	}

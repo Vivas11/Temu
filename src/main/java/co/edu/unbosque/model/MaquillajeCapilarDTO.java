@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class MaquillajeCapilar extends Maquillaje implements Serializable{
+public class MaquillajeCapilarDTO extends Maquillaje implements Serializable{
 	/**
 	 * 
 	 */
@@ -10,35 +10,35 @@ public class MaquillajeCapilar extends Maquillaje implements Serializable{
 	private boolean resistenciaAgua;
 	private int duracionHora;
 	
-	public MaquillajeCapilar() {
+	public MaquillajeCapilarDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MaquillajeCapilar(boolean resistenciaAgua, int duracionHora) {
+	public MaquillajeCapilarDTO(boolean resistenciaAgua, int duracionHora) {
 		super();
 		this.resistenciaAgua = resistenciaAgua;
 		this.duracionHora = duracionHora;
 	}
 
-	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String imagen, String color,
+	public MaquillajeCapilarDTO(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo, boolean resistenciaAgua, int duracionHora) {
 		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
 		this.resistenciaAgua = resistenciaAgua;
 		this.duracionHora = duracionHora;
 	}
 
-	public MaquillajeCapilar(String color, float contenidoEnGramo) {
+	public MaquillajeCapilarDTO(String color, float contenidoEnGramo) {
 		super(color, contenidoEnGramo);
 		// TODO Auto-generated constructor stub
 	}
 
-	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String imagen, String color,
+	public MaquillajeCapilarDTO(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo) {
 		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
 		// TODO Auto-generated constructor stub
 	}
 
-	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String imagen) {
+	public MaquillajeCapilarDTO(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}

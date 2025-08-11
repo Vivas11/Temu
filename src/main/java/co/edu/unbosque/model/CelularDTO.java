@@ -2,7 +2,8 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class Celular extends DispositivosElectronico implements Serializable{
+public class CelularDTO extends DispositivosElectronico implements Serializable{
+
 	
 	/**
 	 * 
@@ -12,19 +13,19 @@ public class Celular extends DispositivosElectronico implements Serializable{
 	private int resolucionCamra;
 	
 	
-	public Celular() {
+	public CelularDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Celular(String procesador, int resolucionCamra) {
+	public CelularDTO(String procesador, int resolucionCamra) {
 		super();
 		this.procesador = procesador;
 		this.resolucionCamra = resolucionCamra;
 	}
 
 
-	public Celular(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
+	public CelularDTO(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
 			int almacenamiento, String procesador, int resolucionCamra) {
 		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		this.procesador = procesador;
@@ -32,13 +33,13 @@ public class Celular extends DispositivosElectronico implements Serializable{
 	}
 
 
-	public Celular(String marca, int ram, int almacenamiento) {
+	public CelularDTO(String marca, int ram, int almacenamiento) {
 		super(marca, ram, almacenamiento);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Celular(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
+	public CelularDTO(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
 			int almacenamiento) {
 		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		// TODO Auto-generated constructor stub
@@ -74,9 +75,5 @@ public class Celular extends DispositivosElectronico implements Serializable{
 
 
 	
-	
-	
-	
-	
-	
+
 }

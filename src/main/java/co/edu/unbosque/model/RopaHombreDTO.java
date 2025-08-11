@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class RopaHombre  extends  Ropa 	implements Serializable{
+public class RopaHombreDTO  extends  Ropa 	implements Serializable{
 
 	/**
 	 * 
@@ -10,33 +10,33 @@ public class RopaHombre  extends  Ropa 	implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String corte;
 	
-	public RopaHombre() {
+	public RopaHombreDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public RopaHombre(String corte) {
+	public RopaHombreDTO(String corte) {
 		super();
 		this.corte = corte;
 	}
 
-	public RopaHombre(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda,
+	public RopaHombreDTO(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda,
 			String talla, String material, String corte) {
 		super(nombre, id, descripcion, precio, imagen, tipoPrenda, talla, material);
 		this.corte = corte;
 	}
 
-	public RopaHombre(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda,
+	public RopaHombreDTO(String nombre, int id, String descripcion, float precio, String imagen, String tipoPrenda,
 			String talla, String material) {
 		super(nombre, id, descripcion, precio, imagen, tipoPrenda, talla, material);
 		// TODO Auto-generated constructor stub
 	}
 
-	public RopaHombre(String nombre, int id, String descripcion, float precio, String imagen) {
+	public RopaHombreDTO(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
-	public RopaHombre(String tipoPrenda, String talla, String material) {
+	public RopaHombreDTO(String tipoPrenda, String talla, String material) {
 		super(tipoPrenda, talla, material);
 		// TODO Auto-generated constructor stub
 	}

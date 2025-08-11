@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class JuegoDeMesa extends Juguete implements Serializable{
+public class JuegoDeMesaDTO extends Juguete implements Serializable{
 	
 	/**
 	 * 
@@ -13,13 +13,13 @@ public class JuegoDeMesa extends Juguete implements Serializable{
 	
 	
 	
-	public JuegoDeMesa() {
+	public JuegoDeMesaDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 
 
-	public JuegoDeMesa(int numeroJugadore, String tipoDeJuego) {
+	public JuegoDeMesaDTO(int numeroJugadore, String tipoDeJuego) {
 		super();
 		this.numeroJugadore = numeroJugadore;
 		this.tipoDeJuego = tipoDeJuego;
@@ -27,7 +27,7 @@ public class JuegoDeMesa extends Juguete implements Serializable{
 
 
 
-	public JuegoDeMesa(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+	public JuegoDeMesaDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String material, int numeroJugadore, String tipoDeJuego) {
 		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		this.numeroJugadore = numeroJugadore;
@@ -36,7 +36,7 @@ public class JuegoDeMesa extends Juguete implements Serializable{
 
 
 
-	public JuegoDeMesa(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
+	public JuegoDeMesaDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String material) {
 		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		// TODO Auto-generated constructor stub
@@ -44,14 +44,14 @@ public class JuegoDeMesa extends Juguete implements Serializable{
 
 
 
-	public JuegoDeMesa(String nombre, int id, String descripcion, float precio, String imagen) {
+	public JuegoDeMesaDTO(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
 
 
-	public JuegoDeMesa(String tamano, String material) {
+	public JuegoDeMesaDTO(String tamano, String material) {
 		super(tamano, material);
 		// TODO Auto-generated constructor stub
 	}

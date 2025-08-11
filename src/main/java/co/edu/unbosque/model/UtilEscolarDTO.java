@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class UtilEscolar extends Papeleria implements Serializable{
+public class UtilEscolarDTO extends Papeleria implements Serializable{
 	/**
 	 * 
 	 */
@@ -11,19 +11,19 @@ public class UtilEscolar extends Papeleria implements Serializable{
 	private int edadRecomendada;
 	
 	
-	public UtilEscolar() {
+	public UtilEscolarDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilEscolar(String color, int edadRecomendada) {
+	public UtilEscolarDTO(String color, int edadRecomendada) {
 		super();
 		this.color = color;
 		this.edadRecomendada = edadRecomendada;
 	}
 
 
-	public UtilEscolar(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
+	public UtilEscolarDTO(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
 			String tamano, String forma, String color, int edadRecomendada) {
 		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		this.color = color;
@@ -31,20 +31,20 @@ public class UtilEscolar extends Papeleria implements Serializable{
 	}
 
 
-	public UtilEscolar(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
+	public UtilEscolarDTO(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
 			String tamano, String forma) {
 		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilEscolar(String nombre, int id, String descripcion, float precio, String imagen) {
+	public UtilEscolarDTO(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilEscolar(String tipo, String tamano, String forma) {
+	public UtilEscolarDTO(String tipo, String tamano, String forma) {
 		super(tipo, tamano, forma);
 		// TODO Auto-generated constructor stub
 	}

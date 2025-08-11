@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class Computador extends DispositivosElectronico implements Serializable{
+public class ComputadorDTO extends DispositivosElectronico implements Serializable{
 	/**
 	 * 
 	 */
@@ -12,12 +12,12 @@ public class Computador extends DispositivosElectronico implements Serializable{
 	private boolean tieneTargetaGrafica;
 	
 	
-	public Computador() {
+	public ComputadorDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Computador(int procesador, String tipo, boolean tieneTargetaGrafica) {
+	public ComputadorDTO(int procesador, String tipo, boolean tieneTargetaGrafica) {
 		super();
 		this.procesador = procesador;
 		this.tipo = tipo;
@@ -25,7 +25,7 @@ public class Computador extends DispositivosElectronico implements Serializable{
 	}
 
 
-	public Computador(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
+	public ComputadorDTO(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
 			int almacenamiento, int procesador, String tipo, boolean tieneTargetaGrafica) {
 		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		this.procesador = procesador;
@@ -34,13 +34,13 @@ public class Computador extends DispositivosElectronico implements Serializable{
 	}
 
 
-	public Computador(String marca, int ram, int almacenamiento) {
+	public ComputadorDTO(String marca, int ram, int almacenamiento) {
 		super(marca, ram, almacenamiento);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Computador(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
+	public ComputadorDTO(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
 			int almacenamiento) {
 		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		// TODO Auto-generated constructor stub
