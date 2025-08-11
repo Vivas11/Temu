@@ -1,23 +1,23 @@
 package co.edu.unbosque.model;
 
-public class UtilesElectronico extends Papeleria{
+public class UtilElectronico extends Papeleria{
 	private String tipoDispositivo;
 	private boolean bateriaIncluida;
 	
 	
-	public UtilesElectronico() {
+	public UtilElectronico() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilesElectronico(String tipoDispositivo, boolean bateriaIncluida) {
+	public UtilElectronico(String tipoDispositivo, boolean bateriaIncluida) {
 		super();
 		this.tipoDispositivo = tipoDispositivo;
 		this.bateriaIncluida = bateriaIncluida;
 	}
 
 
-	public UtilesElectronico(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
+	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
 			String tamano, String forma, String tipoDispositivo, boolean bateriaIncluida) {
 		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		this.tipoDispositivo = tipoDispositivo;
@@ -25,20 +25,20 @@ public class UtilesElectronico extends Papeleria{
 	}
 
 
-	public UtilesElectronico(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
+	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
 			String tamano, String forma) {
 		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilesElectronico(String nombre, int id, String descripcion, float precio, String imagen) {
+	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public UtilesElectronico(String tipo, String tamano, String forma) {
+	public UtilElectronico(String tipo, String tamano, String forma) {
 		super(tipo, tamano, forma);
 		// TODO Auto-generated constructor stub
 	}
