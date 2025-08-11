@@ -1,6 +1,6 @@
 package co.edu.unbosque.model;
 
-public class Papeleria extends Articulo {
+public abstract class Papeleria extends Articulo {
 	
 	private String tipo;
 	private String tamano;

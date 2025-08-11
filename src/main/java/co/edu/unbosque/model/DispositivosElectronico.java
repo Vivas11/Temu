@@ -1,6 +1,6 @@
 package co.edu.unbosque.model;
 
-public class DispositivosElectronico  extends Articulo{
+public abstract class DispositivosElectronico  extends Articulo{
 
 	private String marca;
 	private int ram;

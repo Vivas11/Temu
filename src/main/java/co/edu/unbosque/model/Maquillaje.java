@@ -1,6 +1,6 @@
 package co.edu.unbosque.model;
 
-public class Maquillaje extends Articulo {
+public abstract class Maquillaje extends Articulo {
 	
 	private String  color;
 	private float contenidoEnGramo;
