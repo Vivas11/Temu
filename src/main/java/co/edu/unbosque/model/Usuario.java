@@ -1,9 +1,11 @@
 package co.edu.unbosque.model;
 
+import java.util.Date;
+
 public class Usuario {
 	private String Nombre;
 	private String apellido;
-	private int edad;
+	private Date fechaDeNacimiento;
 	private String nombreUsuario;
 	private String correo;
 	private String contrasena;
@@ -15,12 +17,12 @@ public class Usuario {
 	}
 
 
-	public Usuario(String nombre, String apellido, int edad, String nombreUsuario, String correo, String contrasena,
+	public Usuario(String nombre, String apellido, Date fechaDeNacimiento, String nombreUsuario, String correo, String contrasena,
 			String direccion) {
 		super();
 		Nombre = nombre;
 		this.apellido = apellido;
-		this.edad = edad;
+		this.fechaDeNacimiento = fechaDeNacimiento;
 		this.nombreUsuario = nombreUsuario;
 		this.correo = correo;
 		this.contrasena = contrasena;
@@ -48,13 +50,13 @@ public class Usuario {
 	}
 
 
-	public int getEdad() {
-		return edad;
+	public Date getFechaDeNacimiento() {
+		return fechaDeNacimiento;
 	}
 
 
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public void setEdad(Date fechaDeNacimiento) {
+		this.fechaDeNacimiento = fechaDeNacimiento;
 	}
 
 
@@ -100,7 +102,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [Nombre=" + Nombre + ", apellido=" + apellido + ", edad=" + edad + ", nombreUsuario="
+		return "Usuario [Nombre=" + Nombre + ", apellido=" + apellido + ", Fecha de Nacimiento=" + fechaDeNacimiento + ", nombreUsuario="
 				+ nombreUsuario + ", correo=" + correo + ", contrasena=" + contrasena + ", direccion=" + direccion
 				+ "]";
 	}
