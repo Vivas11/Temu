@@ -3,7 +3,7 @@ package co.edu.unbosque.model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Usuario implements Serializable{
+public class UsuarioDTO implements Serializable{
 	/**
 	 * 
 	 */
@@ -17,12 +17,12 @@ public class Usuario implements Serializable{
 	private String direccion;
 	
 	
-	public Usuario() {
+	public UsuarioDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Usuario(String nombre, String apellido, Date fechaDeNacimiento, String nombreUsuario, String correo, String contrasena,
+	public UsuarioDTO(String nombre, String apellido, Date fechaDeNacimiento, String nombreUsuario, String correo, String contrasena,
 			String direccion) {
 		super();
 		Nombre = nombre;
