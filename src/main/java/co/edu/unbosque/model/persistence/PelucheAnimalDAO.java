@@ -17,7 +17,7 @@ public class PelucheAnimalDAO implements OperacionDAO<PelucheAnimalDTO, PelucheA
 		public String showAll() {
 			String rta = "";
 			if (listaPelucheAnimal.isEmpty()) {
-				return "No hay celulares aun";
+				return "No hay peluche de animales aun";
 
 			} else {
 				for (PelucheAnimal p : listaPelucheAnimal) {
