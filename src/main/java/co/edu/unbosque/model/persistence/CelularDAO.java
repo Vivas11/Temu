@@ -7,7 +7,6 @@ import co.edu.unbosque.model.CelularDTO;
 public class CelularDAO implements OperacionDAO<CelularDTO, Celular> {
 
 	private ArrayList<Celular> listaCelular;
-//lOKA DYLAN
 	public CelularDAO() {
 		listaCelular = new ArrayList<>();
 	}

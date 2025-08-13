@@ -3,6 +3,8 @@ package co.edu.unbosque.model.persistence;
 import java.util.ArrayList;
 
 import javax.swing.JTable;
+
+import co.edu.unbosque.model.MaquillajeDePiel;
 /**
  * Interfaz OperacionDAO que define las operaciones CRUD para cualquier entidad.
  * @param <D> Tipo de dato de transferencia (DTO).
