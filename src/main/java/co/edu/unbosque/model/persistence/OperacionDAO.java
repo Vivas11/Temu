@@ -10,11 +10,10 @@ import javax.swing.JTable;
  */
 public interface OperacionDAO <D, E>{//D -> DTO || E -> Entidad
 	/**
-	 * Método para mostrar todos los registros en una tabla.
-	 * @param tabla JTable donde se mostrarán los registros.
+	 * Método para mostrar todos los registros.
 	 * @return true si se muestran los registros, false en caso contrario.
 	 */
-	public boolean showAll(JTable tabla); //mostrar todo
+	public String showAll(); //mostrar todo
 	/**
 	 * Método para obtener todos los registros.
 	 * @return una lista de registros.

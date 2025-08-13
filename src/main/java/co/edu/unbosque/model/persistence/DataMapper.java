@@ -31,14 +31,14 @@ import co.edu.unbosque.model.UtilEscolarDTO;
 
 public class DataMapper {
 
-	public static Celular CelularDTOToCelular(CelularDTO dto) {
+	public static Celular celularDTOToCelular(CelularDTO dto) {
 		Celular entity;
 		entity = new Celular(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(), dto.getImagen(),
 				dto.getMarca(), dto.getRam(), dto.getAlmacenamiento(), dto.getProcesador(), dto.getResolucionCamra());
 		return entity;
 	}
 
-	public static CelularDTO CelularToCelularDTO(Celular entity) {
+	public static CelularDTO celularToCelularDTO(Celular entity) {
 		CelularDTO dto;
 		dto = new CelularDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getMarca(), entity.getRam(), entity.getAlmacenamiento(),
@@ -64,7 +64,7 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static Computador ComputadorDTOToComputador(ComputadorDTO dto) {
+	public static Computador computadorDTOToComputador(ComputadorDTO dto) {
 		Computador entity;
 		entity = new Computador(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(), dto.getImagen(),
 				dto.getMarca(), dto.getRam(), dto.getAlmacenamiento(), dto.getProcesador(), dto.getTipo(),
@@ -72,7 +72,7 @@ public class DataMapper {
 		return entity;
 	}
 
-	public static ComputadorDTO ComputadorToComputadorDTO(Computador entity) {
+	public static ComputadorDTO computadorToComputadorDTO(Computador entity) {
 		ComputadorDTO dto;
 		dto = new ComputadorDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getMarca(), entity.getRam(), entity.getAlmacenamiento(),
@@ -100,14 +100,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static FiguraColeccionable FiguraColeccionableDTOToFiguraColeccionable(FiguraColeccionableDTO dto) {
+	public static FiguraColeccionable figuraColeccionableDTOToFiguraColeccionable(FiguraColeccionableDTO dto) {
 		FiguraColeccionable entity;
 		entity = new FiguraColeccionable(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(),
 				dto.getImagen(), dto.getTamano(), dto.getMaterial(), dto.getTipoDeFigura(), dto.getValorEnMercado());
 		return entity;
 	}
 
-	public static FiguraColeccionableDTO FiguraColeccionableToFiguraColeccionableDTO(FiguraColeccionable entity) {
+	public static FiguraColeccionableDTO figuraColeccionableToFiguraColeccionableDTO(FiguraColeccionable entity) {
 		FiguraColeccionableDTO dto;
 		dto = new FiguraColeccionableDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(),
 				entity.getPrecio(), entity.getImagen(), entity.getTamano(), entity.getMaterial(),
@@ -135,14 +135,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static JuegoDeMesa JuegoDeMesaDTOToJuegoDeMesa(JuegoDeMesaDTO dto) {
+	public static JuegoDeMesa juegoDeMesaDTOToJuegoDeMesa(JuegoDeMesaDTO dto) {
 		JuegoDeMesa entity;
 		entity = new JuegoDeMesa(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(), dto.getImagen(),
 				dto.getTamano(), dto.getMaterial(), dto.getNumeroJugadore(), dto.getTipoDeJuego());
 		return entity;
 	}
 
-	public static JuegoDeMesaDTO JuegoDeMesaToJuegoDeMesaDTO(JuegoDeMesa entity) {
+	public static JuegoDeMesaDTO juegoDeMesaToJuegoDeMesaDTO(JuegoDeMesa entity) {
 		JuegoDeMesaDTO dto;
 		dto = new JuegoDeMesaDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getTamano(), entity.getMaterial(), entity.getNumeroJugadore(),
@@ -168,7 +168,7 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static MaquillajeCapilar MaquillajeCapilarDTOToMaquillajeCapilar(MaquillajeCapilarDTO dto) {
+	public static MaquillajeCapilar maquillajeCapilarDTOToMaquillajeCapilar(MaquillajeCapilarDTO dto) {
 		MaquillajeCapilar entity;
 		entity = new MaquillajeCapilar(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(),
 				dto.getImagen(), dto.getColor(), dto.getContenidoEnGramo(), dto.isResistenciaAgua(),
@@ -176,7 +176,7 @@ public class DataMapper {
 		return entity;
 	}
 
-	public static MaquillajeCapilarDTO MaquillajeCapilarToMaquillajeCapilarDTO(MaquillajeCapilar entity) {
+	public static MaquillajeCapilarDTO maquillajeCapilarToMaquillajeCapilarDTO(MaquillajeCapilar entity) {
 		MaquillajeCapilarDTO dto;
 		dto = new MaquillajeCapilarDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getColor(), entity.getContenidoEnGramo(), entity.isResistenciaAgua(),
@@ -204,14 +204,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static MaquillajeDePiel MaquillajeDePielDTOToMaquillajeDePiel(MaquillajeDePielDTO dto) {
+	public static MaquillajeDePiel maquillajeDePielDTOToMaquillajeDePiel(MaquillajeDePielDTO dto) {
 		MaquillajeDePiel entity;
 		entity = new MaquillajeDePiel(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(),
 				dto.getImagen(), dto.getColor(), dto.getContenidoEnGramo(), dto.getTipo(), dto.isEsEcoamigable());
 		return entity;
 	}
 
-	public static MaquillajeDePielDTO MaquillajeDePielToMaquillajeDePielDTO(MaquillajeDePiel entity) {
+	public static MaquillajeDePielDTO maquillajeDePielToMaquillajeDePielDTO(MaquillajeDePiel entity) {
 		MaquillajeDePielDTO dto;
 		dto = new MaquillajeDePielDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getColor(), entity.getContenidoEnGramo(), entity.getTipo(),
@@ -239,14 +239,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static PelucheAnimal PelucheAnimalDTOToPelucheAnimal(PelucheAnimalDTO dto) {
+	public static PelucheAnimal pelucheAnimalDTOToPelucheAnimal(PelucheAnimalDTO dto) {
 		PelucheAnimal entity;
 		entity = new PelucheAnimal(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(), dto.getImagen(),
 				dto.getTamano(), dto.getColor(), dto.getMaterial(), dto.getEspecie(), dto.isSonidoIncluido());
 		return entity;
 	}
 
-	public static PelucheAnimalDTO PelucheAnimalToPelucheAnimalDTO(PelucheAnimal entity) {
+	public static PelucheAnimalDTO pelucheAnimalToPelucheAnimalDTO(PelucheAnimal entity) {
 		PelucheAnimalDTO dto;
 		dto = new PelucheAnimalDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getTamano(), entity.getColor(), entity.getMaterial(), entity.getEspecie(),
@@ -274,14 +274,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static PeluchePersonaje PeluchePersonajeDTOToPeluchePersonaje(PeluchePersonajeDTO dto) {
+	public static PeluchePersonaje peluchePersonajeDTOToPeluchePersonaje(PeluchePersonajeDTO dto) {
 		PeluchePersonaje entity;
 		entity = new PeluchePersonaje(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(),
 				dto.getImagen(), dto.getTamano(), dto.getColor(), dto.getMaterial(), dto.getPersonaje());
 		return entity;
 	}
 
-	public static PeluchePersonajeDTO PeluchePersonajeToPeluchePersonajeDTO(PeluchePersonaje entity) {
+	public static PeluchePersonajeDTO peluchePersonajeToPeluchePersonajeDTO(PeluchePersonaje entity) {
 		PeluchePersonajeDTO dto;
 		dto = new PeluchePersonajeDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getTamano(), entity.getColor(), entity.getMaterial(), entity.getPersonaje());
@@ -308,14 +308,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static RopaHombre RopaHombreDTOToRopaHombre(RopaHombreDTO dto) {
+	public static RopaHombre ropaHombreDTOToRopaHombre(RopaHombreDTO dto) {
 		RopaHombre entity;
 		entity = new RopaHombre(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(), dto.getImagen(),
 				dto.getTipoPrenda(), dto.getTalla(), dto.getMaterial(), dto.getCorte());
 		return entity;
 	}
 
-	public static RopaHombreDTO RopaHombreToRopaHombreDTO(RopaHombre entity) {
+	public static RopaHombreDTO ropaHombreToRopaHombreDTO(RopaHombre entity) {
 		RopaHombreDTO dto;
 		dto = new RopaHombreDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getTipoPrenda(), entity.getTalla(), entity.getMaterial(), entity.getCorte());
@@ -340,14 +340,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static RopaMujer RopaMujerDTOToRopaMujer(RopaMujerDTO dto) {
+	public static RopaMujer ropaMujerDTOToRopaMujer(RopaMujerDTO dto) {
 		RopaMujer entity;
 		entity = new RopaMujer(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(), dto.getImagen(),
 				dto.getTipoPrenda(), dto.getTalla(), dto.getMaterial(), dto.getLargoPrenda());
 		return entity;
 	}
 
-	public static RopaMujerDTO RopaMujerToRopaMujerDTO(RopaMujer entity) {
+	public static RopaMujerDTO ropaMujerToRopaMujerDTO(RopaMujer entity) {
 		RopaMujerDTO dto;
 		dto = new RopaMujerDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getTipoPrenda(), entity.getTalla(), entity.getMaterial(),
@@ -373,14 +373,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static Usuario UsuarioDTOToUsuario(UsuarioDTO dto) {
+	public static Usuario usuarioDTOToUsuario(UsuarioDTO dto) {
 		Usuario entity;
 		entity = new Usuario(dto.getNombre(), dto.getApellido(), dto.getFechaDeNacimiento(), dto.getNombreUsuario(),
 				dto.getCorreo(), dto.getContrasena(), dto.getDireccion());
 		return entity;
 	}
 
-	public static UsuarioDTO UsuarioToUsuarioDTO(Usuario entity) {
+	public static UsuarioDTO usuarioToUsuarioDTO(Usuario entity) {
 		UsuarioDTO dto;
 		dto = new UsuarioDTO(entity.getNombre(), entity.getApellido(), entity.getFechaDeNacimiento(),
 				entity.getNombreUsuario(), entity.getCorreo(), entity.getContrasena(), entity.getDireccion());
@@ -405,7 +405,7 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static UtilElectronico UtilElectronicoDTOToUtilElectronico(UtilElectronicoDTO dto) {
+	public static UtilElectronico utilElectronicoDTOToUtilElectronico(UtilElectronicoDTO dto) {
 		UtilElectronico entity;
 		entity = new UtilElectronico(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(),
 				dto.getImagen(), dto.getTipo(), dto.getTamano(), dto.getForma(), dto.getTipoDispositivo(),
@@ -413,7 +413,7 @@ public class DataMapper {
 		return entity;
 	}
 
-	public static UtilElectronicoDTO UtilElectronicoToUtilElectronicoDTO(UtilElectronico entity) {
+	public static UtilElectronicoDTO utilElectronicoToUtilElectronicoDTO(UtilElectronico entity) {
 		UtilElectronicoDTO dto;
 		dto = new UtilElectronicoDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getTipo(), entity.getTamano(), entity.getForma(),
@@ -443,14 +443,14 @@ public class DataMapper {
 		return entityList;
 	}
 
-	public static UtilEscolar UtilEscolarDTOToUtilEscolar(UtilEscolarDTO dto) {
+	public static UtilEscolar utilEscolarDTOToUtilEscolar(UtilEscolarDTO dto) {
 		UtilEscolar entity;
 		entity = new UtilEscolar(dto.getNombre(), dto.getId(), dto.getDescripcion(), dto.getPrecio(), dto.getImagen(),
 				dto.getTipo(), dto.getTamano(), dto.getForma(), dto.getColor(), dto.getEdadRecomendada());
 		return entity;
 	}
 
-	public static UtilEscolarDTO UtilEscolarToUtilEscolarDTO(UtilEscolar entity) {
+	public static UtilEscolarDTO utilEscolarToUtilEscolarDTO(UtilEscolar entity) {
 		UtilEscolarDTO dto;
 		dto = new UtilEscolarDTO(entity.getNombre(), entity.getId(), entity.getDescripcion(), entity.getPrecio(),
 				entity.getImagen(), entity.getTipo(), entity.getTamano(), entity.getForma(), entity.getColor(),
