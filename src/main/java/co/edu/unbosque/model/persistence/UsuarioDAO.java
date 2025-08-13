@@ -2,7 +2,6 @@ package co.edu.unbosque.model.persistence;
 
 import java.util.ArrayList;
 
-import co.edu.unbosque.model.Celular;
 import co.edu.unbosque.model.Usuario;
 import co.edu.unbosque.model.UsuarioDTO;
 

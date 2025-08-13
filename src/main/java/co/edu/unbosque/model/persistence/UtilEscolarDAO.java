@@ -1,8 +1,6 @@
 package co.edu.unbosque.model.persistence;
 
 import java.util.ArrayList;
-
-
 import co.edu.unbosque.model.UtilEscolar;
 import co.edu.unbosque.model.UtilEscolarDTO;
 
