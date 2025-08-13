@@ -20,7 +20,7 @@ public class MaquillajeDePielDTO extends Maquillaje implements Serializable{
 		this.tipo = tipo;
 		this.esEcoamigable = esEcoamigable;
 	}
-
+	
 	public MaquillajeDePielDTO(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo, int tipo, boolean esEcoamigable) {
 		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
@@ -28,19 +28,9 @@ public class MaquillajeDePielDTO extends Maquillaje implements Serializable{
 		this.esEcoamigable = esEcoamigable;
 	}
 
-	public MaquillajeDePielDTO(String color, float contenidoEnGramo) {
-		super(color, contenidoEnGramo);
-		// TODO Auto-generated constructor stub
-	}
-
 	public MaquillajeDePielDTO(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo) {
 		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MaquillajeDePielDTO(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 

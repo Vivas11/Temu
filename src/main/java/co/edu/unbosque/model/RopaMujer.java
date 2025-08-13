@@ -2,13 +2,13 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 
-public class RopaMujer extends Ropa implements Serializable{
+public class RopaMujer extends Ropa implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String largoPrenda;
-	
+
 	public RopaMujer() {
 		// TODO Auto-generated constructor stub
 	}
@@ -30,16 +30,6 @@ public class RopaMujer extends Ropa implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public RopaMujer(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
-		// TODO Auto-generated constructor stub
-	}
-
-	public RopaMujer(String tipoPrenda, String talla, String material) {
-		super(tipoPrenda, talla, material);
-		// TODO Auto-generated constructor stub
-	}
-
 	public String getLargoPrenda() {
 		return largoPrenda;
 	}
@@ -52,10 +42,5 @@ public class RopaMujer extends Ropa implements Serializable{
 	public String toString() {
 		return "RopaMujer [largoPrenda=" + largoPrenda + "]";
 	}
-	
-	
-	
-	
-	
 
 }

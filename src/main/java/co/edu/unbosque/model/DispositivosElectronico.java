@@ -10,15 +10,15 @@ public abstract class DispositivosElectronico  extends Articulo{
 	public DispositivosElectronico() {
 		// TODO Auto-generated constructor stub
 	}
-
-
+	
+	
+	
 	public DispositivosElectronico(String marca, int ram, int almacenamiento) {
 		super();
 		this.marca = marca;
 		this.ram = ram;
 		this.almacenamiento = almacenamiento;
 	}
-
 
 	public DispositivosElectronico(String nombre, int id, String descripcion, float precio, String imagen, String marca,
 			int ram, int almacenamiento) {
@@ -27,6 +27,12 @@ public abstract class DispositivosElectronico  extends Articulo{
 		this.ram = ram;
 		this.almacenamiento = almacenamiento;
 	}
+
+	public DispositivosElectronico(String nombre, int id, String descripcion, float precio, String imagen) {
+		super(nombre, id, descripcion, precio, imagen);
+		// TODO Auto-generated constructor stub
+	}
+
 
 
 	public String getMarca() {

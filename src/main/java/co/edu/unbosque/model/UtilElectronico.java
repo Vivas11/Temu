@@ -15,13 +15,11 @@ public class UtilElectronico extends Papeleria implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public UtilElectronico(String tipoDispositivo, boolean bateriaIncluida) {
 		super();
 		this.tipoDispositivo = tipoDispositivo;
 		this.bateriaIncluida = bateriaIncluida;
 	}
-
 
 	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
 			String tamano, String forma, String tipoDispositivo, boolean bateriaIncluida) {
@@ -30,25 +28,11 @@ public class UtilElectronico extends Papeleria implements Serializable{
 		this.bateriaIncluida = bateriaIncluida;
 	}
 
-
 	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen, String tipo,
 			String tamano, String forma) {
 		super(nombre, id, descripcion, precio, imagen, tipo, tamano, forma);
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public UtilElectronico(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public UtilElectronico(String tipo, String tamano, String forma) {
-		super(tipo, tamano, forma);
-		// TODO Auto-generated constructor stub
-	}
-
 
 	public String getTipoDispositivo() {
 		return tipoDispositivo;

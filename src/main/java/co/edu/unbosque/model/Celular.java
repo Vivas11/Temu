@@ -15,7 +15,7 @@ public class Celular extends DispositivosElectronico implements Serializable{
 	public Celular() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 
 	public Celular(String procesador, int resolucionCamra) {
 		super();
@@ -29,12 +29,6 @@ public class Celular extends DispositivosElectronico implements Serializable{
 		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		this.procesador = procesador;
 		this.resolucionCamra = resolucionCamra;
-	}
-
-
-	public Celular(String marca, int ram, int almacenamiento) {
-		super(marca, ram, almacenamiento);
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -69,14 +63,4 @@ public class Celular extends DispositivosElectronico implements Serializable{
 	public String toString() {
 		return "Celular [procesador=" + procesador + ", resolucionCamra=" + resolucionCamra + "]";
 	}
-	
-	
-
-
-	
-	
-	
-	
-	
-	
 }

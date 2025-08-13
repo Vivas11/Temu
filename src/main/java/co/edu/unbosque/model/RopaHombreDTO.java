@@ -31,16 +31,6 @@ public class RopaHombreDTO  extends  Ropa 	implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public RopaHombreDTO(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
-		// TODO Auto-generated constructor stub
-	}
-
-	public RopaHombreDTO(String tipoPrenda, String talla, String material) {
-		super(tipoPrenda, talla, material);
-		// TODO Auto-generated constructor stub
-	}
-
 	public String getCorte() {
 		return corte;
 	}

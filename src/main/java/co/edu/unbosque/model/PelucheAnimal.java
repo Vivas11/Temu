@@ -14,14 +14,12 @@ public class PelucheAnimal extends Peluche implements Serializable{
 	public PelucheAnimal() {
 		// TODO Auto-generated constructor stub
 	}
-
-
+	
 	public PelucheAnimal(String especie, boolean sonidoIncluido) {
 		super();
 		this.especie = especie;
 		this.sonidoIncluido = sonidoIncluido;
 	}
-
 
 	public PelucheAnimal(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String color, String material, String especie, boolean sonidoIncluido) {
@@ -30,25 +28,11 @@ public class PelucheAnimal extends Peluche implements Serializable{
 		this.sonidoIncluido = sonidoIncluido;
 	}
 
-
 	public PelucheAnimal(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String color, String material) {
 		super(nombre, id, descripcion, precio, imagen, tamano, color, material);
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public PelucheAnimal(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public PelucheAnimal(String tamano, String color, String material) {
-		super(tamano, color, material);
-		// TODO Auto-generated constructor stub
-	}
-
 
 	public String getEspecie() {
 		return especie;
