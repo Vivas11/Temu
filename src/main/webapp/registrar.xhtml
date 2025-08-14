@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template/template.xhtml">
+	<ui:define name="content">
+		<!-- 		<div class="main" style="height: 100vh;"> -->
+		<div class="main">
+			<h:form id="registroForm">
+
+				<div class="container mt-4">
+					<div class="card shadow p-4">
+						<h2 class="mb-4 text-center">Registro de Usuario</h2>
+
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<p:outputLabel for="nombre" value="Nombre:" />
+								<p:inputText id="nombre" value="#{registroBean.nombre}"
+									required="true" placeholder="Ingrese su nombre"
+									styleClass="form-control" />
+							</div>
+							<div class="col-md-6">
+								<p:outputLabel for="apellido" value="Apellido:" />
+								<p:inputText id="apellido" value="#{registroBean.apellido}"
+									required="true" placeholder="Ingrese su apellido"
+									styleClass="form-control" />
+							</div>
+						</div>
+
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<p:outputLabel for="fechaNacimiento"
+									value="Fecha de Nacimiento:" />
+								<p:datePicker id="fechaNacimiento"
+									value="#{registroBean.fechaNacimiento}" showIcon="true"
+									pattern="dd/MM/yyyy" showOnFocus="false" style="display:block;" />
+							</div>
+							<div class="col-md-6">
+								<p:outputLabel for="usuario" value="Nombre de Usuario:" />
+								<p:inputText id="usuario" value="#{registroBean.nombreUsuario}"
+									required="true" placeholder="Ingrese un usuario"
+									styleClass="form-control" />
+							</div>
+						</div>
+
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<p:outputLabel for="correo" value="Correo:" />
+								<p:inputText id="correo" value="#{registroBean.correo}"
+									required="true" placeholder="ejemplo@correo.com"
+									styleClass="form-control" />
+							</div>
+							<div class="col-md-6">
+								<p:outputLabel for="contrasena" value="Contraseña:" />
+								<p:password id="contrasena" value="#{registroBean.contrasena}"
+									required="true" feedback="true" styleClass="form-control" />
+							</div>
+						</div>
+
+						<div class="row mb-3">
+							<div class="col-md-6 offset-md-6">
+								<p:outputLabel for="confirmarContrasena"
+									value="Confirmar Contraseña:" />
+								<p:password id="confirmarContrasena"
+									value="#{registroBean.confirmarContrasena}" required="true"
+									feedback="false" styleClass="form-control" />
+							</div>
+						</div>
+
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<p:outputLabel for="direccion" value="Dirección:" />
+								<p:inputTextarea id="direccion"
+									value="#{registroBean.direccion}" required="true" rows="3"
+									autoResize="false" styleClass="form-control"
+									placeholder="Ingrese su dirección" />
+							</div>
+						</div>
+
+						<div class="text-center">
+							<p:commandButton value="Registrar"
+								action="#{registroBean.registrarUsuario}" update="@form"
+								styleClass="btn btn-primary" />
+						</div>
+					</div>
+				</div>
+
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
