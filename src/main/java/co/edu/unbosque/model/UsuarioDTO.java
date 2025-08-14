@@ -8,7 +8,7 @@ public class UsuarioDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String Nombre;
+	private String nombre;
 	private String apellido;
 	private Date fechaDeNacimiento;
 	private String nombreUsuario;
@@ -23,7 +23,7 @@ public class UsuarioDTO implements Serializable {
 	public UsuarioDTO(String nombre, String apellido, Date fechaDeNacimiento, String nombreUsuario, String correo,
 			String contrasena, String direccion) {
 		super();
-		Nombre = nombre;
+		this.nombre = nombre;
 		this.apellido = apellido;
 		this.fechaDeNacimiento = fechaDeNacimiento;
 		this.nombreUsuario = nombreUsuario;
@@ -33,11 +33,11 @@ public class UsuarioDTO implements Serializable {
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public String getApellido() {
@@ -90,7 +90,7 @@ public class UsuarioDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Usuario [Nombre=" + Nombre + ", apellido=" + apellido + ", Fecha de Nacimiento=" + fechaDeNacimiento
+		return "Usuario [Nombre=" + nombre + ", apellido=" + apellido + ", Fecha de Nacimiento=" + fechaDeNacimiento
 				+ ", nombreUsuario=" + nombreUsuario + ", correo=" + correo + ", contrasena=" + contrasena
 				+ ", direccion=" + direccion + "]";
 	}
