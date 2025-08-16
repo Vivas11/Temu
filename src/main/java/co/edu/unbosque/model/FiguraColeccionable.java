@@ -34,16 +34,6 @@ public class FiguraColeccionable  extends Juguete implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public FiguraColeccionable(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
-		// TODO Auto-generated constructor stub
-	}
-
-	public FiguraColeccionable(String tamano, String material) {
-		super(tamano, material);
-		// TODO Auto-generated constructor stub
-	}
-
 	public String getTipoDeFigura() {
 		return tipoDeFigura;
 	}
@@ -64,13 +54,4 @@ public class FiguraColeccionable  extends Juguete implements Serializable{
 	public String toString() {
 		return "FiguraColeccionable [tipoDeFigura=" + tipoDeFigura + ", valorEnMercado=" + valorEnMercado + "]";
 	}
-	
-	
-
-	
-	
-	
-	
-	
-
 }

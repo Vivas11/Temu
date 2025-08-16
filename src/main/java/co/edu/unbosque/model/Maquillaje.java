@@ -47,8 +47,4 @@ public abstract class Maquillaje extends Articulo {
 	public String toString() {
 		return "Maquillaje [color=" + color + ", contenidoEnGramo=" + contenidoEnGramo + "]";
 	}
-	
-	
-	
-	
 }

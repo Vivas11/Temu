@@ -15,12 +15,10 @@ public class PeluchePersonajeDTO extends Peluche implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public PeluchePersonajeDTO(String personaje) {
 		super();
 		this.personaje = personaje;
 	}
-
 
 	public PeluchePersonajeDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String color, String material, String personaje) {
@@ -28,25 +26,11 @@ public class PeluchePersonajeDTO extends Peluche implements Serializable{
 		this.personaje = personaje;
 	}
 
-
 	public PeluchePersonajeDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String color, String material) {
 		super(nombre, id, descripcion, precio, imagen, tamano, color, material);
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public PeluchePersonajeDTO(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public PeluchePersonajeDTO(String tamano, String color, String material) {
-		super(tamano, color, material);
-		// TODO Auto-generated constructor stub
-	}
-
 
 	public String getPersonaje() {
 		return personaje;
@@ -62,10 +46,4 @@ public class PeluchePersonajeDTO extends Peluche implements Serializable{
 	public String toString() {
 		return "PeluchePersonaje [personaje=" + personaje + "]";
 	}
-	
-	
-	
-	
-	
-
 }

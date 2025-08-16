@@ -17,15 +17,11 @@ public class JuegoDeMesaDTO extends Juguete implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-
-
 	public JuegoDeMesaDTO(int numeroJugadore, String tipoDeJuego) {
 		super();
 		this.numeroJugadore = numeroJugadore;
 		this.tipoDeJuego = tipoDeJuego;
 	}
-
-
 
 	public JuegoDeMesaDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String material, int numeroJugadore, String tipoDeJuego) {
@@ -34,29 +30,11 @@ public class JuegoDeMesaDTO extends Juguete implements Serializable{
 		this.tipoDeJuego = tipoDeJuego;
 	}
 
-
-
 	public JuegoDeMesaDTO(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String material) {
 		super(nombre, id, descripcion, precio, imagen, tamano, material);
 		// TODO Auto-generated constructor stub
 	}
-
-
-
-	public JuegoDeMesaDTO(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
-		// TODO Auto-generated constructor stub
-	}
-
-
-
-	public JuegoDeMesaDTO(String tamano, String material) {
-		super(tamano, material);
-		// TODO Auto-generated constructor stub
-	}
-
-
 
 	public int getNumeroJugadore() {
 		return numeroJugadore;

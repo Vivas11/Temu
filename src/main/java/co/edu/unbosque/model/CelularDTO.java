@@ -3,7 +3,6 @@ package co.edu.unbosque.model;
 import java.io.Serializable;
 
 public class CelularDTO extends DispositivosElectronico implements Serializable{
-
 	
 	/**
 	 * 
@@ -16,14 +15,12 @@ public class CelularDTO extends DispositivosElectronico implements Serializable{
 	public CelularDTO() {
 		// TODO Auto-generated constructor stub
 	}
-
-
+	
 	public CelularDTO(String procesador, int resolucionCamra) {
 		super();
 		this.procesador = procesador;
 		this.resolucionCamra = resolucionCamra;
 	}
-
 
 	public CelularDTO(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
 			int almacenamiento, String procesador, int resolucionCamra) {
@@ -31,20 +28,12 @@ public class CelularDTO extends DispositivosElectronico implements Serializable{
 		this.procesador = procesador;
 		this.resolucionCamra = resolucionCamra;
 	}
-
-
-	public CelularDTO(String marca, int ram, int almacenamiento) {
-		super(marca, ram, almacenamiento);
-		// TODO Auto-generated constructor stub
-	}
-
-
+ 
 	public CelularDTO(String nombre, int id, String descripcion, float precio, String imagen, String marca, int ram,
 			int almacenamiento) {
 		super(nombre, id, descripcion, precio, imagen, marca, ram, almacenamiento);
 		// TODO Auto-generated constructor stub
 	}
-
 
 	public String getProcesador() {
 		return procesador;
@@ -70,10 +59,4 @@ public class CelularDTO extends DispositivosElectronico implements Serializable{
 	public String toString() {
 		return "Celular [procesador=" + procesador + ", resolucionCamra=" + resolucionCamra + "]";
 	}
-	
-	
-
-
-	
-
 }

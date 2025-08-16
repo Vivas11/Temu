@@ -27,19 +27,9 @@ public class MaquillajeCapilarDTO extends Maquillaje implements Serializable{
 		this.duracionHora = duracionHora;
 	}
 
-	public MaquillajeCapilarDTO(String color, float contenidoEnGramo) {
-		super(color, contenidoEnGramo);
-		// TODO Auto-generated constructor stub
-	}
-
 	public MaquillajeCapilarDTO(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo) {
 		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MaquillajeCapilarDTO(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 

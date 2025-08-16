@@ -13,7 +13,7 @@ public class MaquillajeCapilar extends Maquillaje implements Serializable{
 	public MaquillajeCapilar() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	public MaquillajeCapilar(boolean resistenciaAgua, int duracionHora) {
 		super();
 		this.resistenciaAgua = resistenciaAgua;
@@ -27,19 +27,9 @@ public class MaquillajeCapilar extends Maquillaje implements Serializable{
 		this.duracionHora = duracionHora;
 	}
 
-	public MaquillajeCapilar(String color, float contenidoEnGramo) {
-		super(color, contenidoEnGramo);
-		// TODO Auto-generated constructor stub
-	}
-
 	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String imagen, String color,
 			float contenidoEnGramo) {
 		super(nombre, id, descripcion, precio, imagen, color, contenidoEnGramo);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MaquillajeCapilar(String nombre, int id, String descripcion, float precio, String imagen) {
-		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -63,12 +53,4 @@ public class MaquillajeCapilar extends Maquillaje implements Serializable{
 	public String toString() {
 		return "MaquillajeCapilar [resistenciaAgua=" + resistenciaAgua + ", duracionHora=" + duracionHora + "]";
 	}
-	
-	
-	
-
- 
-	
-	
-	
 }

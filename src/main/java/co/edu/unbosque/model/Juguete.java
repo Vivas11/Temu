@@ -10,13 +10,11 @@ public abstract class Juguete  extends Articulo{
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public Juguete(String tamano, String material) {
 		super();
 		this.tamano = tamano;
 		this.material = material;
 	}
-
 
 	public Juguete(String nombre, int id, String descripcion, float precio, String imagen, String tamano,
 			String material) {
@@ -25,12 +23,10 @@ public abstract class Juguete  extends Articulo{
 		this.material = material;
 	}
 
-
 	public Juguete(String nombre, int id, String descripcion, float precio, String imagen) {
 		super(nombre, id, descripcion, precio, imagen);
 		// TODO Auto-generated constructor stub
 	}
-
 
 	public String getTamano() {
 		return tamano;
