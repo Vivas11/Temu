@@ -13,130 +13,21 @@ import co.edu.unbosque.model.persistence.UtilEscolarDAO;
 
 public class ModelFacade {
 	
-	private CelularDAO celucoDAO; 
-	private ComputadorDAO compuDAO;
-	private FiguraColeccionableDAO figuraColeccionableDAO;
-	private JuegoDeMesaDAO juegoMesaDAO;
-	private MaquillajeCapilarDAO maquillajeCapilarDAO; 
-	private MaquillajeDePielDAO maquillajeDePielDAO;
-	private PelucheAnimalDAO pelucheAnimalDAO;
-	private PeluchePersonajeDAO peluchePersonajeDAO;
-	private RopaHombre ropaHombre;
-	private RopaMujer ropaMujer;
-	private UtilElectronicoDAO utilElectronicoDAO;
-	private UtilEscolarDAO utilEscolarDAO;
+	public static CelularDAO celucoDAO = new CelularDAO();
+	public static ComputadorDAO compuDAO = new ComputadorDAO();
+	public static FiguraColeccionableDAO figuraColeccionableDAO = new FiguraColeccionableDAO();
+	public static JuegoDeMesaDAO juegoMesaDAO = new JuegoDeMesaDAO();
+	public static MaquillajeCapilarDAO maquillajeCapilarDAO = new MaquillajeCapilarDAO();
+	public static MaquillajeDePielDAO maquillajeDePielDAO = new MaquillajeDePielDAO();
+	public static PelucheAnimalDAO pelucheAnimalDAO = new PelucheAnimalDAO();
+	public static PeluchePersonajeDAO peluchePersonajeDAO = new PeluchePersonajeDAO();
+	public static RopaHombre ropaHombre = new RopaHombre();
+	public static RopaMujer ropaMujer = new RopaMujer();
+	public static UtilElectronicoDAO utilElectronicoDAO = new UtilElectronicoDAO();
+	public static UtilEscolarDAO utilEscolarDAO = new UtilEscolarDAO();
 	
 	public ModelFacade() {
-		celucoDAO = new CelularDAO();
-		compuDAO = new ComputadorDAO();
-		figuraColeccionableDAO = new FiguraColeccionableDAO();
-		juegoMesaDAO = new JuegoDeMesaDAO();
-		maquillajeCapilarDAO = new MaquillajeCapilarDAO();
-		maquillajeDePielDAO = new MaquillajeDePielDAO();
-		pelucheAnimalDAO = new PelucheAnimalDAO();
-		peluchePersonajeDAO = new PeluchePersonajeDAO();
-		ropaHombre = new RopaHombre();
-		ropaMujer = new RopaMujer();
-		utilElectronicoDAO = new UtilElectronicoDAO();
-		utilEscolarDAO = new UtilEscolarDAO();
 	}
 
-	public CelularDAO getCelucoDAO() {
-		return celucoDAO;
-	}
-
-	public void setCelucoDAO(CelularDAO celucoDAO) {
-		this.celucoDAO = celucoDAO;
-	}
-
-	public ComputadorDAO getCompuDAO() {
-		return compuDAO;
-	}
-
-	public void setCompuDAO(ComputadorDAO compuDAO) {
-		this.compuDAO = compuDAO;
-	}
-
-	public FiguraColeccionableDAO getFiguraColeccionableDAO() {
-		return figuraColeccionableDAO;
-	}
-
-	public void setFiguraColeccionableDAO(FiguraColeccionableDAO figuraColeccionableDAO) {
-		this.figuraColeccionableDAO = figuraColeccionableDAO;
-	}
-
-	public JuegoDeMesaDAO getJuegoMesaDAO() {
-		return juegoMesaDAO;
-	}
-
-	public void setJuegoMesaDAO(JuegoDeMesaDAO juegoMesaDAO) {
-		this.juegoMesaDAO = juegoMesaDAO;
-	}
-
-	public MaquillajeCapilarDAO getMaquillajeCapilarDAO() {
-		return maquillajeCapilarDAO;
-	}
-
-	public void setMaquillajeCapilarDAO(MaquillajeCapilarDAO maquillajeCapilarDAO) {
-		this.maquillajeCapilarDAO = maquillajeCapilarDAO;
-	}
-
-	public MaquillajeDePielDAO getMaquillajeDePielDAO() {
-		return maquillajeDePielDAO;
-	}
-
-	public void setMaquillajeDePielDAO(MaquillajeDePielDAO maquillajeDePielDAO) {
-		this.maquillajeDePielDAO = maquillajeDePielDAO;
-	}
-
-	public PelucheAnimalDAO getPelucheAnimalDAO() {
-		return pelucheAnimalDAO;
-	}
-
-	public void setPelucheAnimalDAO(PelucheAnimalDAO pelucheAnimalDAO) {
-		this.pelucheAnimalDAO = pelucheAnimalDAO;
-	}
-
-	public PeluchePersonajeDAO getPeluchePersonajeDAO() {
-		return peluchePersonajeDAO;
-	}
-
-	public void setPeluchePersonajeDAO(PeluchePersonajeDAO peluchePersonajeDAO) {
-		this.peluchePersonajeDAO = peluchePersonajeDAO;
-	}
-
-	public RopaHombre getRopaHombre() {
-		return ropaHombre;
-	}
-
-	public void setRopaHombre(RopaHombre ropaHombre) {
-		this.ropaHombre = ropaHombre;
-	}
-
-	public RopaMujer getRopaMujer() {
-		return ropaMujer;
-	}
-
-	public void setRopaMujer(RopaMujer ropaMujer) {
-		this.ropaMujer = ropaMujer;
-	}
-
-	public UtilElectronicoDAO getUtilElectronicoDAO() {
-		return utilElectronicoDAO;
-	}
-
-	public void setUtilElectronicoDAO(UtilElectronicoDAO utilElectronicoDAO) {
-		this.utilElectronicoDAO = utilElectronicoDAO;
-	}
-
-	public UtilEscolarDAO getUtilEscolarDAO() {
-		return utilEscolarDAO;
-	}
-
-	public void setUtilEscolarDAO(UtilEscolarDAO utilEscolarDAO) {
-		this.utilEscolarDAO = utilEscolarDAO;
-	}
-	
-	
 
 }
