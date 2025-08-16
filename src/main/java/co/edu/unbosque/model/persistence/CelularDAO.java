@@ -23,7 +23,7 @@ public class CelularDAO implements OperacionDAO<CelularDTO, Celular> {
 			}
 		}
 		return rta;
-	}
+	} 
 
 	@Override
 	public boolean add(CelularDTO newData) {
@@ -63,7 +63,7 @@ public class CelularDAO implements OperacionDAO<CelularDTO, Celular> {
 			return null;
 		}
 		return null;
-	}
+	} 
 
 	@Override
 	public boolean update(CelularDTO previous, CelularDTO newData) {
