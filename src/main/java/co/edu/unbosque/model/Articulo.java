@@ -8,7 +8,8 @@ public abstract class  Articulo {
 	private float precio;
 	private String imagen;
 	
-	
+
+    private static int contador = 1;
 	
 	public Articulo() {
 		// TODO Auto-generated constructor stub
@@ -19,7 +20,7 @@ public abstract class  Articulo {
 	public Articulo(String nombre, int id, String descripcion, float precio, String imagen) {
 		super();
 		this.nombre = nombre;
-		this.id = id;
+        this.id = contador++;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.imagen = imagen;

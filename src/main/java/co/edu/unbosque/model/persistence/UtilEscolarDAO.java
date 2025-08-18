@@ -82,6 +82,14 @@ public class UtilEscolarDAO implements OperacionDAO<UtilEscolarDTO, UtilEscolar>
 			return false;
 		}
 	}
+
+	public ArrayList<UtilEscolar> getListaUtilesEscolares() {
+		return listaUtilesEscolares;
+	}
+
+	public void setListaUtilesEscolares(ArrayList<UtilEscolar> listaUtilesEscolares) {
+		this.listaUtilesEscolares = listaUtilesEscolares;
+	}
 	
 
 }

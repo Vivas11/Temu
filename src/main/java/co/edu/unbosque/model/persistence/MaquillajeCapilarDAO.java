@@ -83,4 +83,12 @@ public class MaquillajeCapilarDAO implements OperacionDAO<MaquillajeCapilarDTO, 
 	public ArrayList<MaquillajeCapilarDTO> getAll() {
 		return DataMapper.listaMaquillajeCapilarToListaMaquillajeCapilarDTO(listaMaquillajeC);
 	}
+
+	public ArrayList<MaquillajeCapilar> getListaMaquillajeC() {
+		return listaMaquillajeC;
+	}
+
+	public void setListaMaquillajeC(ArrayList<MaquillajeCapilar> listaMaquillajeC) {
+		this.listaMaquillajeC = listaMaquillajeC;
+	}
 }

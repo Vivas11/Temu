@@ -85,4 +85,12 @@ public class PeluchePersonajeDAO implements OperacionDAO<PeluchePersonajeDTO, Pe
 		return DataMapper.listaPeluchePersonajeToListaPeluchePersonajeDTO(listaPeluchePersonaje);
 	}
 
+	public ArrayList<PeluchePersonaje> getListaPeluchePersonaje() {
+		return listaPeluchePersonaje;
+	}
+
+	public void setListaPeluchePersonaje(ArrayList<PeluchePersonaje> listaPeluchePersonaje) {
+		this.listaPeluchePersonaje = listaPeluchePersonaje;
+	}
+
 }

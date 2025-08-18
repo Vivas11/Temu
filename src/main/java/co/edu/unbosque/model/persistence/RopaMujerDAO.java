@@ -78,6 +78,14 @@ public class RopaMujerDAO implements OperacionDAO<RopaMujerDTO, RopaMujer>{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	public ArrayList<RopaMujer> getListaRopaMujer() {
+		return listaRopaMujer;
+	}
+
+	public void setListaRopaMujer(ArrayList<RopaMujer> listaRopaMujer) {
+		this.listaRopaMujer = listaRopaMujer;
+	}
 	
 	
 

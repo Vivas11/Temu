@@ -6,8 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
-import java.util.Scanner;
+
+import jakarta.faces.context.FacesContext;
+import jakarta.servlet.ServletContext;
 
 /**
  * La clase {@link FileManager} es la encargada de manejar los archivos de texto y los archivos serializados.
@@ -15,24 +16,17 @@ import java.util.Scanner;
  */
 
 public class FileManager {
-
+	
+	
 
 	/**
 	 * El atributo archivo es el archivo que se va a manipular.
 	 */	
 	private static File archivo;
 	/**
-	 * El atributo lectorArchivoTexto es el lector de archivos de texto.
-	 */
-	private static Scanner lectorArchivoTexto;
-	/**
-	 * El atributo escritorArchivoTexto es el escritor de archivos de texto.
-	 */
-	private static PrintWriter escritorArchivoTexto;
-	/**
 	 * El atributo RUTA_CARPETA es la ruta de la carpeta donde se guardan los archivos.
 	 */
-	private static final String RUTA_CARPETA = "src/archivos";
+	private static final String RUTA_CARPETA = System.getProperty("user.dir") + File.separator + "data";
 	/**
 	 * El atributo fos es el archivo de salida.
 	 */
@@ -50,133 +44,89 @@ public class FileManager {
 	 */
 	private static ObjectInputStream ois;
 
+	private static File carpetaBase;
+
+    static {
+        try {
+            // Ruta dentro del WAR (WEB-INF/data)
+            String ruta = new File("data").getAbsolutePath();
+
+            carpetaBase = new File(ruta);
+            if (!carpetaBase.exists() || !carpetaBase.isDirectory()) {
+                carpetaBase.mkdirs(); // crear carpeta si no existe
+            }
+            System.out.println("Carpeta de datos: " + carpetaBase.getAbsolutePath());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 	/**
-	 * El metodo crearCarpeta crea la carpeta donde se guardan los archivos.
+	 * Método para escribir un objeto en un archivo serializado. Recibe el nombre
+	 * del archivo y el contenido (objeto) a escribir. Si el archivo no existe, lo
+	 * crea antes de escribir en él.
 	 */
-	public static void crearCarpeta() {
-		// la tarea del objeto file es apuntar a
-		// una direccion
-		archivo = new File(RUTA_CARPETA);
-		if (!archivo.exists() || !archivo.isDirectory()) {
-			archivo.mkdir();
-		} else {
-			System.out.println("La carpeta ya existe");
-		}
 
-	}
-
-	/**
-	 * El metodo escribirEnArchivoDeTexto escribe en un archivo de texto.
-	 * @param nombreArchivo es el nombre del archivo.
-	 * @param contenido es el contenido del archivo.
-	 */
-	public static void escribirEnArchivoDeTexto(String nombreArchivo, String contenido) {
-
+	public static void escribirArchivoSerializado(String nombreArchivo, Object contenido) {
 		try {
-
 			archivo = new File(RUTA_CARPETA + "/" + nombreArchivo);
 			if (!archivo.exists()) {
-				archivo.createNewFile();
+				archivo.createNewFile(); // crea el archivo si no existe
 			}
-
-			escritorArchivoTexto = new PrintWriter(archivo);
-			escritorArchivoTexto.println(contenido);
-			// una vez se hallan echo las operaciones en un archivo hay que cerrarlo
-			escritorArchivoTexto.close();
-
+			fos = new FileOutputStream(archivo);// abre el archivo para escritura
+			oos = new ObjectOutputStream(fos);// crea un ObjectOutputStream para escribir objetos
+			oos.writeObject(contenido);// escribe el objeto en el archivo
+			oos.close();// cierra el ObjectOutputStream
+			fos.close();// cierra el FileOutputStream
 		} catch (IOException e) {
-			System.out.println("Error al crear el archivo (escritura)");
+			System.out.println("Problemas al abrir el archivo serealizado (escritura)");
 			e.printStackTrace();
-
 		}
 
 	}
-	
-	/**
-	 * El metodo leerArchivoDeTexto lee un archivo de texto.
-	 * @param nombreArchivo es el nombre del archivo.
-	 * @return contenido es el contenido del archivo.
-	 */
-
-	public static String leerArchivoDeTexto(String nombreArchivo) {
-
-		try {
-
-			archivo = new File(RUTA_CARPETA + "/" + nombreArchivo);
-			if (!archivo.exists()) {
-				archivo.createNewFile();
-			}
-
-			lectorArchivoTexto = new Scanner(archivo);
-
-			String contenido = "";
-			while (lectorArchivoTexto.hasNext()) {
-				contenido += lectorArchivoTexto.nextLine() + "\n";
-			}
-			lectorArchivoTexto.close();
-			return contenido;
-		} catch (IOException e) {
-			System.out.println("Error al crear el archivo (lectura)");
-			e.printStackTrace();
-
-		}
-		return null;
-
-
-	}
-	/**
-	 * El metodo escribirArchivoSerializado escribe un archivo serializado.
-	 * @param nombreArchivo es el nombre del archivo.
-	 * @param contenido es el contenido del archivo.
-	 */
-	//los seializados no escriben String escriben objetos completos
-	public static void escribirArchivoSerializado(String nombreArchivo, Object contenido ){
-		try {
-			archivo = new File(RUTA_CARPETA + "/" + nombreArchivo);
-			if (!archivo.exists()) {
-				archivo.createNewFile();
-			}
-			fos = new FileOutputStream(archivo);
-			oos = new ObjectOutputStream(fos);
-			oos.writeObject(contenido);
-			oos.close();
-			fos.close();
-		}catch (IOException e) {
-			System.out.println("Error en la escritura del archivo serializado");
-			e.printStackTrace();
-		}
-	}
-	
 
 	/**
-	 * El metodo leerArchivoSerializado lee un archivo serializado.
-	 * @param nombreArchivo es el nombre del archivo.
-	 * @return contenido es el contenido del archivo.
+	 * Método para leer un archivo serializado. Recibe el nombre del archivo a leer.
+	 * Devuelve el objeto leído del archivo.
 	 */
-	public static Object leerArchivoSerializado(String nombreArchivo) {
+
+	public static Object leerArchivoSerialziado(String nombreArchivo) {
+
 		Object contenido = null;
 		try {
 			archivo = new File(RUTA_CARPETA + "/" + nombreArchivo);
 			if (!archivo.exists()) {
+				/**
+				 * crea el archivo si no existe
+				 */
 				archivo.createNewFile();
 			}
+			/**
+			 * abre el archivo para lectura
+			 */
 			fis = new FileInputStream(archivo);
+
+			/**
+			 * crea un ObjectInputStream para leer objetos
+			 */
 			ois = new ObjectInputStream(fis);
-			contenido = ois.readObject();
-			fis.close();
+			/**
+			 * lee el objeto desde el archivo
+			 */
+			contenido = ois.readObject();//
 			ois.close();
-		}catch (IOException e) {
-			System.out.println("Error al leer el archivo serializado");
+			fis.close();
+		} catch (IOException e) {
+			System.out.println("Error al leer el archivo serializado.");
 			e.printStackTrace();
+
 		} catch (ClassNotFoundException e) {
-			System.out.println("Error al obtener el contenido del archivo");
+			System.out.println("Error en los datos del archivo serializado.");
 			e.printStackTrace();
 		}
+		/**
+		 * devuelve el objeto leído o null si hubo un error
+		 */
 		return contenido;
-
 	}
-
-
-
 }

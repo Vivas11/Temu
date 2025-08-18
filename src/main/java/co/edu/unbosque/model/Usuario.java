@@ -1,6 +1,7 @@
 package co.edu.unbosque.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Usuario implements Serializable {
@@ -15,6 +16,8 @@ public class Usuario implements Serializable {
 	private String correo;
 	private String contrasena;
 	private String direccion;
+	private Carrito carrito;
+	private ArrayList<Carrito> historialCompras;
 
 	public Usuario() {
 		// TODO Auto-generated constructor stub
@@ -30,6 +33,8 @@ public class Usuario implements Serializable {
 		this.correo = correo;
 		this.contrasena = contrasena;
 		this.direccion = direccion;
+		this.carrito = new Carrito();
+		this.historialCompras = new ArrayList<>();
 	}
 
 	public String getNombre() {
@@ -86,6 +91,26 @@ public class Usuario implements Serializable {
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+
+	public Carrito getCarrito() {
+		return carrito;
+	}
+
+	public void setCarrito(Carrito carrito) {
+		this.carrito = carrito;
+	}
+
+	public ArrayList<Carrito> getHistorialCompras() {
+		return historialCompras;
+	}
+
+	public void setHistorialCompras(ArrayList<Carrito> historialCompras) {
+		this.historialCompras = historialCompras;
+	}
+
+	public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+		this.fechaDeNacimiento = fechaDeNacimiento;
 	}
 
 	@Override

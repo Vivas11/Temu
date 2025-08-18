@@ -7,6 +7,14 @@ import co.edu.unbosque.model.PelucheAnimalDTO;
 
 public class PelucheAnimalDAO implements OperacionDAO<PelucheAnimalDTO, PelucheAnimal>{
 	 
+		public ArrayList<PelucheAnimal> getListaPelucheAnimal() {
+		return listaPelucheAnimal;
+	}
+
+	public void setListaPelucheAnimal(ArrayList<PelucheAnimal> listaPelucheAnimal) {
+		this.listaPelucheAnimal = listaPelucheAnimal;
+	}
+
 		private ArrayList<PelucheAnimal> listaPelucheAnimal;
 
 		public PelucheAnimalDAO() {

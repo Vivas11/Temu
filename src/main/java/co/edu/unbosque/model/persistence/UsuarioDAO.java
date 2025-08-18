@@ -36,6 +36,8 @@ public class UsuarioDAO  implements OperacionDAO<UsuarioDTO, Usuario>{
 	public boolean add(UsuarioDTO newData) {
 		if (find(DataMapper.usuarioDTOToUsuario(newData)) == null) {
 			listaUsuario.add(DataMapper.usuarioDTOToUsuario(newData));
+			System.out.println("Anadido");
+			System.out.println(showAll());
 			return true;
 		} else {
 			return false;
@@ -71,6 +73,16 @@ public class UsuarioDAO  implements OperacionDAO<UsuarioDTO, Usuario>{
 		}
 		return null;
 	}
+	
+	public Usuario encontrarUsuario(String nombre, String contrasena) {
+		Usuario salida = null;
+        for (Usuario cliente : listaUsuario) {
+            if (cliente.getNombreUsuario().equals(nombre) && cliente.getContrasena().equals(contrasena)) {
+                salida = cliente;
+            }
+        }
+        return salida;
+    }
 
 	@Override
 	public boolean update(UsuarioDTO previous, UsuarioDTO newData) {
@@ -82,6 +94,14 @@ public class UsuarioDAO  implements OperacionDAO<UsuarioDTO, Usuario>{
 		} else {
 			return false;
 		}
+	}
+
+	public ArrayList<Usuario> getListaUsuario() {
+		return listaUsuario;
+	}
+
+	public void setListaUsuario(ArrayList<Usuario> listaUsuario) {
+		this.listaUsuario = listaUsuario;
 	}
 	
 	

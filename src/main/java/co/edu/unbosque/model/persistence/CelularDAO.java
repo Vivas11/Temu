@@ -82,4 +82,12 @@ public class CelularDAO implements OperacionDAO<CelularDTO, Celular> {
 		return DataMapper.listaCelularToListaCelularDTO(listaCelular);
 	}
 
+	public ArrayList<Celular> getListaCelular() {
+		return listaCelular;
+	}
+
+	public void setListaCelular(ArrayList<Celular> listaCelular) {
+		this.listaCelular = listaCelular;
+	}
+	
 }

@@ -81,6 +81,14 @@ public class UtilElectronicoDAO implements OperacionDAO<UtilElectronicoDTO, Util
 				return false;
 			}
 	  }
+
+	  public ArrayList<UtilElectronico> getListaUtilElectronico() {
+		  return listaUtilElectronico;
+	  }
+
+	  public void setListaUtilElectronico(ArrayList<UtilElectronico> listaUtilElectronico) {
+		  this.listaUtilElectronico = listaUtilElectronico;
+	  }
       
       
       

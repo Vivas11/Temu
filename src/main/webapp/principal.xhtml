@@ -9,7 +9,50 @@
 <ui:composition template="template/template.xhtml">
 	<ui:define name="content">
 		<div class="main">
-		
+			<h:form>
+			<p:growl id="mensajes" showDetail="true" life="3000" />
+				<ui:repeat value="#{principalbean.articulos}" var="art">
+					<div
+						style="display: flex; justify-content: space-between; align-items: center; width: 50%; border: 1px solid gray; margin: 10px auto; padding: 15px; box-sizing: border-box;">
+
+						<div style="flex: 1; padding-right: 15px;">
+							<ul style="list-style: none; padding: 0; margin: 0;">
+								<li><strong>Nombre:</strong> #{art.nombre}</li>
+								<li><strong>Precio:</strong> #{art.precio}</li>
+								<li><strong>Descripción:</strong> #{art.descripcion}</li>
+							</ul>
+						</div>
+
+						<div>
+							<img src="#{art.imagen}" alt="#{art.nombre}"
+								style="width: 200px; height: 200px; object-fit: cover; border: 1px solid #ccc; border-radius: 8px;" />
+						</div>
+
+						<h:commandButton value="Añadir al carrito" styleClass="btn btn-primary"
+							action="#{principalbean.agregarAlCarrito(art)}">
+							<f:ajax render="@form" />
+						</h:commandButton>
+					</div>
+				</ui:repeat>
+
+				<div style="text-align: center; margin-top: 20px;">
+					<h:commandButton value="Anterior" styleClass="btn btn-primary"
+						action="#{principalbean.paginaAnterior()}"
+						disabled="#{principalbean.paginaActual == 1}">
+						<f:ajax render="@form" />
+					</h:commandButton>
+
+					<span style="margin: 0 15px; font-weight: bold;"> <h:outputText
+							value="Página #{principalbean.paginaActual} de #{principalbean.totalPaginas}" />
+					</span>
+
+					<h:commandButton value="Siguiente" styleClass="btn btn-primary"
+						action="#{principalbean.siguientePagina()}"
+						disabled="#{principalbean.paginaActual == principalbean.totalPaginas}">
+						<f:ajax render="@form" />
+					</h:commandButton>
+				</div>
+			</h:form>
 		</div>
 	</ui:define>
 </ui:composition>

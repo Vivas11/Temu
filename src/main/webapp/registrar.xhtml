@@ -20,13 +20,13 @@
 						<div class="row mb-3">
 							<div class="col-md-6">
 								<p:outputLabel for="nombre" value="Nombre:" />
-								<p:inputText id="nombre" value="#{registroBean.nombre}"
+								<p:inputText id="nombre" value="#{registrobean.nombre}"
 									required="true" placeholder="Ingrese su nombre"
 									styleClass="form-control" />
 							</div>
 							<div class="col-md-6">
 								<p:outputLabel for="apellido" value="Apellido:" />
-								<p:inputText id="apellido" value="#{registroBean.apellido}"
+								<p:inputText id="apellido" value="#{registrobean.apellido}"
 									required="true" placeholder="Ingrese su apellido"
 									styleClass="form-control" />
 							</div>
@@ -37,12 +37,12 @@
 								<p:outputLabel for="fechaNacimiento"
 									value="Fecha de Nacimiento:" />
 								<p:datePicker id="fechaNacimiento"
-									value="#{registroBean.fechaNacimiento}" showIcon="true"
+									value="#{registrobean.fechaDeNacimiento}" showIcon="true"
 									pattern="dd/MM/yyyy" showOnFocus="false" style="display:block;" />
 							</div>
 							<div class="col-md-6">
 								<p:outputLabel for="usuario" value="Nombre de Usuario:" />
-								<p:inputText id="usuario" value="#{registroBean.nombreUsuario}"
+								<p:inputText id="usuario" value="#{registrobean.nombreUsuario}"
 									required="true" placeholder="Ingrese un usuario"
 									styleClass="form-control" />
 							</div>
@@ -51,13 +51,13 @@
 						<div class="row mb-3">
 							<div class="col-md-6">
 								<p:outputLabel for="correo" value="Correo:" />
-								<p:inputText id="correo" value="#{registroBean.correo}"
+								<p:inputText id="correo" value="#{registrobean.correo}"
 									required="true" placeholder="ejemplo@correo.com"
 									styleClass="form-control" />
 							</div>
 							<div class="col-md-6">
 								<p:outputLabel for="contrasena" value="Contraseña:" />
-								<p:password id="contrasena" value="#{registroBean.contrasena}"
+								<p:password id="contrasena" value="#{registrobean.contrasena}"
 									required="true" feedback="true" styleClass="form-control" />
 							</div>
 						</div>
@@ -67,7 +67,7 @@
 								<p:outputLabel for="confirmarContrasena"
 									value="Confirmar Contraseña:" />
 								<p:password id="confirmarContrasena"
-									value="#{registroBean.confirmarContrasena}" required="true"
+									value="#{registrobean.contrasena2}" required="true"
 									feedback="false" styleClass="form-control" />
 							</div>
 						</div>
@@ -76,7 +76,7 @@
 							<div class="col-md-12">
 								<p:outputLabel for="direccion" value="Dirección:" />
 								<p:inputTextarea id="direccion"
-									value="#{registroBean.direccion}" required="true" rows="3"
+									value="#{registrobean.direccion}" required="true" rows="3"
 									autoResize="false" styleClass="form-control"
 									placeholder="Ingrese su dirección" />
 							</div>
@@ -84,7 +84,7 @@
 
 						<div class="text-center">
 							<p:commandButton value="Registrar"
-								action="#{registroBean.registrarUsuario}" update="@form"
+								action="#{registrobean.registrarUsuario}" update="@form"
 								styleClass="btn btn-primary" />
 						</div>
 					</div>

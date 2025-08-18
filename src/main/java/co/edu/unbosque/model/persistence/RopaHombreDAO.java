@@ -83,6 +83,14 @@ public class RopaHombreDAO implements OperacionDAO<RopaHombreDTO, RopaHombre> {
 					return false;
 				}
 		   }
+
+		   public ArrayList<RopaHombre> getListaRopaHombre() {
+			   return listaRopaHombre;
+		   }
+
+		   public void setListaRopaHombre(ArrayList<RopaHombre> listaRopaHombre) {
+			   this.listaRopaHombre = listaRopaHombre;
+		   }
 	       
 	       
 

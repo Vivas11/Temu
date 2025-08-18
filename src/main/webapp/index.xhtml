@@ -16,26 +16,23 @@
 						style="max-width: 400px; margin: auto;">
 						<h2 class="mb-4 text-center">Iniciar Sesión</h2>
 
-						<!-- Usuario -->
 						<div class="mb-3">
 							<p:outputLabel for="usuario" value="Usuario:" />
-							<p:inputText id="usuario" value="#{loginBean.usuario}"
+							<p:inputText id="usuario" value="#{loginbean.usuario}"
 								required="true" placeholder="Ingrese su usuario"
 								styleClass="form-control" />
 						</div>
 
-						<!-- Contraseña -->
 						<div class="mb-4">
 							<p:outputLabel for="contrasena" value="Contraseña:" />
-							<p:password id="contrasena" value="#{loginBean.contrasena}"
+							<p:password id="contrasena" value="#{loginbean.contrasena}"
 								required="true" feedback="false"
 								placeholder="Ingrese su contraseña" styleClass="form-control" />
 						</div>
 
-						<!-- Botón Iniciar Sesión -->
 						<div class="text-center">
 							<p:commandButton value="Ingresar"
-								action="#{loginBean.iniciarSesion}" update="@form"
+								action="#{loginbean.iniciarSesion}" update="@form"
 								styleClass="btn btn-primary w-100" />
 						</div>
 					</div>

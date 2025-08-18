@@ -84,4 +84,12 @@ public class JuegoDeMesaDAO implements OperacionDAO<JuegoDeMesaDTO, JuegoDeMesa>
 		return DataMapper.listaJuegoDeMesaToListaJuegoDeMesaDTO(listaJuegoMesa);
 	}
 
+	public ArrayList<JuegoDeMesa> getListaJuegoMesa() {
+		return listaJuegoMesa;
+	}
+
+	public void setListaJuegoMesa(ArrayList<JuegoDeMesa> listaJuegoMesa) {
+		this.listaJuegoMesa = listaJuegoMesa;
+	}
+	
 }

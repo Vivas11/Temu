@@ -82,5 +82,13 @@ public class FiguraColeccionableDAO implements OperacionDAO<FiguraColeccionableD
 	public ArrayList<FiguraColeccionableDTO> getAll() {
 		return DataMapper.listaFiguraColeccionableToListaFiguraColeccionableDTO(listaFiguraCol);
 	}
+
+	public ArrayList<FiguraColeccionable> getListaFiguraCol() {
+		return listaFiguraCol;
+	}
+
+	public void setListaFiguraCol(ArrayList<FiguraColeccionable> listaFiguraCol) {
+		this.listaFiguraCol = listaFiguraCol;
+	}
 	
 }

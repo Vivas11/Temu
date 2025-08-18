@@ -81,4 +81,12 @@ public class ComputadorDAO implements OperacionDAO<ComputadorDTO, Computador>{
 	public ArrayList<ComputadorDTO> getAll() {
 		return DataMapper.listaComputadorToListaComputadorDTO(listaComputador);
 	}
+
+	public ArrayList<Computador> getListaComputador() {
+		return listaComputador;
+	}
+
+	public void setListaComputador(ArrayList<Computador> listaComputador) {
+		this.listaComputador = listaComputador;
+	}
 }

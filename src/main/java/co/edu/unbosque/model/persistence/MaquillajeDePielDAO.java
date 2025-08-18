@@ -82,4 +82,12 @@ public class MaquillajeDePielDAO implements OperacionDAO<MaquillajeDePielDTO, Ma
 	public ArrayList<MaquillajeDePielDTO> getAll() {
 		return DataMapper.listaMaquillajeDePielToListaMaquillajeDePielDTO(listaMaquillajeP);
 	}
+
+	public ArrayList<MaquillajeDePiel> getListaMaquillajeP() {
+		return listaMaquillajeP;
+	}
+
+	public void setListaMaquillajeP(ArrayList<MaquillajeDePiel> listaMaquillajeP) {
+		this.listaMaquillajeP = listaMaquillajeP;
+	}
 }

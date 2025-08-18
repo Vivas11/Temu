@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="template/template.xhtml">
+	<ui:define name="content">
+		<div class="main">
+			<h:form>
+			<p:growl id="mensajes" showDetail="true" life="3000" />
+				<ui:repeat value="#{papeleriabean.articulos}" var="art">
+					<div
+						style="display: flex; justify-content: space-between; align-items: center; width: 50%; border: 1px solid gray; margin: 10px auto; padding: 15px; box-sizing: border-box;">
+
+						<div style="flex: 1; padding-right: 15px;">
+							<ul style="list-style: none; padding: 0; margin: 0;">
+								<li><strong>Nombre:</strong> #{art.nombre}</li>
+								<li><strong>Precio:</strong> #{art.precio}</li>
+								<li><strong>Descripción:</strong> #{art.descripcion}</li>
+							</ul>
+						</div>
+
+						<div>
+							<img src="#{art.imagen}" alt="#{art.nombre}"
+								style="width: 200px; height: 200px; object-fit: cover; border: 1px solid #ccc; border-radius: 8px;" />
+						</div>
+
+						<h:commandButton value="Añadir al carrito" styleClass="btn btn-primary"
+							action="#{papeleriabean.agregarAlCarrito(art)}">
+							<f:ajax render="@form" />
+						</h:commandButton>
+					</div>
+				</ui:repeat>
+
+				<div style="text-align: center; margin-top: 20px;">
+					<h:commandButton value="Anterior" styleClass="btn btn-primary"
+						action="#{papeleriabean.paginaAnterior()}"
+						disabled="#{papeleriabean.paginaActual == 1}">
+						<f:ajax render="@form" />
+					</h:commandButton>
+
+					<span style="margin: 0 15px; font-weight: bold;"> <h:outputText
+						value="Página #{papeleriabean.paginaActual} de #{papeleriabean.totalPaginas}" />
+					</span>
+
+					<h:commandButton value="Siguiente" styleClass="btn btn-primary"
+						action="#{papeleriabean.siguientePagina()}"
+						disabled="#{papeleriabean.paginaActual == papeleriabean.totalPaginas}">
+						<f:ajax render="@form" />
+					</h:commandButton>
+				</div>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
