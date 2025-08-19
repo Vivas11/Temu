@@ -27,7 +27,7 @@ public class PrincipalBean implements Serializable {
 	}
 	
 	public List<Articulo> getArticulos() {
-		todos = ModelFacade.obtenerArticulos();
+		todos = ModelFacade.obtenerArticulosAleatorios();
 
 		int inicio = (paginaActual - 1) * articulosPorPagina;
 		int fin = Math.min(inicio + articulosPorPagina, todos.size());

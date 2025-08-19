@@ -1,6 +1,7 @@
 package co.edu.unbosque.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import co.edu.unbosque.model.persistence.CelularDAO;
 import co.edu.unbosque.model.persistence.ComputadorDAO;
@@ -52,6 +53,23 @@ public class ModelFacade {
 		articulos.addAll(ropaMujer.getListaRopaMujer());
 		articulos.addAll(utilElectronicoDAO.getListaUtilElectronico());
 		articulos.addAll(utilEscolarDAO.getListaUtilesEscolares());
+		return articulos;
+	}
+	public static ArrayList<Articulo> obtenerArticulosAleatorios() {
+		ArrayList<Articulo> articulos = new ArrayList<>();
+		articulos.addAll(celucoDAO.getListaCelular());
+		articulos.addAll(compuDAO.getListaComputador());
+		articulos.addAll(figuraColeccionableDAO.getListaFiguraCol());
+		articulos.addAll(juegoMesaDAO.getListaJuegoMesa());
+		articulos.addAll(maquillajeCapilarDAO.getListaMaquillajeC());
+		articulos.addAll(maquillajeDePielDAO.getListaMaquillajeP());
+		articulos.addAll(pelucheAnimalDAO.getListaPelucheAnimal());
+		articulos.addAll(peluchePersonajeDAO.getListaPeluchePersonaje());
+		articulos.addAll(ropaHombre.getListaRopaHombre());
+		articulos.addAll(ropaMujer.getListaRopaMujer());
+		articulos.addAll(utilElectronicoDAO.getListaUtilElectronico());
+		articulos.addAll(utilEscolarDAO.getListaUtilesEscolares());
+		Collections.shuffle(articulos);
 		return articulos;
 	}
 

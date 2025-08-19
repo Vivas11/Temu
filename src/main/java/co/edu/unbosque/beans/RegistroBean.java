@@ -5,6 +5,8 @@ import java.util.Date;
 import co.edu.unbosque.model.UsuarioDTO;
 import co.edu.unbosque.service.UsuarioService;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 
 //indica que es un bean
@@ -21,16 +23,32 @@ public class RegistroBean {
 	private String contrasena;
 	private String contrasena2;
 	private String direccion;
-	
+
 	private UsuarioService usuarioService;
-	
+
 	public RegistroBean() {
 		usuarioService = new UsuarioService();
 	}
-	
-	public void registrarUsuario() {
-		UsuarioDTO nuevo = new UsuarioDTO(nombre, apellido, fechaDeNacimiento, nombreUsuario, correo, contrasena, direccion);  
-		usuarioService.registrar(nuevo);
+
+	public String registrarUsuario() {
+		if (!contrasena.equals(contrasena2)) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Las contraseñas no coinciden", null));
+			return null;
+		}
+
+		UsuarioDTO nuevo = new UsuarioDTO(nombre, apellido, fechaDeNacimiento, nombreUsuario, correo, contrasena,
+				direccion);
+
+		if (usuarioService.registrar(nuevo)) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro exitoso", null));
+			return "index?faces-redirect=true";
+		}
+
+		FacesContext.getCurrentInstance().addMessage(null,
+				new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error al registrar usuario", null));
+		return null;
 	}
 
 	public String getNombre() {
@@ -104,5 +122,5 @@ public class RegistroBean {
 	public void setContrasena2(String contrasena2) {
 		this.contrasena2 = contrasena2;
 	}
-	
+
 }

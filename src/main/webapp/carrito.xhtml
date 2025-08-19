@@ -1,10 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="template/template.xhtml">
+	<ui:define name="content">
+		<div class="main">
+			<h:form id="carritoForm">
+				<p:growl id="mensajes" showDetail="true" life="3000" />
+				<h:dataTable value="#{carritobean.articulos}" var="art"
+					id="carritoTabla"
+					style="width: 80%; margin: auto; border-collapse: collapse;"
+					border="1">
+
+					<h:column>
+						<f:facet name="header">Nombre</f:facet>
+            #{art.nombre}
+        </h:column>
+
+					<h:column>
+						<f:facet name="header">Precio</f:facet>
+            $ #{art.precio}
+        </h:column>
+
+					<h:column>
+						<f:facet name="header">Descripción</f:facet>
+            #{art.descripcion}
+        </h:column>
+
+					<h:column>
+						<f:facet name="header">Imagen</f:facet>
+						<h:graphicImage value="#{art.imagen}" alt="#{art.nombre}"
+							style="width:120px; height:120px; object-fit:cover; border-radius:8px; border:1px solid #ccc;" />
+					</h:column>
+
+					<h:column>
+						<h:commandButton value="Eliminar"
+							action="#{carritobean.eliminarDelCarrito(art)}"
+							styleClass="btn btn-primary">
+							<f:ajax render="@form" />
+						</h:commandButton>
+					</h:column>
+
+				</h:dataTable>
+
+				<div style="text-align: center; margin-top: 20px;">
+					<h:commandButton value="Realizar Compra" styleClass="btn btn-primary"
+						action="#{carritobean.comprar()}">
+						<f:ajax render="@form" />
+					</h:commandButton>
+					
+				<a href="historial.xhtml" class="btn btn-primary" role="button" >Ver historial de compras</a>
+				</div>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
 </html>

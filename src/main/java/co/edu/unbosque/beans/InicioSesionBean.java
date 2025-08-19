@@ -43,8 +43,11 @@ public class InicioSesionBean {
 		this.usuarioService = usuarioService;
 	}
 	
-	public void iniciarSesion() {
-		usuarioService.iniciarSesion(new UsuarioDTO(usuario, contrasena, null, usuario, usuario, contrasena, contrasena));
+	public String iniciarSesion() {
+		if (usuarioService.iniciarSesion(new UsuarioDTO(usuario, contrasena, null, usuario, usuario, contrasena, contrasena))) {
+			return "principal?faces-redirect=true";
+		}
+		return null;
 	}
 	
 }

@@ -12,6 +12,7 @@
 		<!-- 		<div class="main" style="height: 100vh;"> -->
 		<div class="main">
 			<h:form id="registroForm">
+				<p:growl id="mensajes" showDetail="true" life="3000" />
 
 				<div class="container mt-4">
 					<div class="card shadow p-4">
@@ -78,20 +79,19 @@
 								<p:inputTextarea id="direccion"
 									value="#{registrobean.direccion}" required="true" rows="3"
 									autoResize="false" styleClass="form-control"
+									outcome="iniciarsesion" ajax="false"
 									placeholder="Ingrese su dirección" />
 							</div>
 						</div>
 
-						<div class="text-center">
-							<p:commandButton value="Registrar"
-								action="#{registrobean.registrarUsuario}" update="@form"
-								styleClass="btn btn-primary" />
-						</div>
+						<p:commandButton value="Registrar"
+							action="#{registrobean.registrarUsuario}" ajax="false"
+							styleClass="btn btn-primary" />
 					</div>
 				</div>
-
 			</h:form>
 		</div>
+
 	</ui:define>
 </ui:composition>
 </html>

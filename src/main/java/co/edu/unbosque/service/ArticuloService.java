@@ -10,4 +10,8 @@ public class ArticuloService {
 	public void anadirAlCarrito(Articulo art) {
 		ModelFacade.usuarioActual.getCarrito().getArticulosCarrito().add(art);
 	}
+	
+	public void eliminarDelCarrito(Articulo art) {
+		ModelFacade.usuarioActual.getCarrito().getArticulosCarrito().remove(art);
+	}
 }
