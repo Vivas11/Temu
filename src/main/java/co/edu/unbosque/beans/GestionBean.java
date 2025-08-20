@@ -59,6 +59,56 @@ public class GestionBean implements Serializable {
     private String tipoArticuloNuevo;
     private List<Articulo> todosArticulos;
 
+    // Celular
+    private String marca;
+    private int ram;
+    private int almacenamiento;
+    private String procesador;
+    private int resolucionCamra;
+
+    // Computador
+    private String tipo;
+    private Boolean tieneTargetaGrafica;
+
+    // FiguraColeccionable
+    private String tipoDeFigura;
+    private Float valorEnMercado;
+
+    // JuegoDeMesa
+    private int numeroJugadore;
+    private String tipoDeJuego;
+
+    // MaquillajeCapilar
+    private Boolean resistenciaAgua;
+    private int duracionHora;
+
+    // MaquillajeDePiel
+    private int tipoMaquillaje;
+    private Boolean esEcoamigable;
+
+    // PelucheAnimal
+    private String especie;
+    private Boolean sonidoIncluido;
+    private String colorPelucheAnimal;
+
+    // PeluchePersonaje
+    private String personaje;
+    private String colorPeluchePersonaje;
+
+    // RopaHombre
+    private String corte;
+
+    // RopaMujer
+    private String largoPrenda;
+
+    // UtilElectronico
+    private String tipoDispositivo;
+    private Boolean bateriaIncluida;
+
+    // UtilEscolar
+    private String colorUtilEscolar;
+    private int edadRecomendada;
+
 
     public GestionBean() {
         articuloNuevo = null;
@@ -146,42 +196,96 @@ public class GestionBean implements Serializable {
         }
         try {
             switch (tipoArticuloNuevo) {
-                case "Celular":
-                    new CelularService().add((CelularDTO) articuloNuevo);
+                case "Celular": {
+                    CelularDTO dto = new CelularDTO();
+                    dto.setMarca(marca);
+                    dto.setRam(ram);
+                    dto.setAlmacenamiento(almacenamiento);
+                    dto.setProcesador(procesador);
+                    dto.setResolucionCamra(resolucionCamra);
+                    new CelularService().add(dto);
                     break;
-                case "Computador":
-                    new ComputadorService().add((ComputadorDTO) articuloNuevo);
+                }
+                case "Computador": {
+                    ComputadorDTO dto = new ComputadorDTO();
+                    dto.setMarca(marca);
+                    dto.setRam(ram);
+                    dto.setAlmacenamiento(almacenamiento);
+                    dto.setProcesador(procesador);
+                    dto.setTipo(tipo);
+                    dto.setTieneTargetaGrafica(tieneTargetaGrafica != null ? tieneTargetaGrafica : false);
+                    new ComputadorService().add(dto);
                     break;
-                case "FiguraColeccionable":
-                    new FiguraColeccionableService().add((FiguraColeccionableDTO) articuloNuevo);
+                }
+                case "FiguraColeccionable": {
+                    FiguraColeccionableDTO dto = new FiguraColeccionableDTO();
+                    dto.setTipoDeFigura(tipoDeFigura);
+                    dto.setValorEnMercado(valorEnMercado);
+                    new FiguraColeccionableService().add(dto);
                     break;
-                case "JuegoDeMesa":
-                    new JuegoDeMesaService().add((JuegoDeMesaDTO) articuloNuevo);
+                }
+                case "JuegoDeMesa": {
+                    JuegoDeMesaDTO dto = new JuegoDeMesaDTO();
+                    dto.setNumeroJugadore(numeroJugadore);
+                    dto.setTipoDeJuego(tipoDeJuego);
+                    new JuegoDeMesaService().add(dto);
                     break;
-                case "MaquillajeCapilar":
-                    new MaquillajeCapilarService().add((MaquillajeCapilarDTO) articuloNuevo);
+                }
+                case "MaquillajeCapilar": {
+                    MaquillajeCapilarDTO dto = new MaquillajeCapilarDTO();
+                    dto.setResistenciaAgua(resistenciaAgua != null ? resistenciaAgua : false);
+                    dto.setDuracionHora(duracionHora);
+                    new MaquillajeCapilarService().add(dto);
                     break;
-                case "MaquillajeDePiel":
-                    new MaquillajeDePielService().add((MaquillajeDePielDTO) articuloNuevo);
+                }
+                case "MaquillajeDePiel": {
+                    MaquillajeDePielDTO dto = new MaquillajeDePielDTO();
+                    dto.setTipo(tipoMaquillaje);
+                    dto.setEsEcoamigable(esEcoamigable != null ? esEcoamigable : false);
+                    new MaquillajeDePielService().add(dto);
                     break;
-                case "PelucheAnimal":
-                    new PelucheAnimalService().add((PelucheAnimalDTO) articuloNuevo);
+                }
+                case "PelucheAnimal": {
+                    PelucheAnimalDTO dto = new PelucheAnimalDTO();
+                    dto.setEspecie(especie);
+                    dto.setSonidoIncluido(sonidoIncluido != null ? sonidoIncluido : false);
+                    dto.setColor(colorPelucheAnimal);
+                    new PelucheAnimalService().add(dto);
                     break;
-                case "PeluchePersonaje":
-                    new PeluchePersonajeService().add((PeluchePersonajeDTO) articuloNuevo);
+                }
+                case "PeluchePersonaje": {
+                    PeluchePersonajeDTO dto = new PeluchePersonajeDTO();
+                    dto.setPersonaje(personaje);
+                    dto.setColor(colorPeluchePersonaje);
+                    new PeluchePersonajeService().add(dto);
                     break;
-                case "RopaHombre":
-                    new RopaHombreService().add((RopaHombreDTO) articuloNuevo);
+                }
+                case "RopaHombre": {
+                    RopaHombreDTO dto = new RopaHombreDTO();
+                    dto.setCorte(corte);
+                    new RopaHombreService().add(dto);
                     break;
-                case "RopaMujer":
-                    new RopaMujerService().add((RopaMujerDTO) articuloNuevo);
+                }
+                case "RopaMujer": {
+                    RopaMujerDTO dto = new RopaMujerDTO();
+                    dto.setLargoPrenda(largoPrenda);
+                    new RopaMujerService().add(dto);
                     break;
-                case "UtilElectronico":
-                    new UtilElectronicoService().add((UtilElectronicoDTO) articuloNuevo);
+                }
+                case "UtilElectronico": {
+                    UtilElectronicoDTO dto = new UtilElectronicoDTO();
+                    dto.setTipoDispositivo(tipoDispositivo);
+                    dto.setBateriaIncluida(bateriaIncluida != null ? bateriaIncluida : false);
+                    new UtilElectronicoService().add(dto);
                     break;
-                case "UtilEscolar":
-                    new UtilEscolarService().add((UtilEscolarDTO) articuloNuevo);
+                }
+                case "UtilEscolar": {
+                    UtilEscolarDTO dto = new UtilEscolarDTO();
+                    dto.setColor(colorUtilEscolar);
+                    dto.setEdadRecomendada(edadRecomendada);
+                    new UtilEscolarService().add(dto);
                     break;
+                }
                 default:
                     FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage(FacesMessage.SEVERITY_ERROR, "Tipo de artículo no soportado", null));

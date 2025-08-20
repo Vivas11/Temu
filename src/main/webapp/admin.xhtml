@@ -16,7 +16,7 @@
 					<!-- Añadir -->
 					<p:tab title="Añadir">
 						<h:panelGrid columns="2" cellpadding="10">
-							<h:outputText value="Tipo de artículo:" />
+							<p:outputLabel value="Tipo de artículo:" />
 							<h:selectOneMenu value="#{gestionbean.tipoArticuloNuevo}">
 								<f:selectItem itemLabel="Seleccione..." itemValue="" />
 								<f:selectItem itemLabel="Celular" itemValue="Celular" />
@@ -42,209 +42,186 @@
 						</h:panelGrid>
 						<h:panelGroup
 							rendered="#{not empty gestionbean.tipoArticuloNuevo}">
+
 							<div style="display: block;">
-								<h:outputText value="Nombre:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.nombre}"
-									required="true" />
+								<p:outputLabel value="Nombre:" />
+								<p:inputText value="#{gestionbean.nombre}" required="true" />
 							</div>
 							<div style="display: block;">
-							<h:outputText value="Descripción:" />
-							<h:inputTextarea value="#{gestionbean.articuloNuevo.descripcion}"
-								required="true" />
+								<p:outputLabel value="Descripción:" />
+								<p:inputTextarea value="#{gestionbean.descripcion}" required="true" />
 							</div>
 							<div style="display: block;">
-							<h:outputText value="Precio:" />
-							<h:inputText value="#{gestionbean.articuloNuevo.precio}"
-								required="true" />
+								<p:outputLabel value="Precio:" />
+								<p:inputText value="#{gestionbean.precio}" required="true" />
 							</div>
 							<div style="display: block;">
-							<h:outputText value="Imagen (URL):" />
-							<h:inputText value="#{gestionbean.articuloNuevo.imagen}"
-								required="true" />
+								<p:outputLabel value="Imagen (URL):" />
+								<p:inputText value="#{gestionbean.imagen}" required="true" />
 							</div>
 
 							<!-- Celular -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'Celular'}">
-								<h:outputText value="Marca:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.marca}" />
-								<h:outputText value="RAM:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.ram}" />
-								<h:outputText value="Almacenamiento:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.almacenamiento}" />
-								<h:outputText value="Procesador:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.procesador}" />
-								<h:outputText value="Resolución Cámara:" />
-								<h:inputText
-									value="#{gestionbean.articuloNuevo.resolucionCamra}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'Celular'}">
+								<p:outputLabel value="Marca:" />
+								<p:inputText value="#{gestionbean.marca}" />
+								<p:outputLabel value="RAM:" />
+								<p:inputText value="#{gestionbean.ram}" />
+								<p:outputLabel value="Almacenamiento:" />
+								<p:inputText value="#{gestionbean.almacenamiento}" />
+								<p:outputLabel value="Procesador:" />
+								<p:inputText value="#{gestionbean.procesador}" />
+								<p:outputLabel value="Resolución Cámara:" />
+								<p:inputText value="#{gestionbean.resolucionCamra}" />
 							</h:panelGroup>
 
 							<!-- Computador -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'Computador'}">
-								<h:outputText value="Marca:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.marca}" />
-								<h:outputText value="RAM:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.ram}" />
-								<h:outputText value="Almacenamiento:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.almacenamiento}" />
-								<h:outputText value="Procesador:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.procesador}" />
-								<h:outputText value="Tipo:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tipo}" />
-								<h:outputText value="¿Tiene tarjeta gráfica?:" />
-								<h:selectBooleanCheckbox
-									value="#{gestionbean.articuloNuevo.tieneTargetaGrafica}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'Computador'}">
+								<p:outputLabel value="Marca:" />
+								<p:inputText value="#{gestionbean.marca}" />
+								<p:outputLabel value="RAM:" />
+								<p:inputText value="#{gestionbean.ram}" />
+								<p:outputLabel value="Almacenamiento:" />
+								<p:inputText value="#{gestionbean.almacenamiento}" />
+								<p:outputLabel value="Procesador:" />
+								<p:inputText value="#{gestionbean.procesador}" />
+								<p:outputLabel value="Tipo:" />
+								<p:inputText value="#{gestionbean.tipo}" />
+								<p:outputLabel value="¿Tiene tarjeta gráfica?:" />
+								<p:selectBooleanCheckbox value="#{gestionbean.tieneTargetaGrafica}" />
 							</h:panelGroup>
 
 							<!-- Figura Coleccionable -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'FiguraColeccionable'}">
-								<h:outputText value="Tamaño:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tamano}" />
-								<h:outputText value="Material:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.material}" />
-								<h:outputText value="Tipo de Figura:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tipoDeFigura}" />
-								<h:outputText value="Valor en Mercado:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.valorEnMercado}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'FiguraColeccionable'}">
+								<p:outputLabel value="Tamaño:" />
+								<p:inputText value="#{gestionbean.tamano}" />
+								<p:outputLabel value="Material:" />
+								<p:inputText value="#{gestionbean.material}" />
+								<p:outputLabel value="Tipo de Figura:" />
+								<p:inputText value="#{gestionbean.tipoDeFigura}" />
+								<p:outputLabel value="Valor en Mercado:" />
+								<p:inputText value="#{gestionbean.valorEnMercado}" />
 							</h:panelGroup>
 
 							<!-- Juego de Mesa -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'JuegoDeMesa'}">
-								<h:outputText value="Tamaño:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tamano}" />
-								<h:outputText value="Material:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.material}" />
-								<h:outputText value="Número de Jugadores:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.numeroJugadore}" />
-								<h:outputText value="Tipo de Juego:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tipoDeJuego}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'JuegoDeMesa'}">
+								<p:outputLabel value="Tamaño:" />
+								<p:inputText value="#{gestionbean.tamano}" />
+								<p:outputLabel value="Material:" />
+								<p:inputText value="#{gestionbean.material}" />
+								<p:outputLabel value="Número de Jugadores:" />
+								<p:inputText value="#{gestionbean.numeroJugadore}" />
+								<p:outputLabel value="Tipo de Juego:" />
+								<p:inputText value="#{gestionbean.tipoDeJuego}" />
 							</h:panelGroup>
 
 							<!-- Maquillaje Capilar -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'MaquillajeCapilar'}">
-								<h:outputText value="Color:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.color}" />
-								<h:outputText value="Contenido en Gramo:" />
-								<h:inputText
-									value="#{gestionbean.articuloNuevo.contenidoEnGramo}" />
-								<h:outputText value="Resistencia al Agua:" />
-								<h:selectBooleanCheckbox
-									value="#{gestionbean.articuloNuevo.resistenciaAgua}" />
-								<h:outputText value="Duración (horas):" />
-								<h:inputText value="#{gestionbean.articuloNuevo.duracionHora}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'MaquillajeCapilar'}">
+								<p:outputLabel value="Color:" />
+								<p:inputText value="#{gestionbean.color}" />
+								<p:outputLabel value="Contenido en Gramo:" />
+								<p:inputText value="#{gestionbean.contenidoEnGramo}" />
+								<p:outputLabel value="Resistencia al Agua:" />
+								<p:selectBooleanCheckbox value="#{gestionbean.resistenciaAgua}" />
+								<p:outputLabel value="Duración (horas):" />
+								<p:inputText value="#{gestionbean.duracionHora}" />
 							</h:panelGroup>
 
 							<!-- Maquillaje de Piel -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'MaquillajeDePiel'}">
-								<h:outputText value="Color:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.color}" />
-								<h:outputText value="Contenido en Gramo:" />
-								<h:inputText
-									value="#{gestionbean.articuloNuevo.contenidoEnGramo}" />
-								<h:outputText value="Tipo:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tipo}" />
-								<h:outputText value="¿Es ecoamigable?:" />
-								<h:selectBooleanCheckbox
-									value="#{gestionbean.articuloNuevo.esEcoamigable}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'MaquillajeDePiel'}">
+								<p:outputLabel value="Color:" />
+								<p:inputText value="#{gestionbean.color}" />
+								<p:outputLabel value="Contenido en Gramo:" />
+								<p:inputText value="#{gestionbean.contenidoEnGramo}" />
+								<p:outputLabel value="Tipo:" />
+								<p:inputText value="#{gestionbean.tipo}" />
+								<p:outputLabel value="¿Es ecoamigable?:" />
+								<p:selectBooleanCheckbox value="#{gestionbean.esEcoamigable}" />
 							</h:panelGroup>
 
 							<!-- Peluche Animal -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'PelucheAnimal'}">
-								<h:outputText value="Tamaño:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tamano}" />
-								<h:outputText value="Color:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.color}" />
-								<h:outputText value="Material:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.material}" />
-								<h:outputText value="Especie:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.especie}" />
-								<h:outputText value="¿Sonido incluido?:" />
-								<h:selectBooleanCheckbox
-									value="#{gestionbean.articuloNuevo.sonidoIncluido}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'PelucheAnimal'}">
+								<p:outputLabel value="Tamaño:" />
+								<p:inputText value="#{gestionbean.tamano}" />
+								<p:outputLabel value="Color:" />
+								<p:inputText value="#{gestionbean.color}" />
+								<p:outputLabel value="Material:" />
+								<p:inputText value="#{gestionbean.material}" />
+								<p:outputLabel value="Especie:" />
+								<p:inputText value="#{gestionbean.especie}" />
+								<p:outputLabel value="¿Sonido incluido?:" />
+								<p:selectBooleanCheckbox value="#{gestionbean.sonidoIncluido}" />
 							</h:panelGroup>
 
 							<!-- Peluche Personaje -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'PeluchePersonaje'}">
-								<h:outputText value="Tamaño:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tamano}" />
-								<h:outputText value="Color:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.color}" />
-								<h:outputText value="Material:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.material}" />
-								<h:outputText value="Personaje:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.personaje}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'PeluchePersonaje'}">
+								<p:outputLabel value="Tamaño:" />
+								<p:inputText value="#{gestionbean.tamano}" />
+								<p:outputLabel value="Color:" />
+								<p:inputText value="#{gestionbean.color}" />
+								<p:outputLabel value="Material:" />
+								<p:inputText value="#{gestionbean.material}" />
+								<p:outputLabel value="Personaje:" />
+								<p:inputText value="#{gestionbean.personaje}" />
 							</h:panelGroup>
 
 							<!-- Ropa Hombre -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'RopaHombre'}">
-								<h:outputText value="Tipo de Prenda:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tipoPrenda}" />
-								<h:outputText value="Talla:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.talla}" />
-								<h:outputText value="Material:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.material}" />
-								<h:outputText value="Corte:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.corte}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'RopaHombre'}">
+								<p:outputLabel value="Tipo de Prenda:" />
+								<p:inputText value="#{gestionbean.tipoPrenda}" />
+								<p:outputLabel value="Talla:" />
+								<p:inputText value="#{gestionbean.talla}" />
+								<p:outputLabel value="Material:" />
+								<p:inputText value="#{gestionbean.material}" />
+								<p:outputLabel value="Corte:" />
+								<p:inputText value="#{gestionbean.corte}" />
 							</h:panelGroup>
 
 							<!-- Ropa Mujer -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'RopaMujer'}">
-								<h:outputText value="Tipo de Prenda:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tipoPrenda}" />
-								<h:outputText value="Talla:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.talla}" />
-								<h:outputText value="Material:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.material}" />
-								<h:outputText value="Largo de Prenda:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.largoPrenda}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'RopaMujer'}">
+								<p:outputLabel value="Tipo de Prenda:" />
+								<p:inputText value="#{gestionbean.tipoPrenda}" />
+								<p:outputLabel value="Talla:" />
+								<p:inputText value="#{gestionbean.talla}" />
+								<p:outputLabel value="Material:" />
+								<p:inputText value="#{gestionbean.material}" />
+								<p:outputLabel value="Largo de Prenda:" />
+								<p:inputText value="#{gestionbean.largoPrenda}" />
 							</h:panelGroup>
 
 							<!-- Util Electrónico -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'UtilElectronico'}">
-								<h:outputText value="Tipo:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tipo}" />
-								<h:outputText value="Tamaño:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tamano}" />
-								<h:outputText value="Forma:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.forma}" />
-								<h:outputText value="Tipo de Dispositivo:" />
-								<h:inputText
-									value="#{gestionbean.articuloNuevo.tipoDispositivo}" />
-								<h:outputText value="¿Batería incluida?:" />
-								<h:selectBooleanCheckbox
-									value="#{gestionbean.articuloNuevo.bateriaIncluida}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'UtilElectronico'}">
+								<p:outputLabel value="Tipo:" />
+								<p:inputText value="#{gestionbean.tipo}" />
+								<p:outputLabel value="Tamaño:" />
+								<p:inputText value="#{gestionbean.tamano}" />
+								<p:outputLabel value="Forma:" />
+								<p:inputText value="#{gestionbean.forma}" />
+								<p:outputLabel value="Tipo de Dispositivo:" />
+								<p:inputText value="#{gestionbean.tipoDispositivo}" />
+								<p:outputLabel value="¿Batería incluida?:" />
+								<p:selectBooleanCheckbox value="#{gestionbean.bateriaIncluida}" />
 							</h:panelGroup>
 
 							<!-- Util Escolar -->
-							<h:panelGroup
-								rendered="#{gestionbean.tipoArticuloNuevo eq 'UtilEscolar'}">
-								<h:outputText value="Tipo:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tipo}" />
-								<h:outputText value="Tamaño:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.tamano}" />
-								<h:outputText value="Forma:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.forma}" />
-								<h:outputText value="Color:" />
-								<h:inputText value="#{gestionbean.articuloNuevo.color}" />
-								<h:outputText value="Edad Recomendada:" />
-								<h:inputText
-									value="#{gestionbean.articuloNuevo.edadRecomendada}" />
+							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'UtilEscolar'}">
+								<p:outputLabel value="Tipo:" />
+								<p:inputText value="#{gestionbean.tipo}" />
+								<p:outputLabel value="Tamaño:" />
+								<p:inputText value="#{gestionbean.tamano}" />
+								<p:outputLabel value="Forma:" />
+								<p:inputText value="#{gestionbean.forma}" />
+								<p:outputLabel value="Color:" />
+								<p:inputText value="#{gestionbean.color}" />
+								<p:outputLabel value="Edad Recomendada:" />
+								<p:inputText value="#{gestionbean.edadRecomendada}" />
 							</h:panelGroup>
-							<h:commandButton value="Añadir"
-								action="#{gestionbean.aniadirObjeto}"
-								styleClass="btn btn-primary">
-								<f:ajax render="@form" />
-							</h:commandButton>
+							<!-- 							<h:commandButton value="Añadir" -->
+							<!-- 								action="#{gestionbean.aniadirObjeto}" -->
+							<!-- 								styleClass="btn btn-primary"> -->
+							<!-- 								<f:ajax render="@form" /> -->
+							<!-- 							</h:commandButton> -->
+							<p:commandButton value="Submit" update="@form"
+								actionListener="#{gestionbean.aniadirObjeto}" styleClass="btn btn-primary" />
 						</h:panelGroup>
 					</p:tab>
 
@@ -275,16 +252,19 @@
 							</h:column>
 							<h:column>
 								<f:facet name="header">Acción</f:facet>
-								<h:commandButton value="Eliminar"
-									action="#{gestionbean.eliminarObjeto(art)}"
-									styleClass="btn btn-danger">
-									<f:ajax render="@form" />
-								</h:commandButton>
+<!-- 								<h:commandButton value="Eliminar" -->
+<!-- 									action="#{gestionbean.eliminarObjeto(art)}" -->
+<!-- 									styleClass="btn btn-danger"> -->
+<!-- 									<f:ajax render="@form" /> -->
+<!-- 								</h:commandButton> -->
+
+								<p:commandButton value="Submit" update="@form"
+									actionListener="#{gestionbean.eliminarObjeto(art)}" styleClass="btn btn-danger"/>
 							</h:column>
 						</h:dataTable>
 					</p:tab>
 
-					
+
 
 					<!-- Mostrar -->
 					<p:tab title="Mostrar">
@@ -309,7 +289,7 @@
 							</h:column>
 						</h:dataTable>
 					</p:tab>
-					
+
 				</p:tabView>
 			</h:form>
 		</div>

@@ -54,6 +54,11 @@
 			<artifactId>jakarta.persistence-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.angus</groupId>
+			<artifactId>angus-mail</artifactId>
+			<version>2.0.3</version>
+		</dependency>
 	</dependencies>
 	<description>Temu is a Java-based web application for a virtual store,
 		enabling users to browse products and make purchases online.</description>
