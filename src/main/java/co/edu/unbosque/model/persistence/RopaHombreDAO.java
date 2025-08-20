@@ -63,7 +63,7 @@ public class RopaHombreDAO implements OperacionDAO<RopaHombreDTO, RopaHombre> {
 							found = r;
 							return found;
 						} else {
-							continue; // las sig lineas desps de continue no se ejecutan, saltan a la sig iteracion
+							continue;
 						}
 					}
 				} else {

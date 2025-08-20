@@ -63,10 +63,16 @@
 				<h:panelGroup rendered="#{templatebean.sesionIniciada}">
 					<li><h:link outcome="principal.xhtml"
 							styleClass="navbar-brand">
-							<h:graphicImage value="css/fa6p/svgs/solid/arrow-left-from-line.svg"
-								width="40" height="40" style="border-radius:20%;" />
+							<h:graphicImage
+								value="css/fa6p/svgs/solid/arrow-left-from-line.svg" width="40"
+								height="40" style="border-radius:20%;" />
 						</h:link></li>
 				</h:panelGroup>
+				<h:panelGroup rendered="#{templatebean.sesionIniciada}">
+					<li><a href="admin.xhtml" class="btn btn-primary"
+						role="button">Administrar Productos</a></li>
+				</h:panelGroup>
+
 
 				<h:panelGroup rendered="#{!templatebean.sesionIniciada}">
 					<li class="nav-item"><h:link outcome="registrar.xhtml"
