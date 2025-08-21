@@ -13,6 +13,8 @@ public class ComputadorService {
         ModelFacade.compuDAO.add(computador);
     }
     public void delete(ComputadorDTO computador) {
-        ModelFacade.compuDAO.delete(computador);
+    // Llamada al DAO para eliminar el objeto Computador
+    System.out.println("[DEBUG][Service] Llamando a DAO para eliminar ComputadorDTO: " + computador);
+    ModelFacade.compuDAO.delete(computador);
     }
 }

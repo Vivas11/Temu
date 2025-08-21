@@ -13,6 +13,8 @@ public class MaquillajeDePielService {
         ModelFacade.maquillajeDePielDAO.add(maq);
     }
     public void delete(MaquillajeDePielDTO maq) {
-        ModelFacade.maquillajeDePielDAO.delete(maq);
+    // Llamada al DAO para eliminar el objeto MaquillajeDePiel
+    System.out.println("[DEBUG][Service] Llamando a DAO para eliminar MaquillajeDePielDTO: " + maq);
+    ModelFacade.maquillajeDePielDAO.delete(maq);
     }
 }

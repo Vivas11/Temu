@@ -1,5 +1,6 @@
 package co.edu.unbosque.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import co.edu.unbosque.model.UsuarioDTO;
@@ -14,7 +15,9 @@ import jakarta.inject.Named;
 
 //ciclo de vida
 @RequestScoped
-public class RegistroBean {
+public class RegistroBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private String nombre;
 	private String apellido;
 	private Date fechaDeNacimiento;

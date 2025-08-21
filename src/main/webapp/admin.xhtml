@@ -105,9 +105,9 @@
 							<!-- Juego de Mesa -->
 							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'JuegoDeMesa'}">
 								<p:outputLabel value="Tamaño:" />
-								<p:inputText value="#{gestionbean.tamano}" />
+								<p:inputText value="#{gestionbean.tamanoJuego}" />
 								<p:outputLabel value="Material:" />
-								<p:inputText value="#{gestionbean.material}" />
+								<p:inputText value="#{gestionbean.materialJuego}" />
 								<p:outputLabel value="Número de Jugadores:" />
 								<p:inputText value="#{gestionbean.numeroJugadore}" />
 								<p:outputLabel value="Tipo de Juego:" />
@@ -128,12 +128,12 @@
 
 							<!-- Maquillaje de Piel -->
 							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'MaquillajeDePiel'}">
-								<p:outputLabel value="Color:" />
-								<p:inputText value="#{gestionbean.color}" />
+								<p:outputLabel value="Color de piel:" />
+								<p:inputText value="#{gestionbean.colorPiel}" />
 								<p:outputLabel value="Contenido en Gramo:" />
-								<p:inputText value="#{gestionbean.contenidoEnGramo}" />
-								<p:outputLabel value="Tipo:" />
-								<p:inputText value="#{gestionbean.tipo}" />
+								<p:inputText value="#{gestionbean.contenidoEnGramoPiel}" />
+								<p:outputLabel value="Tipo de Maquillaje:" />
+								<p:inputText value="#{gestionbean.tipoMaquillaje}" />
 								<p:outputLabel value="¿Es ecoamigable?:" />
 								<p:selectBooleanCheckbox value="#{gestionbean.esEcoamigable}" />
 							</h:panelGroup>
@@ -141,11 +141,11 @@
 							<!-- Peluche Animal -->
 							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'PelucheAnimal'}">
 								<p:outputLabel value="Tamaño:" />
-								<p:inputText value="#{gestionbean.tamano}" />
+								<p:inputText value="#{gestionbean.tamanoPeluche}" />
 								<p:outputLabel value="Color:" />
-								<p:inputText value="#{gestionbean.color}" />
+								<p:inputText value="#{gestionbean.colorPelucheAnimal}" />
 								<p:outputLabel value="Material:" />
-								<p:inputText value="#{gestionbean.material}" />
+								<p:inputText value="#{gestionbean.materialPeluche}" />
 								<p:outputLabel value="Especie:" />
 								<p:inputText value="#{gestionbean.especie}" />
 								<p:outputLabel value="¿Sonido incluido?:" />
@@ -155,11 +155,11 @@
 							<!-- Peluche Personaje -->
 							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'PeluchePersonaje'}">
 								<p:outputLabel value="Tamaño:" />
-								<p:inputText value="#{gestionbean.tamano}" />
+								<p:inputText value="#{gestionbean.tamanoPersonaje}" />
 								<p:outputLabel value="Color:" />
-								<p:inputText value="#{gestionbean.color}" />
+								<p:inputText value="#{gestionbean.colorPeluchePersonaje}" />
 								<p:outputLabel value="Material:" />
-								<p:inputText value="#{gestionbean.material}" />
+								<p:inputText value="#{gestionbean.materialPersonaje}" />
 								<p:outputLabel value="Personaje:" />
 								<p:inputText value="#{gestionbean.personaje}" />
 							</h:panelGroup>
@@ -171,7 +171,7 @@
 								<p:outputLabel value="Talla:" />
 								<p:inputText value="#{gestionbean.talla}" />
 								<p:outputLabel value="Material:" />
-								<p:inputText value="#{gestionbean.material}" />
+								<p:inputText value="#{gestionbean.materialRopaHombre}" />
 								<p:outputLabel value="Corte:" />
 								<p:inputText value="#{gestionbean.corte}" />
 							</h:panelGroup>
@@ -179,11 +179,11 @@
 							<!-- Ropa Mujer -->
 							<h:panelGroup rendered="#{gestionbean.tipoArticuloNuevo eq 'RopaMujer'}">
 								<p:outputLabel value="Tipo de Prenda:" />
-								<p:inputText value="#{gestionbean.tipoPrenda}" />
+								<p:inputText value="#{gestionbean.tipoPrendaMujer}" />
 								<p:outputLabel value="Talla:" />
-								<p:inputText value="#{gestionbean.talla}" />
+								<p:inputText value="#{gestionbean.tallaMujer}" />
 								<p:outputLabel value="Material:" />
-								<p:inputText value="#{gestionbean.material}" />
+								<p:inputText value="#{gestionbean.materialRopaMujer}" />
 								<p:outputLabel value="Largo de Prenda:" />
 								<p:inputText value="#{gestionbean.largoPrenda}" />
 							</h:panelGroup>
@@ -193,7 +193,7 @@
 								<p:outputLabel value="Tipo:" />
 								<p:inputText value="#{gestionbean.tipo}" />
 								<p:outputLabel value="Tamaño:" />
-								<p:inputText value="#{gestionbean.tamano}" />
+								<p:inputText value="#{gestionbean.tamanoElectronico}" />
 								<p:outputLabel value="Forma:" />
 								<p:inputText value="#{gestionbean.forma}" />
 								<p:outputLabel value="Tipo de Dispositivo:" />
@@ -207,21 +207,16 @@
 								<p:outputLabel value="Tipo:" />
 								<p:inputText value="#{gestionbean.tipo}" />
 								<p:outputLabel value="Tamaño:" />
-								<p:inputText value="#{gestionbean.tamano}" />
+								<p:inputText value="#{gestionbean.tamanoEscolar}" />
 								<p:outputLabel value="Forma:" />
-								<p:inputText value="#{gestionbean.forma}" />
+								<p:inputText value="#{gestionbean.formaEscolar}" />
 								<p:outputLabel value="Color:" />
-								<p:inputText value="#{gestionbean.color}" />
+								<p:inputText value="#{gestionbean.colorUtilEscolar}" />
 								<p:outputLabel value="Edad Recomendada:" />
 								<p:inputText value="#{gestionbean.edadRecomendada}" />
 							</h:panelGroup>
-							<!-- 							<h:commandButton value="Añadir" -->
-							<!-- 								action="#{gestionbean.aniadirObjeto}" -->
-							<!-- 								styleClass="btn btn-primary"> -->
-							<!-- 								<f:ajax render="@form" /> -->
-							<!-- 							</h:commandButton> -->
 							<p:commandButton value="Submit" update="@form"
-								actionListener="#{gestionbean.aniadirObjeto}" styleClass="btn btn-primary" />
+								action="#{gestionbean.anadirObjeto}" styleClass="btn btn-primary" />
 						</h:panelGroup>
 					</p:tab>
 
@@ -252,14 +247,9 @@
 							</h:column>
 							<h:column>
 								<f:facet name="header">Acción</f:facet>
-<!-- 								<h:commandButton value="Eliminar" -->
-<!-- 									action="#{gestionbean.eliminarObjeto(art)}" -->
-<!-- 									styleClass="btn btn-danger"> -->
-<!-- 									<f:ajax render="@form" /> -->
-<!-- 								</h:commandButton> -->
 
-								<p:commandButton value="Submit" update="@form"
-									actionListener="#{gestionbean.eliminarObjeto(art)}" styleClass="btn btn-danger"/>
+								<p:commandButton value="Eliminar" update="@form"
+									action="#{gestionbean.eliminarObjeto(art)}" styleClass="btn btn-danger"/>
 							</h:column>
 						</h:dataTable>
 					</p:tab>

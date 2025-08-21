@@ -46,11 +46,16 @@ public class RopaMujerDAO implements OperacionDAO<RopaMujerDTO, RopaMujer>{
 
 	@Override
 	public boolean delete(RopaMujerDTO toDelete) {
+		// Buscar el objeto en la lista antes de eliminar
+		System.out.println("[DEBUG][DAO] Buscando RopaMujer para eliminar: " + toDelete);
 		RopaMujer found = find(DataMapper.ropaMujerDTOToRopaMujer(toDelete));
 		if (found != null) {
-			return listaRopaMujer.remove(found);
-			
+			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
+			boolean result = listaRopaMujer.remove(found);
+			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
+			return result;
 		} else {
+			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}
@@ -59,9 +64,11 @@ public class RopaMujerDAO implements OperacionDAO<RopaMujerDTO, RopaMujer>{
 	public RopaMujer find(RopaMujer toFind) {
 		RopaMujer found = null;
 		if (!listaRopaMujer.isEmpty()) {
-			for (RopaMujer m : listaRopaMujer) {
-				if (m.getId() == toFind.getId()) {
-					found = m;
+			for (RopaMujer c : listaRopaMujer) {
+				System.out.println("[DEBUG] Comparando RopaMujer: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
+				if (c.getId() == toFind.getId()) {
+					System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
+					found = c;
 					return found;
 				} else {
 					continue; // las sig lineas desps de continue no se ejecutan, saltan a la sig iteracion

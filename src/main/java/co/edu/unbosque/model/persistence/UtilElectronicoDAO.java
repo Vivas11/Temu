@@ -43,22 +43,29 @@ public class UtilElectronicoDAO implements OperacionDAO<UtilElectronicoDTO, Util
 
 	  @Override
 	  public boolean delete(UtilElectronicoDTO toDelete) {
-		  UtilElectronico found = find(DataMapper.utilElectronicoDTOToUtilElectronico(toDelete));
-			if (found != null) {
-				return listaUtilElectronico.remove(found);
-				
-			} else {
-				return false;
-			}
+		// Buscar el objeto en la lista antes de eliminar
+		System.out.println("[DEBUG][DAO] Buscando UtilElectronico para eliminar: " + toDelete);
+		UtilElectronico found = find(DataMapper.utilElectronicoDTOToUtilElectronico(toDelete));
+		if (found != null) {
+			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
+			boolean result = listaUtilElectronico.remove(found);
+			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
+			return result;
+		} else {
+			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
+			return false;
+		}
 	  }
 
 	  @Override
 	  public UtilElectronico find(UtilElectronico toFind) {
 		  UtilElectronico found = null;
 			if (!listaUtilElectronico.isEmpty()) {
-				for (UtilElectronico e : listaUtilElectronico) {
-					if (e.getId() == toFind.getId()) {
-						found = e;
+				for (UtilElectronico c : listaUtilElectronico) {
+					System.out.println("[DEBUG] Comparando UtilElectronico: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
+					if (c.getId() == toFind.getId()) {
+						System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
+						found = c;
 						return found;
 					} else {
 						continue; // las sig lineas desps de continue no se ejecutan, saltan a la sig iteracion

@@ -13,6 +13,8 @@ public class UtilEscolarService {
         ModelFacade.utilEscolarDAO.add(util);
     }
     public void delete(UtilEscolarDTO util) {
-        ModelFacade.utilEscolarDAO.delete(util);
+    // Llamada al DAO para eliminar el objeto UtilEscolar
+    System.out.println("[DEBUG][Service] Llamando a DAO para eliminar UtilEscolarDTO: " + util);
+    ModelFacade.utilEscolarDAO.delete(util);
     }
 }

@@ -13,6 +13,8 @@ public class RopaMujerService {
         ModelFacade.ropaMujer.add(ropa);
     }
     public void delete(RopaMujerDTO ropa) {
-        ModelFacade.ropaMujer.delete(ropa);
+    // Llamada al DAO para eliminar el objeto RopaMujer
+    System.out.println("[DEBUG][Service] Llamando a DAO para eliminar RopaMujerDTO: " + ropa);
+    ModelFacade.ropaMujer.delete(ropa);
     }
 }

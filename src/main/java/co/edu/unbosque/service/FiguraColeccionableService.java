@@ -13,6 +13,8 @@ public class FiguraColeccionableService {
         ModelFacade.figuraColeccionableDAO.add(figura);
     }
     public void delete(FiguraColeccionableDTO figura) {
-        ModelFacade.figuraColeccionableDAO.delete(figura);
+    // Llamada al DAO para eliminar el objeto FiguraColeccionable
+    System.out.println("[DEBUG][Service] Llamando a DAO para eliminar FiguraColeccionableDTO: " + figura);
+    ModelFacade.figuraColeccionableDAO.delete(figura);
     }
 }

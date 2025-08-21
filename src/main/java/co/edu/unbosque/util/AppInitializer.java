@@ -18,7 +18,7 @@ public class AppInitializer implements ServletContextListener {
 		System.out.println("INICIANDO");
 		ModelFacade.imprimirTodo();
 		
-		ModelFacade.usuarioActual = new Usuario("Luis", "Vivas", new Date(2007, 03, 17), "Vivas11", "lc.vivascruz@gmail.com", "2120231luis@", "Calle 162#54-56");
+//		ModelFacade.usuarioActual = new Usuario("Luis", "Vivas", new Date(2007, 03, 17), "Vivas11", "lc.vivascruz@gmail.com", "2120231luis@", "Calle 162#54-56");
     }
 
 }

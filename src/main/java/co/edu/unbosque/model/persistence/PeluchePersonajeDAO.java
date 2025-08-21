@@ -41,11 +41,16 @@ public class PeluchePersonajeDAO implements OperacionDAO<PeluchePersonajeDTO, Pe
 
 	@Override
 	public boolean delete(PeluchePersonajeDTO toDelete) {
+		// Buscar el objeto en la lista antes de eliminar
+		System.out.println("[DEBUG][DAO] Buscando PeluchePersonaje para eliminar: " + toDelete);
 		PeluchePersonaje found = find(DataMapper.peluchePersonajeDTOToPeluchePersonaje(toDelete));
 		if (found != null) {
-			return listaPeluchePersonaje.remove(found);
-
+			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
+			boolean result = listaPeluchePersonaje.remove(found);
+			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
+			return result;
 		} else {
+			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}
@@ -54,9 +59,11 @@ public class PeluchePersonajeDAO implements OperacionDAO<PeluchePersonajeDTO, Pe
 	public PeluchePersonaje find(PeluchePersonaje toFind) {
 		PeluchePersonaje found = null;
 		if (!listaPeluchePersonaje.isEmpty()) {
-			for (PeluchePersonaje p : listaPeluchePersonaje) {
-				if (p.getId() == toFind.getId()) {
-					found = p;
+			for (PeluchePersonaje c : listaPeluchePersonaje) {
+				System.out.println("[DEBUG] Comparando PeluchePersonaje: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
+				if (c.getId() == toFind.getId()) {
+					System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
+					found = c;
 					return found;
 				} else {
 					continue; // las sig lineas desps de continue no se ejecutan, saltan a la sig iteracion

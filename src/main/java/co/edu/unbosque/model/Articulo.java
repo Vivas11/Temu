@@ -24,6 +24,7 @@ public abstract class  Articulo {
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.imagen = imagen;
+		contador++;
 	}
 
 

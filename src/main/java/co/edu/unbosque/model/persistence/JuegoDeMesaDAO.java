@@ -40,11 +40,16 @@ public class JuegoDeMesaDAO implements OperacionDAO<JuegoDeMesaDTO, JuegoDeMesa>
 
 	@Override
 	public boolean delete(JuegoDeMesaDTO toDelete) {
+		// Buscar el objeto en la lista antes de eliminar
+		System.out.println("[DEBUG][DAO] Buscando JuegoDeMesa para eliminar: " + toDelete);
 		JuegoDeMesa found = find(DataMapper.juegoDeMesaDTOToJuegoDeMesa(toDelete));
 		if (found != null) {
-			return listaJuegoMesa.remove(found);
-
+			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
+			boolean result = listaJuegoMesa.remove(found);
+			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
+			return result;
 		} else {
+			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}
@@ -53,12 +58,14 @@ public class JuegoDeMesaDAO implements OperacionDAO<JuegoDeMesaDTO, JuegoDeMesa>
 	public JuegoDeMesa find(JuegoDeMesa toFind) {
 		JuegoDeMesa found = null;
 		if (!listaJuegoMesa.isEmpty()) {
-			for (JuegoDeMesa j : listaJuegoMesa) {
-				if (j.getId() == toFind.getId()) {
-					found = j;
+			for (JuegoDeMesa c : listaJuegoMesa) {
+				System.out.println("[DEBUG] Comparando JuegoDeMesa: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
+				if (c.getId() == toFind.getId()) {
+					System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
+					found = c;
 					return found;
 				} else {
-					continue; // las sig lineas desps de continue no se ejecutan, saltan a la sig iteracion
+					continue;
 				}
 			}
 		} else {

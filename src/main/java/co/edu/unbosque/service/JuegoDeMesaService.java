@@ -13,6 +13,8 @@ public class JuegoDeMesaService {
         ModelFacade.juegoMesaDAO.add(juego);
     }
     public void delete(JuegoDeMesaDTO juego) {
-        ModelFacade.juegoMesaDAO.delete(juego);
+    // Llamada al DAO para eliminar el objeto JuegoDeMesa
+    System.out.println("[DEBUG][Service] Llamando a DAO para eliminar JuegoDeMesaDTO: " + juego);
+    ModelFacade.juegoMesaDAO.delete(juego);
     }
 }

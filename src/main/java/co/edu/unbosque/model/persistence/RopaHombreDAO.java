@@ -45,22 +45,29 @@ public class RopaHombreDAO implements OperacionDAO<RopaHombreDTO, RopaHombre> {
 
 		   @Override
 		   public boolean delete(RopaHombreDTO toDelete) {
+			// Buscar el objeto en la lista antes de eliminar
+			System.out.println("[DEBUG][DAO] Buscando RopaHombre para eliminar: " + toDelete);
 			RopaHombre found = find(DataMapper.ropaHombreDTOToRopaHombre(toDelete));
-				if (found != null) {
-					return listaRopaHombre.remove(found);
-					
-				} else {
-					return false;
-				}
+			if (found != null) {
+				System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
+				boolean result = listaRopaHombre.remove(found);
+				System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
+				return result;
+			} else {
+				System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
+				return false;
+			}
 		   }
 
 		   @Override
 		   public RopaHombre find(RopaHombre toFind) {
 			   RopaHombre found = null;
 				if (!listaRopaHombre.isEmpty()) {
-					for (RopaHombre r : listaRopaHombre) {
-						if (r.getId() == toFind.getId()) {
-							found = r;
+					for (RopaHombre c : listaRopaHombre) {
+						System.out.println("[DEBUG] Comparando RopaHombre: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
+						if (c.getId() == toFind.getId()) {
+							System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
+							found = c;
 							return found;
 						} else {
 							continue;

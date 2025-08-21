@@ -1,6 +1,8 @@
 package co.edu.unbosque.beans;
 
 
+import java.io.Serializable;
+
 import co.edu.unbosque.model.UsuarioDTO;
 import co.edu.unbosque.service.UsuarioService;
 import jakarta.enterprise.context.RequestScoped;
@@ -9,7 +11,9 @@ import jakarta.inject.Named;
 //indica que es un bean
 @Named(value = "loginbean")
 @RequestScoped
-public class InicioSesionBean {
+public class InicioSesionBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private String usuario;
 	private String contrasena;
 	

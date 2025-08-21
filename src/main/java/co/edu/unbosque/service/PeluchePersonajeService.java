@@ -13,6 +13,8 @@ public class PeluchePersonajeService {
         ModelFacade.peluchePersonajeDAO.add(peluche);
     }
     public void delete(PeluchePersonajeDTO peluche) {
-        ModelFacade.peluchePersonajeDAO.delete(peluche);
+    // Llamada al DAO para eliminar el objeto PeluchePersonaje
+    System.out.println("[DEBUG][Service] Llamando a DAO para eliminar PeluchePersonajeDTO: " + peluche);
+    ModelFacade.peluchePersonajeDAO.delete(peluche);
     }
 }

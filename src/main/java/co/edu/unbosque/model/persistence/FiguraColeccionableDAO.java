@@ -39,11 +39,16 @@ public class FiguraColeccionableDAO implements OperacionDAO<FiguraColeccionableD
 
 	@Override
 	public boolean delete(FiguraColeccionableDTO toDelete) {
+		// Buscar el objeto en la lista antes de eliminar
+		System.out.println("[DEBUG][DAO] Buscando FiguraColeccionable para eliminar: " + toDelete);
 		FiguraColeccionable found = find(DataMapper.figuraColeccionableDTOToFiguraColeccionable(toDelete));
 		if (found != null) {
-			return listaFiguraCol.remove(found);
-			
+			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
+			boolean result = listaFiguraCol.remove(found);
+			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
+			return result;
 		} else {
+			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}
@@ -53,7 +58,9 @@ public class FiguraColeccionableDAO implements OperacionDAO<FiguraColeccionableD
 		FiguraColeccionable found = null;
 		if (!listaFiguraCol.isEmpty()) {
 			for (FiguraColeccionable f : listaFiguraCol) {
+				System.out.println("[DEBUG] Comparando FiguraColeccionable: listaId=" + f.getId() + " vs buscarId=" + toFind.getId());
 				if (f.getId() == toFind.getId()) {
+					System.out.println("[DEBUG] Coincidencia encontrada: id=" + f.getId());
 					found = f;
 					return found;
 				} else {

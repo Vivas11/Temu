@@ -13,6 +13,8 @@ public class UtilElectronicoService {
         ModelFacade.utilElectronicoDAO.add(util);
     }
     public void delete(UtilElectronicoDTO util) {
-        ModelFacade.utilElectronicoDAO.delete(util);
+    // Llamada al DAO para eliminar el objeto UtilElectronico
+    System.out.println("[DEBUG][Service] Llamando a DAO para eliminar UtilElectronicoDTO: " + util);
+    ModelFacade.utilElectronicoDAO.delete(util);
     }
 }

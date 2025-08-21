@@ -48,11 +48,16 @@ public class PelucheAnimalDAO implements OperacionDAO<PelucheAnimalDTO, PelucheA
 
 		@Override
 		public boolean delete(PelucheAnimalDTO toDelete) {
+			// Buscar el objeto en la lista antes de eliminar
+			System.out.println("[DEBUG][DAO] Buscando PelucheAnimal para eliminar: " + toDelete);
 			PelucheAnimal found = find(DataMapper.pelucheAnimalDTOToPelucheAnimal(toDelete));
 			if (found != null) {
-				return listaPelucheAnimal.remove(found);
-
+				System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
+				boolean result = listaPelucheAnimal.remove(found);
+				System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
+				return result;
 			} else {
+				System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 				return false;
 			}
 		}
@@ -61,9 +66,11 @@ public class PelucheAnimalDAO implements OperacionDAO<PelucheAnimalDTO, PelucheA
 		public PelucheAnimal find(PelucheAnimal toFind) {
 			PelucheAnimal found = null;
 			if (!listaPelucheAnimal.isEmpty()) {
-				for (PelucheAnimal j : listaPelucheAnimal) {
-					if (j.getId() == toFind.getId()) {
-						found = j;
+				for (PelucheAnimal c : listaPelucheAnimal) {
+					System.out.println("[DEBUG] Comparando PelucheAnimal: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
+					if (c.getId() == toFind.getId()) {
+						System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
+						found = c;
 						return found;
 					} else {
 						continue; // las sig lineas desps de continue no se ejecutan, saltan a la sig iteracion
