@@ -58,7 +58,12 @@ public class GestionBean implements Serializable {
     private Object articuloNuevo; // Será del tipo DTO correspondiente
     private String tipoArticuloNuevo;
     private List<Articulo> todosArticulos;
-
+    
+    private String nombre;
+    private String descripcion;
+    private int precio;
+    private String imagen;
+    
     // Celular
     private String marca;
     private int ram;
@@ -197,92 +202,62 @@ public class GestionBean implements Serializable {
         try {
             switch (tipoArticuloNuevo) {
                 case "Celular": {
-                    CelularDTO dto = new CelularDTO();
-                    dto.setMarca(marca);
-                    dto.setRam(ram);
-                    dto.setAlmacenamiento(almacenamiento);
-                    dto.setProcesador(procesador);
-                    dto.setResolucionCamra(resolucionCamra);
+                    CelularDTO dto = new CelularDTO(nombre, 0, descripcion, precio, imagen, marca, ram, almacenamiento, procesador, resolucionCamra);
                     new CelularService().add(dto);
                     break;
                 }
                 case "Computador": {
-                    ComputadorDTO dto = new ComputadorDTO();
-                    dto.setMarca(marca);
-                    dto.setRam(ram);
-                    dto.setAlmacenamiento(almacenamiento);
-                    dto.setProcesador(procesador);
-                    dto.setTipo(tipo);
-                    dto.setTieneTargetaGrafica(tieneTargetaGrafica != null ? tieneTargetaGrafica : false);
+                    ComputadorDTO dto = new ComputadorDTO(nombre, 0, descripcion, precio, imagen, marca, ram, almacenamiento, procesador, tipo, tieneTargetaGrafica != null ? tieneTargetaGrafica : false);
                     new ComputadorService().add(dto);
                     break;
                 }
                 case "FiguraColeccionable": {
-                    FiguraColeccionableDTO dto = new FiguraColeccionableDTO();
-                    dto.setTipoDeFigura(tipoDeFigura);
-                    dto.setValorEnMercado(valorEnMercado);
+                    FiguraColeccionableDTO dto = new FiguraColeccionableDTO(nombre, 0, descripcion, precio, imagen, "tamano", "material", tipoDeFigura, valorEnMercado);
                     new FiguraColeccionableService().add(dto);
                     break;
                 }
                 case "JuegoDeMesa": {
-                    JuegoDeMesaDTO dto = new JuegoDeMesaDTO();
-                    dto.setNumeroJugadore(numeroJugadore);
-                    dto.setTipoDeJuego(tipoDeJuego);
+                    JuegoDeMesaDTO dto = new JuegoDeMesaDTO(nombre, 0, descripcion, precio, imagen, "tamano", "material", numeroJugadore, tipoDeJuego);
                     new JuegoDeMesaService().add(dto);
                     break;
                 }
                 case "MaquillajeCapilar": {
-                    MaquillajeCapilarDTO dto = new MaquillajeCapilarDTO();
-                    dto.setResistenciaAgua(resistenciaAgua != null ? resistenciaAgua : false);
-                    dto.setDuracionHora(duracionHora);
+                    MaquillajeCapilarDTO dto = new MaquillajeCapilarDTO(nombre, 0, descripcion, precio, imagen, "color", 0.0f, resistenciaAgua != null ? resistenciaAgua : false, duracionHora);
                     new MaquillajeCapilarService().add(dto);
                     break;
                 }
                 case "MaquillajeDePiel": {
-                    MaquillajeDePielDTO dto = new MaquillajeDePielDTO();
-                    dto.setTipo(tipoMaquillaje);
-                    dto.setEsEcoamigable(esEcoamigable != null ? esEcoamigable : false);
+                    MaquillajeDePielDTO dto = new MaquillajeDePielDTO(nombre, 0, descripcion, precio, imagen, "color", 0.0f, tipoMaquillaje, esEcoamigable != null ? esEcoamigable : false);
                     new MaquillajeDePielService().add(dto);
                     break;
                 }
                 case "PelucheAnimal": {
-                    PelucheAnimalDTO dto = new PelucheAnimalDTO();
-                    dto.setEspecie(especie);
-                    dto.setSonidoIncluido(sonidoIncluido != null ? sonidoIncluido : false);
-                    dto.setColor(colorPelucheAnimal);
+                    PelucheAnimalDTO dto = new PelucheAnimalDTO(nombre, 0, descripcion, precio, imagen, "tamano", colorPelucheAnimal, "material", especie, sonidoIncluido != null ? sonidoIncluido : false);
                     new PelucheAnimalService().add(dto);
                     break;
                 }
                 case "PeluchePersonaje": {
-                    PeluchePersonajeDTO dto = new PeluchePersonajeDTO();
-                    dto.setPersonaje(personaje);
-                    dto.setColor(colorPeluchePersonaje);
+                    PeluchePersonajeDTO dto = new PeluchePersonajeDTO(nombre, 0, descripcion, precio, imagen, "tamano", "color", "material", personaje);
                     new PeluchePersonajeService().add(dto);
                     break;
                 }
                 case "RopaHombre": {
-                    RopaHombreDTO dto = new RopaHombreDTO();
-                    dto.setCorte(corte);
+                    RopaHombreDTO dto = new RopaHombreDTO(nombre, 0, descripcion, precio, imagen, "tipoPrenda", "talla", "material", corte);
                     new RopaHombreService().add(dto);
                     break;
                 }
                 case "RopaMujer": {
-                    RopaMujerDTO dto = new RopaMujerDTO();
-                    dto.setLargoPrenda(largoPrenda);
+                    RopaMujerDTO dto = new RopaMujerDTO(nombre, 0, descripcion, precio, imagen, "tipoPrenda", "talla", "material", largoPrenda);
                     new RopaMujerService().add(dto);
                     break;
                 }
                 case "UtilElectronico": {
-                    UtilElectronicoDTO dto = new UtilElectronicoDTO();
-                    dto.setTipoDispositivo(tipoDispositivo);
-                    dto.setBateriaIncluida(bateriaIncluida != null ? bateriaIncluida : false);
+                    UtilElectronicoDTO dto = new UtilElectronicoDTO(nombre, 0, descripcion, precio, imagen, "tipo", "tamano", "forma", tipoDispositivo, bateriaIncluida != null ? bateriaIncluida : false);
                     new UtilElectronicoService().add(dto);
                     break;
                 }
                 case "UtilEscolar": {
-                    UtilEscolarDTO dto = new UtilEscolarDTO();
-                    dto.setColor(colorUtilEscolar);
-                    dto.setEdadRecomendada(edadRecomendada);
+                    UtilEscolarDTO dto = new UtilEscolarDTO(nombre, 0, descripcion, precio, imagen, "tipo", "tamano", "forma", colorUtilEscolar, edadRecomendada);
                     new UtilEscolarService().add(dto);
                     break;
                 }
@@ -349,323 +324,257 @@ public class GestionBean implements Serializable {
                 new FacesMessage("Artículo eliminado correctamente"));
     }
 
-    // Celular y Computador
-    public String getMarca() {
-        if (articuloNuevo instanceof DispositivosElectronico) {
-            return ((DispositivosElectronico) articuloNuevo).getMarca();
-        }
-        return null;
-    }
-    public void setMarca(String marca) {
-        if (articuloNuevo instanceof DispositivosElectronico) {
-            ((DispositivosElectronico) articuloNuevo).setMarca(marca);
-        }
-    }
-    public Integer getRam() {
-        if (articuloNuevo instanceof DispositivosElectronico) {
-            return ((DispositivosElectronico) articuloNuevo).getRam();
-        }
-        return null;
-    }
-    public void setRam(Integer ram) {
-        if (articuloNuevo instanceof DispositivosElectronico) {
-            ((DispositivosElectronico) articuloNuevo).setRam(ram);
-        }
-    }
-    public Integer getAlmacenamiento() {
-        if (articuloNuevo instanceof DispositivosElectronico) {
-            return ((DispositivosElectronico) articuloNuevo).getAlmacenamiento();
-        }
-        return null;
-    }
-    public void setAlmacenamiento(Integer almacenamiento) {
-        if (articuloNuevo instanceof DispositivosElectronico) {
-            ((DispositivosElectronico) articuloNuevo).setAlmacenamiento(almacenamiento);
-        }
-    }
-    public String getProcesador() {
-        if (articuloNuevo instanceof Celular) {
-            return ((Celular) articuloNuevo).getProcesador();
-        }
-        if (articuloNuevo instanceof Computador) {
-            return ((Computador) articuloNuevo).getProcesador();
-        }
-        return null;
-    }
-    public void setProcesador(String procesador) {
-        if (articuloNuevo instanceof Celular) {
-            ((Celular) articuloNuevo).setProcesador(procesador);
-        }
-        if (articuloNuevo instanceof Computador) {
-            ((Computador) articuloNuevo).setProcesador(procesador);
-        }
-    }
-    public Integer getResolucionCamra() {
-        if (articuloNuevo instanceof Celular) {
-            return ((Celular) articuloNuevo).getResolucionCamra();
-        }
-        return null;
-    }
-    public void setResolucionCamra(Integer resolucionCamra) {
-        if (articuloNuevo instanceof Celular) {
-            ((Celular) articuloNuevo).setResolucionCamra(resolucionCamra);
-        }
-    }
-    public String getTipo() {
-        if (articuloNuevo instanceof Computador) {
-            return ((Computador) articuloNuevo).getTipo();
-        }
-        if (articuloNuevo instanceof UtilElectronico) {
-            return ((UtilElectronico) articuloNuevo).getTipo();
-        }
-        if (articuloNuevo instanceof UtilEscolar) {
-            return ((UtilEscolar) articuloNuevo).getTipo();
-        }
-        return null;
-    }
-    public void setTipo(String tipo) {
-        if (articuloNuevo instanceof Computador) {
-            ((Computador) articuloNuevo).setTipo(tipo);
-        }
-        if (articuloNuevo instanceof UtilElectronico) {
-            ((UtilElectronico) articuloNuevo).setTipo(tipo);
-        }
-        if (articuloNuevo instanceof UtilEscolar) {
-            ((UtilEscolar) articuloNuevo).setTipo(tipo);
-        }
-    }
-    public Boolean getTieneTargetaGrafica() {
-        if (articuloNuevo instanceof Computador) {
-            return ((Computador) articuloNuevo).isTieneTargetaGrafica();
-        }
-        return null;
-    }
-    public void setTieneTargetaGrafica(Boolean tieneTargetaGrafica) {
-        if (articuloNuevo instanceof Computador) {
-            ((Computador) articuloNuevo).setTieneTargetaGrafica(tieneTargetaGrafica);
-        }
-    }
+	public Object getArticuloNuevo() {
+		return articuloNuevo;
+	}
 
-    // FiguraColeccionable
-    public String getTipoDeFigura() {
-        if (articuloNuevo instanceof FiguraColeccionable) {
-            return ((FiguraColeccionable) articuloNuevo).getTipoDeFigura();
-        }
-        return null;
-    }
-    public void setTipoDeFigura(String tipoDeFigura) {
-        if (articuloNuevo instanceof FiguraColeccionable) {
-            ((FiguraColeccionable) articuloNuevo).setTipoDeFigura(tipoDeFigura);
-        }
-    }
-    public Float getValorEnMercado() {
-        if (articuloNuevo instanceof FiguraColeccionable) {
-            return ((FiguraColeccionable) articuloNuevo).getValorEnMercado();
-        }
-        return null;
-    }
-    public void setValorEnMercado(Float valorEnMercado) {
-        if (articuloNuevo instanceof FiguraColeccionable) {
-            ((FiguraColeccionable) articuloNuevo).setValorEnMercado(valorEnMercado);
-        }
-    }
+	public void setArticuloNuevo(Object articuloNuevo) {
+		this.articuloNuevo = articuloNuevo;
+	}
 
-    // JuegoDeMesa
-    public Integer getNumeroJugadore() {
-        if (articuloNuevo instanceof JuegoDeMesa) {
-            return ((JuegoDeMesa) articuloNuevo).getNumeroJugadore();
-        }
-        return null;
-    }
-    public void setNumeroJugadore(Integer numeroJugadore) {
-        if (articuloNuevo instanceof JuegoDeMesa) {
-            ((JuegoDeMesa) articuloNuevo).setNumeroJugadore(numeroJugadore);
-        }
-    }
-    public String getTipoDeJuego() {
-        if (articuloNuevo instanceof JuegoDeMesa) {
-            return ((JuegoDeMesa) articuloNuevo).getTipoDeJuego();
-        }
-        return null;
-    }
-    public void setTipoDeJuego(String tipoDeJuego) {
-        if (articuloNuevo instanceof JuegoDeMesa) {
-            ((JuegoDeMesa) articuloNuevo).setTipoDeJuego(tipoDeJuego);
-        }
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    // MaquillajeCapilar
-    public Boolean getResistenciaAgua() {
-        if (articuloNuevo instanceof MaquillajeCapilar) {
-            return ((MaquillajeCapilar) articuloNuevo).isResistenciaAgua();
-        }
-        return null;
-    }
-    public void setResistenciaAgua(Boolean resistenciaAgua) {
-        if (articuloNuevo instanceof MaquillajeCapilar) {
-            ((MaquillajeCapilar) articuloNuevo).setResistenciaAgua(resistenciaAgua);
-        }
-    }
-    public Integer getDuracionHora() {
-        if (articuloNuevo instanceof MaquillajeCapilar) {
-            return ((MaquillajeCapilar) articuloNuevo).getDuracionHora();
-        }
-        return null;
-    }
-    public void setDuracionHora(Integer duracionHora) {
-        if (articuloNuevo instanceof MaquillajeCapilar) {
-            ((MaquillajeCapilar) articuloNuevo).setDuracionHora(duracionHora);
-        }
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    // MaquillajeDePiel
-    public Integer getTipoMaquillaje() {
-        if (articuloNuevo instanceof MaquillajeDePiel) {
-            return ((MaquillajeDePiel) articuloNuevo).getTipo();
-        }
-        return null;
-    }
-    public void setTipoMaquillaje(Integer tipo) {
-        if (articuloNuevo instanceof MaquillajeDePiel) {
-            ((MaquillajeDePiel) articuloNuevo).setTipo(tipo);
-        }
-    }
-    public Boolean getEsEcoamigable() {
-        if (articuloNuevo instanceof MaquillajeDePiel) {
-            return ((MaquillajeDePiel) articuloNuevo).isEsEcoamigable();
-        }
-        return null;
-    }
-    public void setEsEcoamigable(Boolean esEcoamigable) {
-        if (articuloNuevo instanceof MaquillajeDePiel) {
-            ((MaquillajeDePiel) articuloNuevo).setEsEcoamigable(esEcoamigable);
-        }
-    }
+	public String getDescripcion() {
+		return descripcion;
+	}
 
-    // PelucheAnimal
-    public String getEspecie() {
-        if (articuloNuevo instanceof PelucheAnimal) {
-            return ((PelucheAnimal) articuloNuevo).getEspecie();
-        }
-        return null;
-    }
-    public void setEspecie(String especie) {
-        if (articuloNuevo instanceof PelucheAnimal) {
-            ((PelucheAnimal) articuloNuevo).setEspecie(especie);
-        }
-    }
-    public Boolean getSonidoIncluido() {
-        if (articuloNuevo instanceof PelucheAnimal) {
-            return ((PelucheAnimal) articuloNuevo).isSonidoIncluido();
-        }
-        return null;
-    }
-    public void setSonidoIncluido(Boolean sonidoIncluido) {
-        if (articuloNuevo instanceof PelucheAnimal) {
-            ((PelucheAnimal) articuloNuevo).setSonidoIncluido(sonidoIncluido);
-        }
-    }
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
-    // PeluchePersonaje
-    public String getPersonaje() {
-        if (articuloNuevo instanceof PeluchePersonaje) {
-            return ((PeluchePersonaje) articuloNuevo).getPersonaje();
-        }
-        return null;
-    }
-    public void setPersonaje(String personaje) {
-        if (articuloNuevo instanceof PeluchePersonaje) {
-            ((PeluchePersonaje) articuloNuevo).setPersonaje(personaje);
-        }
-    }
+	public int getPrecio() {
+		return precio;
+	}
 
-    // RopaHombre
-    public String getCorte() {
-        if (articuloNuevo instanceof RopaHombre) {
-            return ((RopaHombre) articuloNuevo).getCorte();
-        }
-        return null;
-    }
-    public void setCorte(String corte) {
-        if (articuloNuevo instanceof RopaHombre) {
-            ((RopaHombre) articuloNuevo).setCorte(corte);
-        }
-    }
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
 
-    // RopaMujer
-    public String getLargoPrenda() {
-        if (articuloNuevo instanceof RopaMujer) {
-            return ((RopaMujer) articuloNuevo).getLargoPrenda();
-        }
-        return null;
-    }
-    public void setLargoPrenda(String largoPrenda) {
-        if (articuloNuevo instanceof RopaMujer) {
-            ((RopaMujer) articuloNuevo).setLargoPrenda(largoPrenda);
-        }
-    }
+	public String getImagen() {
+		return imagen;
+	}
 
-    // UtilElectronico
-    public String getTipoDispositivo() {
-        if (articuloNuevo instanceof UtilElectronico) {
-            return ((UtilElectronico) articuloNuevo).getTipoDispositivo();
-        }
-        return null;
-    }
-    public void setTipoDispositivo(String tipoDispositivo) {
-        if (articuloNuevo instanceof UtilElectronico) {
-            ((UtilElectronico) articuloNuevo).setTipoDispositivo(tipoDispositivo);
-        }
-    }
-    public Boolean getBateriaIncluida() {
-        if (articuloNuevo instanceof UtilElectronico) {
-            return ((UtilElectronico) articuloNuevo).isBateriaIncluida();
-        }
-        return null;
-    }
-    public void setBateriaIncluida(Boolean bateriaIncluida) {
-        if (articuloNuevo instanceof UtilElectronico) {
-            ((UtilElectronico) articuloNuevo).setBateriaIncluida(bateriaIncluida);
-        }
-    }
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 
-    // UtilEscolar
-    public String getColor() {
-        if (articuloNuevo instanceof UtilEscolar) {
-            return ((UtilEscolar) articuloNuevo).getColor();
-        }
-        if (articuloNuevo instanceof PelucheAnimal) {
-            return ((PelucheAnimal) articuloNuevo).getColor();
-        }
-        if (articuloNuevo instanceof PeluchePersonaje) {
-            return ((PeluchePersonaje) articuloNuevo).getColor();
-        }
-        return null;
-    }
-    public void setColor(String color) {
-        if (articuloNuevo instanceof UtilEscolar) {
-            ((UtilEscolar) articuloNuevo).setColor(color);
-        }
-        if (articuloNuevo instanceof PelucheAnimal) {
-            ((PelucheAnimal) articuloNuevo).setColor(color);
-        }
-        if (articuloNuevo instanceof PeluchePersonaje) {
-            ((PeluchePersonaje) articuloNuevo).setColor(color);
-        }
-    }
-    public Integer getEdadRecomendada() {
-        if (articuloNuevo instanceof UtilEscolar) {
-            return ((UtilEscolar) articuloNuevo).getEdadRecomendada();
-        }
-        return null;
-    }
-    public void setEdadRecomendada(Integer edadRecomendada) {
-        if (articuloNuevo instanceof UtilEscolar) {
-            ((UtilEscolar) articuloNuevo).setEdadRecomendada(edadRecomendada);
-        }
-    }
+	public String getMarca() {
+		return marca;
+	}
 
-    public Object getArticuloNuevo() {
-        return articuloNuevo;
-    }
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public int getRam() {
+		return ram;
+	}
+
+	public void setRam(int ram) {
+		this.ram = ram;
+	}
+
+	public int getAlmacenamiento() {
+		return almacenamiento;
+	}
+
+	public void setAlmacenamiento(int almacenamiento) {
+		this.almacenamiento = almacenamiento;
+	}
+
+	public String getProcesador() {
+		return procesador;
+	}
+
+	public void setProcesador(String procesador) {
+		this.procesador = procesador;
+	}
+
+	public int getResolucionCamra() {
+		return resolucionCamra;
+	}
+
+	public void setResolucionCamra(int resolucionCamra) {
+		this.resolucionCamra = resolucionCamra;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public Boolean getTieneTargetaGrafica() {
+		return tieneTargetaGrafica;
+	}
+
+	public void setTieneTargetaGrafica(Boolean tieneTargetaGrafica) {
+		this.tieneTargetaGrafica = tieneTargetaGrafica;
+	}
+
+	public String getTipoDeFigura() {
+		return tipoDeFigura;
+	}
+
+	public void setTipoDeFigura(String tipoDeFigura) {
+		this.tipoDeFigura = tipoDeFigura;
+	}
+
+	public Float getValorEnMercado() {
+		return valorEnMercado;
+	}
+
+	public void setValorEnMercado(Float valorEnMercado) {
+		this.valorEnMercado = valorEnMercado;
+	}
+
+	public int getNumeroJugadore() {
+		return numeroJugadore;
+	}
+
+	public void setNumeroJugadore(int numeroJugadore) {
+		this.numeroJugadore = numeroJugadore;
+	}
+
+	public String getTipoDeJuego() {
+		return tipoDeJuego;
+	}
+
+	public void setTipoDeJuego(String tipoDeJuego) {
+		this.tipoDeJuego = tipoDeJuego;
+	}
+
+	public Boolean getResistenciaAgua() {
+		return resistenciaAgua;
+	}
+
+	public void setResistenciaAgua(Boolean resistenciaAgua) {
+		this.resistenciaAgua = resistenciaAgua;
+	}
+
+	public int getDuracionHora() {
+		return duracionHora;
+	}
+
+	public void setDuracionHora(int duracionHora) {
+		this.duracionHora = duracionHora;
+	}
+
+	public int getTipoMaquillaje() {
+		return tipoMaquillaje;
+	}
+
+	public void setTipoMaquillaje(int tipoMaquillaje) {
+		this.tipoMaquillaje = tipoMaquillaje;
+	}
+
+	public Boolean getEsEcoamigable() {
+		return esEcoamigable;
+	}
+
+	public void setEsEcoamigable(Boolean esEcoamigable) {
+		this.esEcoamigable = esEcoamigable;
+	}
+
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
+	}
+
+	public Boolean getSonidoIncluido() {
+		return sonidoIncluido;
+	}
+
+	public void setSonidoIncluido(Boolean sonidoIncluido) {
+		this.sonidoIncluido = sonidoIncluido;
+	}
+
+	public String getColorPelucheAnimal() {
+		return colorPelucheAnimal;
+	}
+
+	public void setColorPelucheAnimal(String colorPelucheAnimal) {
+		this.colorPelucheAnimal = colorPelucheAnimal;
+	}
+
+	public String getPersonaje() {
+		return personaje;
+	}
+
+	public void setPersonaje(String personaje) {
+		this.personaje = personaje;
+	}
+
+	public String getColorPeluchePersonaje() {
+		return colorPeluchePersonaje;
+	}
+
+	public void setColorPeluchePersonaje(String colorPeluchePersonaje) {
+		this.colorPeluchePersonaje = colorPeluchePersonaje;
+	}
+
+	public String getCorte() {
+		return corte;
+	}
+
+	public void setCorte(String corte) {
+		this.corte = corte;
+	}
+
+	public String getLargoPrenda() {
+		return largoPrenda;
+	}
+
+	public void setLargoPrenda(String largoPrenda) {
+		this.largoPrenda = largoPrenda;
+	}
+
+	public String getTipoDispositivo() {
+		return tipoDispositivo;
+	}
+
+	public void setTipoDispositivo(String tipoDispositivo) {
+		this.tipoDispositivo = tipoDispositivo;
+	}
+
+	public Boolean getBateriaIncluida() {
+		return bateriaIncluida;
+	}
+
+	public void setBateriaIncluida(Boolean bateriaIncluida) {
+		this.bateriaIncluida = bateriaIncluida;
+	}
+
+	public String getColorUtilEscolar() {
+		return colorUtilEscolar;
+	}
+
+	public void setColorUtilEscolar(String colorUtilEscolar) {
+		this.colorUtilEscolar = colorUtilEscolar;
+	}
+
+	public int getEdadRecomendada() {
+		return edadRecomendada;
+	}
+
+	public void setEdadRecomendada(int edadRecomendada) {
+		this.edadRecomendada = edadRecomendada;
+	}
+
+	public void setTodosArticulos(List<Articulo> todosArticulos) {
+		this.todosArticulos = todosArticulos;
+	}
+    
+    
 }
