@@ -76,14 +76,14 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Transforma una lista de entidades {@link Celular} en una lista de
+	 * {@link CelularDTO}.
+	 *
+	 * @param entityList lista de entidades no nula
+	 * @return nueva lista con DTOs; puede ser vacía
+	 */
 	public static ArrayList<CelularDTO> listaCelularToListaCelularDTO(ArrayList<Celular> entityList) {
-		/**
-		 * Transforma una lista de entidades {@link Celular} en una lista de
-		 * {@link CelularDTO}.
-		 *
-		 * @param entityList lista de entidades no nula
-		 * @return nueva lista con DTOs; puede ser vacía
-		 */
 		ArrayList<CelularDTO> dtoList = new ArrayList<>();
 		for (Celular m : entityList) {
 			dtoList.add(new CelularDTO(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(), m.getImagen(),
@@ -92,14 +92,14 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Transforma una lista de {@link CelularDTO} en una lista de entidades
+	 * {@link Celular}.
+	 *
+	 * @param dtoList lista de DTOs no nula
+	 * @return nueva lista con entidades; puede ser vacía
+	 */
 	public static ArrayList<Celular> listaCelularDTOToListaCelular(ArrayList<CelularDTO> dtoList) {
-		/**
-		 * Transforma una lista de {@link CelularDTO} en una lista de entidades
-		 * {@link Celular}.
-		 *
-		 * @param dtoList lista de DTOs no nula
-		 * @return nueva lista con entidades; puede ser vacía
-		 */
 		ArrayList<Celular> entityList = new ArrayList<>();
 		for (CelularDTO m : dtoList) {
 			entityList.add(new Celular(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(), m.getImagen(),
@@ -136,12 +136,12 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Transforma una lista de {@link Computador} en {@link ComputadorDTO}.
+	 * @param entityList lista no nula de entidades
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<ComputadorDTO> listaComputadorToListaComputadorDTO(ArrayList<Computador> entityList) {
-		/**
-		 * Transforma una lista de {@link Computador} en {@link ComputadorDTO}.
-		 * @param entityList lista no nula de entidades
-		 * @return lista de DTOs
-		 */
 		ArrayList<ComputadorDTO> dtoList = new ArrayList<>();
 		for (Computador m : entityList) {
 			dtoList.add(new ComputadorDTO(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(), m.getImagen(),
@@ -151,12 +151,12 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Transforma una lista de {@link ComputadorDTO} en {@link Computador}.
+	 * @param dtoList lista no nula de DTOs
+	 * @return lista de entidades
+	 */
 	public static ArrayList<Computador> listaComputadorDTOToListaComputador(ArrayList<ComputadorDTO> dtoList) {
-		/**
-		 * Transforma una lista de {@link ComputadorDTO} en {@link Computador}.
-		 * @param dtoList lista no nula de DTOs
-		 * @return lista de entidades
-		 */
 		ArrayList<Computador> entityList = new ArrayList<>();
 		for (ComputadorDTO m : dtoList) {
 			entityList.add(new Computador(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(), m.getImagen(),
@@ -191,14 +191,14 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de entidades {@link FiguraColeccionable} a
+	 * {@link FiguraColeccionableDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<FiguraColeccionableDTO> listaFiguraColeccionableToListaFiguraColeccionableDTO(
 			ArrayList<FiguraColeccionable> entityList) {
-		/**
-		 * Convierte una lista de entidades {@link FiguraColeccionable} a
-		 * {@link FiguraColeccionableDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<FiguraColeccionableDTO> dtoList = new ArrayList<>();
 		for (FiguraColeccionable m : entityList) {
 			dtoList.add(new FiguraColeccionableDTO(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(),
@@ -207,14 +207,14 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link FiguraColeccionableDTO} a entidades
+	 * {@link FiguraColeccionable}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<FiguraColeccionable> listaFiguraColeccionableDTOToListaFiguraColeccionable(
 			ArrayList<FiguraColeccionableDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link FiguraColeccionableDTO} a entidades
-		 * {@link FiguraColeccionable}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<FiguraColeccionable> entityList = new ArrayList<>();
 		for (FiguraColeccionableDTO m : dtoList) {
 			entityList.add(new FiguraColeccionable(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(),
@@ -248,12 +248,12 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link JuegoDeMesa} a {@link JuegoDeMesaDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<JuegoDeMesaDTO> listaJuegoDeMesaToListaJuegoDeMesaDTO(ArrayList<JuegoDeMesa> entityList) {
-		/**
-		 * Convierte una lista de {@link JuegoDeMesa} a {@link JuegoDeMesaDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<JuegoDeMesaDTO> dtoList = new ArrayList<>();
 		for (JuegoDeMesa m : entityList) {
 			dtoList.add(new JuegoDeMesaDTO(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(), m.getImagen(),
@@ -262,12 +262,12 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link JuegoDeMesaDTO} a entidades {@link JuegoDeMesa}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<JuegoDeMesa> listaJuegoDeMesaDTOToListaJuegoDeMesa(ArrayList<JuegoDeMesaDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link JuegoDeMesaDTO} a entidades {@link JuegoDeMesa}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<JuegoDeMesa> entityList = new ArrayList<>();
 		for (JuegoDeMesaDTO m : dtoList) {
 			entityList.add(new JuegoDeMesa(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(), m.getImagen(),
@@ -302,13 +302,13 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link MaquillajeCapilar} a {@link MaquillajeCapilarDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<MaquillajeCapilarDTO> listaMaquillajeCapilarToListaMaquillajeCapilarDTO(
 			ArrayList<MaquillajeCapilar> entityList) {
-		/**
-		 * Convierte una lista de {@link MaquillajeCapilar} a {@link MaquillajeCapilarDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<MaquillajeCapilarDTO> dtoList = new ArrayList<>();
 		for (MaquillajeCapilar m : entityList) {
 			dtoList.add(new MaquillajeCapilarDTO(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(),
@@ -317,14 +317,14 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link MaquillajeCapilarDTO} a entidades
+	 * {@link MaquillajeCapilar}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<MaquillajeCapilar> listaMaquillajeCapilarDTOToListaMaquillajeCapilar(
 			ArrayList<MaquillajeCapilarDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link MaquillajeCapilarDTO} a entidades
-		 * {@link MaquillajeCapilar}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<MaquillajeCapilar> entityList = new ArrayList<>();
 		for (MaquillajeCapilarDTO m : dtoList) {
 			entityList.add(new MaquillajeCapilar(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(),
@@ -358,13 +358,13 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link MaquillajeDePiel} a {@link MaquillajeDePielDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<MaquillajeDePielDTO> listaMaquillajeDePielToListaMaquillajeDePielDTO(
 			ArrayList<MaquillajeDePiel> entityList) {
-		/**
-		 * Convierte una lista de {@link MaquillajeDePiel} a {@link MaquillajeDePielDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<MaquillajeDePielDTO> dtoList = new ArrayList<>();
 		for (MaquillajeDePiel m : entityList) {
 			dtoList.add(new MaquillajeDePielDTO(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(),
@@ -373,14 +373,14 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link MaquillajeDePielDTO} a entidades
+	 * {@link MaquillajeDePiel}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<MaquillajeDePiel> listaMaquillajeDePielDTOToListaMaquillajeDePiel(
 			ArrayList<MaquillajeDePielDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link MaquillajeDePielDTO} a entidades
-		 * {@link MaquillajeDePiel}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<MaquillajeDePiel> entityList = new ArrayList<>();
 		for (MaquillajeDePielDTO m : dtoList) {
 			entityList.add(new MaquillajeDePiel(m.getNombre(), m.getId(), m.getDescripcion(), m.getPrecio(),
@@ -414,13 +414,13 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link PelucheAnimal} a {@link PelucheAnimalDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<PelucheAnimalDTO> listaPelucheAnimalToListaPelucheAnimalDTO(
 			ArrayList<PelucheAnimal> entityList) {
-		/**
-		 * Convierte una lista de {@link PelucheAnimal} a {@link PelucheAnimalDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<PelucheAnimalDTO> dtoList = new ArrayList<>();
 		for (PelucheAnimal p : entityList) {
 			dtoList.add(new PelucheAnimalDTO(p.getNombre(), p.getId(), p.getDescripcion(), p.getPrecio(), p.getImagen(),
@@ -429,13 +429,13 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link PelucheAnimalDTO} a entidades {@link PelucheAnimal}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<PelucheAnimal> listaPelucheAnimalDTOToListaPelucheAnimal(
 			ArrayList<PelucheAnimalDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link PelucheAnimalDTO} a entidades {@link PelucheAnimal}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<PelucheAnimal> entityList = new ArrayList<>();
 		for (PelucheAnimalDTO p : dtoList) {
 			entityList.add(new PelucheAnimal(p.getNombre(), p.getId(), p.getDescripcion(), p.getPrecio(), p.getImagen(),
@@ -468,13 +468,13 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link PeluchePersonaje} a {@link PeluchePersonajeDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<PeluchePersonajeDTO> listaPeluchePersonajeToListaPeluchePersonajeDTO(
 			ArrayList<PeluchePersonaje> entityList) {
-		/**
-		 * Convierte una lista de {@link PeluchePersonaje} a {@link PeluchePersonajeDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<PeluchePersonajeDTO> dtoList = new ArrayList<>();
 		for (PeluchePersonaje p : entityList) {
 			dtoList.add(new PeluchePersonajeDTO(p.getNombre(), p.getId(), p.getDescripcion(), p.getPrecio(),
@@ -483,14 +483,14 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link PeluchePersonajeDTO} a entidades
+	 * {@link PeluchePersonaje}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<PeluchePersonaje> listaPeluchePersonajeDTOToListaPeluchePersonaje(
 			ArrayList<PeluchePersonajeDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link PeluchePersonajeDTO} a entidades
-		 * {@link PeluchePersonaje}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<PeluchePersonaje> entityList = new ArrayList<>();
 		for (PeluchePersonajeDTO p : dtoList) {
 			entityList.add(new PeluchePersonaje(p.getNombre(), p.getId(), p.getDescripcion(), p.getPrecio(),
@@ -523,12 +523,12 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link RopaHombre} a {@link RopaHombreDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<RopaHombreDTO> listaRopaHombreToListaRopaHombreDTO(ArrayList<RopaHombre> entityList) {
-		/**
-		 * Convierte una lista de {@link RopaHombre} a {@link RopaHombreDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<RopaHombreDTO> dtoList = new ArrayList<>();
 		for (RopaHombre r : entityList) {
 			dtoList.add(new RopaHombreDTO(r.getNombre(), r.getId(), r.getDescripcion(), r.getPrecio(), r.getImagen(),
@@ -537,12 +537,12 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link RopaHombreDTO} a entidades {@link RopaHombre}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<RopaHombre> listaRopaHombreDTOToListaRopaHombre(ArrayList<RopaHombreDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link RopaHombreDTO} a entidades {@link RopaHombre}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<RopaHombre> entityList = new ArrayList<>();
 		for (RopaHombreDTO r : dtoList) {
 			entityList.add(new RopaHombre(r.getNombre(), r.getId(), r.getDescripcion(), r.getPrecio(), r.getImagen(),
@@ -576,12 +576,12 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link RopaMujer} a {@link RopaMujerDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<RopaMujerDTO> listaRopaMujerToListaRopaMujerDTO(ArrayList<RopaMujer> entityList) {
-		/**
-		 * Convierte una lista de {@link RopaMujer} a {@link RopaMujerDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<RopaMujerDTO> dtoList = new ArrayList<>();
 		for (RopaMujer r : entityList) {
 			dtoList.add(new RopaMujerDTO(r.getNombre(), r.getId(), r.getDescripcion(), r.getPrecio(), r.getImagen(),
@@ -590,12 +590,12 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link RopaMujerDTO} a entidades {@link RopaMujer}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<RopaMujer> listaRopaMujerDTOToListaRopaMujer(ArrayList<RopaMujerDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link RopaMujerDTO} a entidades {@link RopaMujer}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<RopaMujer> entityList = new ArrayList<>();
 		for (RopaMujerDTO r : dtoList) {
 			entityList.add(new RopaMujer(r.getNombre(), r.getId(), r.getDescripcion(), r.getPrecio(), r.getImagen(),
@@ -628,12 +628,12 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link Usuario} a {@link UsuarioDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<UsuarioDTO> listaUsuarioToListaUsuarioDTO(ArrayList<Usuario> entityList) {
-		/**
-		 * Convierte una lista de {@link Usuario} a {@link UsuarioDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<UsuarioDTO> dtoList = new ArrayList<>();
 		for (Usuario u : entityList) {
 			dtoList.add(new UsuarioDTO(u.getNombre(), u.getApellido(), u.getFechaDeNacimiento(), u.getNombreUsuario(),
@@ -642,12 +642,12 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link UsuarioDTO} a entidades {@link Usuario}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<Usuario> listaUsuarioDTOToListaUsuario(ArrayList<UsuarioDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link UsuarioDTO} a entidades {@link Usuario}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<Usuario> entityList = new ArrayList<>();
 		for (UsuarioDTO u : dtoList) {
 			entityList.add(new Usuario(u.getNombre(), u.getApellido(), u.getFechaDeNacimiento(), u.getNombreUsuario(),
@@ -682,13 +682,13 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link UtilElectronico} a {@link UtilElectronicoDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<UtilElectronicoDTO> listaUtilElectronicoToListaUtilElectronicoDTO(
 			ArrayList<UtilElectronico> entityList) {
-		/**
-		 * Convierte una lista de {@link UtilElectronico} a {@link UtilElectronicoDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<UtilElectronicoDTO> dtoList = new ArrayList<>();
 		for (UtilElectronico u : entityList) {
 			dtoList.add(
@@ -698,14 +698,14 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link UtilElectronicoDTO} a entidades
+	 * {@link UtilElectronico}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<UtilElectronico> listaUtilElectronicoDTOToListaUtilElectronico(
 			ArrayList<UtilElectronicoDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link UtilElectronicoDTO} a entidades
-		 * {@link UtilElectronico}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<UtilElectronico> entityList = new ArrayList<>();
 		for (UtilElectronicoDTO u : dtoList) {
 			entityList
@@ -740,12 +740,12 @@ public class DataMapper {
 		return dto;
 	}
 
+	/**
+	 * Convierte una lista de {@link UtilEscolar} a {@link UtilEscolarDTO}.
+	 * @param entityList lista no nula
+	 * @return lista de DTOs
+	 */
 	public static ArrayList<UtilEscolarDTO> listaUtilEscolarToListaUtilEscolarDTO(ArrayList<UtilEscolar> entityList) {
-		/**
-		 * Convierte una lista de {@link UtilEscolar} a {@link UtilEscolarDTO}.
-		 * @param entityList lista no nula
-		 * @return lista de DTOs
-		 */
 		ArrayList<UtilEscolarDTO> dtoList = new ArrayList<>();
 		for (UtilEscolar u : entityList) {
 			dtoList.add(new UtilEscolarDTO(u.getNombre(), u.getId(), u.getDescripcion(), u.getPrecio(), u.getImagen(),
@@ -754,12 +754,12 @@ public class DataMapper {
 		return dtoList;
 	}
 
+	/**
+	 * Convierte una lista de {@link UtilEscolarDTO} a entidades {@link UtilEscolar}.
+	 * @param dtoList lista no nula
+	 * @return lista de entidades
+	 */
 	public static ArrayList<UtilEscolar> listaUtilEscolarDTOToListaUtilEscolar(ArrayList<UtilEscolarDTO> dtoList) {
-		/**
-		 * Convierte una lista de {@link UtilEscolarDTO} a entidades {@link UtilEscolar}.
-		 * @param dtoList lista no nula
-		 * @return lista de entidades
-		 */
 		ArrayList<UtilEscolar> entityList = new ArrayList<>();
 		for (UtilEscolarDTO u : dtoList) {
 			entityList.add(new UtilEscolar(u.getNombre(), u.getId(), u.getDescripcion(), u.getPrecio(), u.getImagen(),
