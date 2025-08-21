@@ -1,3 +1,6 @@
+/**
+ * Paquete que contiene los servicios para la gestión de usuarios.
+ */
 package co.edu.unbosque.service;
 
 import java.util.ArrayList;
@@ -8,32 +11,56 @@ import co.edu.unbosque.model.ModelFacade;
 import co.edu.unbosque.model.UsuarioDTO;
 import co.edu.unbosque.util.mail.MailService;
 
+/**
+ * Servicio para operaciones sobre usuarios: registro, inicio de sesión, compras, etc.
+ */
 public class UsuarioService {
 
+	/** Servicio de correo para notificaciones y recibos de compra */
 	private MailService ms;
 
+	/**
+	 * Constructor por defecto.
+	 */
 	public UsuarioService() {
 	}
 
+	/**
+	 * Registra un nuevo usuario en la base de datos.
+	 * @param nuevo UsuarioDTO a registrar
+	 * @return true si el registro fue exitoso
+	 */
 	public boolean registrar(UsuarioDTO nuevo) {
 		return ModelFacade.usuarioDAO.add(nuevo);
 	}
 
+	/**
+	 * Inicia sesión con el usuario especificado.
+	 * @param usuario UsuarioDTO con credenciales
+	 * @return true si el inicio de sesión fue exitoso
+	 */
 	public boolean iniciarSesion(UsuarioDTO usuario) {
-		System.out.println("NotLoggedIn");
+		// NotLoggedIn
 		if (ModelFacade.usuarioDAO.encontrarUsuario(usuario.getNombre(), usuario.getContrasena()) != null) {
 			ModelFacade.usuarioActual = ModelFacade.usuarioDAO.encontrarUsuario(usuario.getNombre(),
 					usuario.getContrasena());
-			System.out.println("LoggedIn");
+			// LoggedIn
 			return true;
 		}
 		return false;
 	}
 
+	/**
+	 * Verifica si hay un usuario logueado actualmente.
+	 * @return true si hay usuario logueado
+	 */
 	public Boolean loggedIn() {
 		return (ModelFacade.usuarioActual != null);
 	}
 
+	/**
+	 * Realiza la compra actual, guarda el historial y envía el recibo por correo.
+	 */
 	public void realizarCompra() {
 		Carrito carritoHistorial = new Carrito();
 		carritoHistorial

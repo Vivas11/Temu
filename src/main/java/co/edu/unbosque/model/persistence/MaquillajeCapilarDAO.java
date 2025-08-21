@@ -40,16 +40,10 @@ public class MaquillajeCapilarDAO implements OperacionDAO<MaquillajeCapilarDTO, 
 
 	@Override
 	public boolean delete(MaquillajeCapilarDTO toDelete) {
-		// Buscar el objeto en la lista antes de eliminar
-		System.out.println("[DEBUG][DAO] Buscando MaquillajeCapilar para eliminar: " + toDelete);
 		MaquillajeCapilar found = find(DataMapper.maquillajeCapilarDTOToMaquillajeCapilar(toDelete));
 		if (found != null) {
-			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
-			boolean result = listaMaquillajeC.remove(found);
-			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
-			return result;
+			return listaMaquillajeC.remove(found);
 		} else {
-			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}

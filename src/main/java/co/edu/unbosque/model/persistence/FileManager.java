@@ -55,7 +55,7 @@ public class FileManager {
             if (!carpetaBase.exists() || !carpetaBase.isDirectory()) {
                 carpetaBase.mkdirs(); // crear carpeta si no existe
             }
-            System.out.println("Carpeta de datos: " + carpetaBase.getAbsolutePath());
+			// Carpeta de datos creada en: carpetaBase.getAbsolutePath()
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,7 +79,7 @@ public class FileManager {
 			oos.close();// cierra el ObjectOutputStream
 			fos.close();// cierra el FileOutputStream
 		} catch (IOException e) {
-			System.out.println("Problemas al abrir el archivo serealizado (escritura)");
+			// Problemas al abrir el archivo serializado (escritura)
 			e.printStackTrace();
 		}
 
@@ -117,11 +117,11 @@ public class FileManager {
 			ois.close();
 			fis.close();
 		} catch (IOException e) {
-			System.out.println("Error al leer el archivo serializado.");
+			// Error al leer el archivo serializado.
 			e.printStackTrace();
 
 		} catch (ClassNotFoundException e) {
-			System.out.println("Error en los datos del archivo serializado.");
+			// Error en los datos del archivo serializado.
 			e.printStackTrace();
 		}
 		/**

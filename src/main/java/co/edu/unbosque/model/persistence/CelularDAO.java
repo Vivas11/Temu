@@ -52,9 +52,7 @@ public class CelularDAO implements OperacionDAO<CelularDTO, Celular> {
 		Celular found = null;
 		if (!listaCelular.isEmpty()) {
 			for (Celular c : listaCelular) {
-				System.out.println("[DEBUG] Comparando Celular: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
 				if (c.getId() == toFind.getId()) {
-					System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
 					found = c;
 					return found;
 				} else {

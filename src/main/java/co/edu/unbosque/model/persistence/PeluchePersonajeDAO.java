@@ -1,34 +1,48 @@
+/**
+ * Paquete que contiene las clases de persistencia (DAO) del modelo de la aplicación Temu.
+ */
 package co.edu.unbosque.model.persistence;
 
 import java.util.ArrayList;
 
-
 import co.edu.unbosque.model.PeluchePersonaje;
 import co.edu.unbosque.model.PeluchePersonajeDTO;
 
+/**
+ * DAO para la entidad PeluchePersonaje. Gestiona operaciones CRUD en memoria
+ * y realiza el mapeo entre {@link PeluchePersonajeDTO} y {@link PeluchePersonaje} usando {@link DataMapper}.
+ */
 public class PeluchePersonajeDAO implements OperacionDAO<PeluchePersonajeDTO, PeluchePersonaje> {
+	/** Lista interna de peluches de personajes. */
 	private ArrayList<PeluchePersonaje> listaPeluchePersonaje;
 
-	// lOKA Juan diego
+	/** Constructor por defecto. Inicializa la lista interna. */
 	public PeluchePersonajeDAO() {
 		listaPeluchePersonaje = new ArrayList<>();
 	}
 
+	/**
+	 * Muestra en una cadena todos los peluches de personajes registrados.
+	 * @return Cadena con la representación de los objetos almacenados o un mensaje si no hay registros
+	 */
 	@Override
 	public String showAll() {
 		String rta = "";
 		if (listaPeluchePersonaje.isEmpty()) {
 			return "No hay pelcuhes de personajes aun  ";
 		} else {
-
 			for (PeluchePersonaje peluchePersonaje : listaPeluchePersonaje) {
 				rta += peluchePersonaje.toString();
 			}
-
 		}
 		return rta;
 	}
 
+	/**
+	 * Agrega un nuevo peluche de personaje si no existe otro con el mismo id.
+	 * @param newData DTO con la información a agregar
+	 * @return true si se agregó, false en caso contrario
+	 */
 	@Override
 	public boolean add(PeluchePersonajeDTO newData) {
 		if (find(DataMapper.peluchePersonajeDTOToPeluchePersonaje(newData)) == null) {
@@ -39,30 +53,32 @@ public class PeluchePersonajeDAO implements OperacionDAO<PeluchePersonajeDTO, Pe
 		}
 	}
 
+	/**
+	 * Elimina un peluche de personaje coincidente con el DTO proporcionado.
+	 * @param toDelete DTO del peluche a eliminar
+	 * @return true si se eliminó, false en caso contrario
+	 */
 	@Override
 	public boolean delete(PeluchePersonajeDTO toDelete) {
-		// Buscar el objeto en la lista antes de eliminar
-		System.out.println("[DEBUG][DAO] Buscando PeluchePersonaje para eliminar: " + toDelete);
 		PeluchePersonaje found = find(DataMapper.peluchePersonajeDTOToPeluchePersonaje(toDelete));
 		if (found != null) {
-			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
-			boolean result = listaPeluchePersonaje.remove(found);
-			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
-			return result;
+			return listaPeluchePersonaje.remove(found);
 		} else {
-			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}
 
+	/**
+	 * Busca un peluche de personaje por su identificador.
+	 * @param toFind Entidad con el id a buscar
+	 * @return La entidad encontrada o null si no existe
+	 */
 	@Override
 	public PeluchePersonaje find(PeluchePersonaje toFind) {
 		PeluchePersonaje found = null;
 		if (!listaPeluchePersonaje.isEmpty()) {
 			for (PeluchePersonaje c : listaPeluchePersonaje) {
-				System.out.println("[DEBUG] Comparando PeluchePersonaje: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
 				if (c.getId() == toFind.getId()) {
-					System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
 					found = c;
 					return found;
 				} else {
@@ -75,6 +91,12 @@ public class PeluchePersonajeDAO implements OperacionDAO<PeluchePersonajeDTO, Pe
 		return null;
 	}
 
+	/**
+	 * Actualiza los datos de un peluche de personaje, reemplazando el existente por uno nuevo.
+	 * @param previous DTO anterior (para localizar el registro)
+	 * @param newData DTO con los nuevos datos
+	 * @return true si se actualizó, false en caso contrario
+	 */
 	@Override
 	public boolean update(PeluchePersonajeDTO previous, PeluchePersonajeDTO newData) {
 		PeluchePersonaje found = find(DataMapper.peluchePersonajeDTOToPeluchePersonaje(previous));
@@ -87,15 +109,26 @@ public class PeluchePersonajeDAO implements OperacionDAO<PeluchePersonajeDTO, Pe
 		}
 	}
 
+	/**
+	 * Obtiene todos los peluches de personajes como DTO.
+	 * @return Lista de {@link PeluchePersonajeDTO}
+	 */
 	public ArrayList<PeluchePersonajeDTO> getAll() {
-
 		return DataMapper.listaPeluchePersonajeToListaPeluchePersonajeDTO(listaPeluchePersonaje);
 	}
 
+	/**
+	 * Obtiene la lista interna de entidades PeluchePersonaje.
+	 * @return lista de entidades
+	 */
 	public ArrayList<PeluchePersonaje> getListaPeluchePersonaje() {
 		return listaPeluchePersonaje;
 	}
 
+	/**
+	 * Establece la lista interna de entidades PeluchePersonaje.
+	 * @param listaPeluchePersonaje lista a establecer
+	 */
 	public void setListaPeluchePersonaje(ArrayList<PeluchePersonaje> listaPeluchePersonaje) {
 		this.listaPeluchePersonaje = listaPeluchePersonaje;
 	}

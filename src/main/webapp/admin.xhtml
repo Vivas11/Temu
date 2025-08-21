@@ -53,7 +53,7 @@
 							</div>
 							<div style="display: block;">
 								<p:outputLabel value="Precio:" />
-								<p:inputText value="#{gestionbean.precio}" required="true" />
+								<p:inputNumber value="#{gestionbean.precio}" required="true" minValue="1" decimalPlaces="0" />
 							</div>
 							<div style="display: block;">
 								<p:outputLabel value="Imagen (URL):" />
@@ -65,13 +65,13 @@
 								<p:outputLabel value="Marca:" />
 								<p:inputText value="#{gestionbean.marca}" />
 								<p:outputLabel value="RAM:" />
-								<p:inputText value="#{gestionbean.ram}" />
+								<p:inputNumber value="#{gestionbean.ram}" minValue="1" decimalPlaces="0" />
 								<p:outputLabel value="Almacenamiento:" />
-								<p:inputText value="#{gestionbean.almacenamiento}" />
+								<p:inputNumber value="#{gestionbean.almacenamiento}" minValue="1" decimalPlaces="0" />
 								<p:outputLabel value="Procesador:" />
 								<p:inputText value="#{gestionbean.procesador}" />
 								<p:outputLabel value="Resolución Cámara:" />
-								<p:inputText value="#{gestionbean.resolucionCamra}" />
+								<p:inputNumber value="#{gestionbean.resolucionCamra}" minValue="1" decimalPlaces="0" />
 							</h:panelGroup>
 
 							<!-- Computador -->
@@ -79,9 +79,9 @@
 								<p:outputLabel value="Marca:" />
 								<p:inputText value="#{gestionbean.marca}" />
 								<p:outputLabel value="RAM:" />
-								<p:inputText value="#{gestionbean.ram}" />
+								<p:inputNumber value="#{gestionbean.ram}" minValue="1" decimalPlaces="0" />
 								<p:outputLabel value="Almacenamiento:" />
-								<p:inputText value="#{gestionbean.almacenamiento}" />
+								<p:inputNumber value="#{gestionbean.almacenamiento}" minValue="1" decimalPlaces="0" />
 								<p:outputLabel value="Procesador:" />
 								<p:inputText value="#{gestionbean.procesador}" />
 								<p:outputLabel value="Tipo:" />
@@ -99,7 +99,7 @@
 								<p:outputLabel value="Tipo de Figura:" />
 								<p:inputText value="#{gestionbean.tipoDeFigura}" />
 								<p:outputLabel value="Valor en Mercado:" />
-								<p:inputText value="#{gestionbean.valorEnMercado}" />
+								<p:inputNumber value="#{gestionbean.valorEnMercado}" minValue="1" decimalPlaces="0" />
 							</h:panelGroup>
 
 							<!-- Juego de Mesa -->
@@ -109,7 +109,7 @@
 								<p:outputLabel value="Material:" />
 								<p:inputText value="#{gestionbean.materialJuego}" />
 								<p:outputLabel value="Número de Jugadores:" />
-								<p:inputText value="#{gestionbean.numeroJugadore}" />
+								<p:inputNumber value="#{gestionbean.numeroJugadore}" minValue="1" decimalPlaces="0" />
 								<p:outputLabel value="Tipo de Juego:" />
 								<p:inputText value="#{gestionbean.tipoDeJuego}" />
 							</h:panelGroup>
@@ -119,11 +119,11 @@
 								<p:outputLabel value="Color:" />
 								<p:inputText value="#{gestionbean.color}" />
 								<p:outputLabel value="Contenido en Gramo:" />
-								<p:inputText value="#{gestionbean.contenidoEnGramo}" />
+								<p:inputNumber value="#{gestionbean.contenidoEnGramo}" minValue="1" decimalPlaces="0" />
 								<p:outputLabel value="Resistencia al Agua:" />
 								<p:selectBooleanCheckbox value="#{gestionbean.resistenciaAgua}" />
 								<p:outputLabel value="Duración (horas):" />
-								<p:inputText value="#{gestionbean.duracionHora}" />
+								<p:inputNumber value="#{gestionbean.duracionHora}" minValue="1" decimalPlaces="0" />
 							</h:panelGroup>
 
 							<!-- Maquillaje de Piel -->
@@ -131,9 +131,9 @@
 								<p:outputLabel value="Color de piel:" />
 								<p:inputText value="#{gestionbean.colorPiel}" />
 								<p:outputLabel value="Contenido en Gramo:" />
-								<p:inputText value="#{gestionbean.contenidoEnGramoPiel}" />
+								<p:inputNumber value="#{gestionbean.contenidoEnGramoPiel}" minValue="1" decimalPlaces="0" />
 								<p:outputLabel value="Tipo de Maquillaje:" />
-								<p:inputText value="#{gestionbean.tipoMaquillaje}" />
+								<p:inputNumber value="#{gestionbean.tipoMaquillaje}" minValue="1" decimalPlaces="0"/>
 								<p:outputLabel value="¿Es ecoamigable?:" />
 								<p:selectBooleanCheckbox value="#{gestionbean.esEcoamigable}" />
 							</h:panelGroup>

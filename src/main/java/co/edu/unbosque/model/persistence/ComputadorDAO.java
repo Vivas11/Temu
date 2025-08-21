@@ -38,16 +38,10 @@ public class ComputadorDAO implements OperacionDAO<ComputadorDTO, Computador>{
 
 	@Override
 	public boolean delete(ComputadorDTO toDelete) {
-		// Buscar el objeto en la lista antes de eliminar
-		System.out.println("[DEBUG][DAO] Buscando Computador para eliminar: " + toDelete);
 		Computador found = find(DataMapper.computadorDTOToComputador(toDelete));
 		if (found != null) {
-			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
-			boolean result = listaComputador.remove(found);
-			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
-			return result;
+			return listaComputador.remove(found);
 		} else {
-			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}

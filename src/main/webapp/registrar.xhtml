@@ -35,18 +35,23 @@
 
 						<div class="row mb-3">
 							<div class="col-md-6">
-								<p:outputLabel for="fechaNacimiento"
-									value="Fecha de Nacimiento:" />
-								<p:datePicker id="fechaNacimiento"
-									value="#{registrobean.fechaDeNacimiento}" showIcon="true"
-									pattern="dd/MM/yyyy" showOnFocus="false" style="display:block;" />
-							</div>
-							<div class="col-md-6">
-								<p:outputLabel for="usuario" value="Nombre de Usuario:" />
-								<p:inputText id="usuario" value="#{registrobean.nombreUsuario}"
-									required="true" placeholder="Ingrese un usuario"
-									styleClass="form-control" />
-							</div>
+                                <p:outputLabel for="fechaNacimiento"
+                                    value="Fecha de Nacimiento:" />
+                                <p:datePicker id="fechaNacimiento"
+                                    value="#{registrobean.fechaDeNacimiento}" 
+                                    maxDate="#{registrobean.fechaMaxima}"
+                                    showIcon="true"
+                                    pattern="dd/MM/yyyy" 
+                                    yearRange="c-100:c"
+                                    showOnFocus="false" 
+                                    style="display:block;" />
+                            </div>
+                            <div class="col-md-6">
+                                <p:outputLabel for="usuario" value="Nombre de Usuario:" />
+                                <p:inputText id="usuario" value="#{registrobean.nombreUsuario}"
+                                    required="true" placeholder="Ingrese un usuario"
+                                    styleClass="form-control" />
+                            </div>
 						</div>
 
 						<div class="row mb-3">

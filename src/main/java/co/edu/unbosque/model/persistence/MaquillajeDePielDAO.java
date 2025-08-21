@@ -39,16 +39,10 @@ public class MaquillajeDePielDAO implements OperacionDAO<MaquillajeDePielDTO, Ma
 
 	@Override
 	public boolean delete(MaquillajeDePielDTO toDelete) {
-		// Buscar el objeto en la lista antes de eliminar
-		System.out.println("[DEBUG][DAO] Buscando MaquillajeDePiel para eliminar: " + toDelete);
 		MaquillajeDePiel found = find(DataMapper.maquillajeDePielDTOToMaquillajeDePiel(toDelete));
 		if (found != null) {
-			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
-			boolean result = listaMaquillajeP.remove(found);
-			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
-			return result;
+			return listaMaquillajeP.remove(found);
 		} else {
-			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}

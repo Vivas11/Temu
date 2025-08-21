@@ -1,3 +1,6 @@
+/**
+ * Paquete que contiene las clases de persistencia (DAO) del modelo de la aplicación Temu.
+ */
 package co.edu.unbosque.model.persistence;
 
 import java.util.ArrayList;
@@ -5,98 +8,135 @@ import java.util.ArrayList;
 import co.edu.unbosque.model.UtilElectronico;
 import co.edu.unbosque.model.UtilElectronicoDTO;
 
+/**
+ * DAO para la entidad UtilElectronico. Gestiona operaciones CRUD en memoria y
+ * realiza el mapeo entre {@link UtilElectronicoDTO} y {@link UtilElectronico}
+ * usando {@link DataMapper}.
+ */
 public class UtilElectronicoDAO implements OperacionDAO<UtilElectronicoDTO, UtilElectronico> {
-	   private ArrayList<UtilElectronico> listaUtilElectronico;
-      public UtilElectronicoDAO() {
+
+	/** Lista interna de útiles electrónicos. */
+	private ArrayList<UtilElectronico> listaUtilElectronico;
+
+	/** Constructor por defecto. Inicializa la lista interna. */
+	public UtilElectronicoDAO() {
 		listaUtilElectronico = new ArrayList<>();
 	}
 
-	  @Override
-	  public String showAll() {
-		  String rta = "";
-			if (listaUtilElectronico.isEmpty()) {
-				return "No hay Utiles electronicos aun";
-
-			} else {
-				for (UtilElectronico utilElectronico : listaUtilElectronico) {
-					rta += utilElectronico.toString();
-				}
-			}
-			return rta;
-	  }
-
-	  @Override
-	  public ArrayList<UtilElectronicoDTO> getAll() {
-		// TODO Auto-generated method stub
-		return  DataMapper.listaUtilElectronicoToListaUtilElectronicoDTO(listaUtilElectronico);
-	  }
-
-	  @Override
-	  public boolean add(UtilElectronicoDTO newData) {
-		  if (find(DataMapper.utilElectronicoDTOToUtilElectronico(newData)) == null) {
-				listaUtilElectronico.add(DataMapper.utilElectronicoDTOToUtilElectronico(newData));
-				return true;
-			} else {
-				return false;
-			}
-	  }
-
-	  @Override
-	  public boolean delete(UtilElectronicoDTO toDelete) {
-		// Buscar el objeto en la lista antes de eliminar
-		System.out.println("[DEBUG][DAO] Buscando UtilElectronico para eliminar: " + toDelete);
-		UtilElectronico found = find(DataMapper.utilElectronicoDTOToUtilElectronico(toDelete));
-		if (found != null) {
-			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
-			boolean result = listaUtilElectronico.remove(found);
-			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
-			return result;
+	/**
+	 * Muestra en una cadena todos los útiles electrónicos registrados.
+	 *
+	 * @return Cadena con la representación de los objetos almacenados o un mensaje si
+	 *         no hay registros
+	 */
+	@Override
+	public String showAll() {
+		String rta = "";
+		if (listaUtilElectronico.isEmpty()) {
+			return "No hay utiles electronicos aun";
 		} else {
-			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
+			for (UtilElectronico e : listaUtilElectronico) {
+				rta += e.toString();
+			}
+		}
+		return rta;
+	}
+
+	/**
+	 * Obtiene todos los útiles electrónicos como DTO.
+	 *
+	 * @return Lista de {@link UtilElectronicoDTO}
+	 */
+	@Override
+	public ArrayList<UtilElectronicoDTO> getAll() {
+		return DataMapper.listaUtilElectronicoToListaUtilElectronicoDTO(listaUtilElectronico);
+	}
+
+	/**
+	 * Agrega un nuevo útil electrónico si no existe otro con el mismo id.
+	 *
+	 * @param newData DTO con la información a agregar
+	 * @return true si se agregó, false en caso contrario
+	 */
+	@Override
+	public boolean add(UtilElectronicoDTO newData) {
+		if (find(DataMapper.utilElectronicoDTOToUtilElectronico(newData)) == null) {
+			listaUtilElectronico.add(DataMapper.utilElectronicoDTOToUtilElectronico(newData));
+			return true;
+		} else {
 			return false;
 		}
-	  }
+	}
 
-	  @Override
-	  public UtilElectronico find(UtilElectronico toFind) {
-		  UtilElectronico found = null;
-			if (!listaUtilElectronico.isEmpty()) {
-				for (UtilElectronico c : listaUtilElectronico) {
-					System.out.println("[DEBUG] Comparando UtilElectronico: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
-					if (c.getId() == toFind.getId()) {
-						System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
-						found = c;
-						return found;
-					} else {
-						continue; // las sig lineas desps de continue no se ejecutan, saltan a la sig iteracion
-					}
+	/**
+	 * Elimina un útil electrónico coincidente con el DTO proporcionado.
+	 *
+	 * @param toDelete DTO del útil a eliminar
+	 * @return true si se eliminó, false en caso contrario
+	 */
+	@Override
+	public boolean delete(UtilElectronicoDTO toDelete) {
+		UtilElectronico found = find(DataMapper.utilElectronicoDTOToUtilElectronico(toDelete));
+		if (found != null) {
+			return listaUtilElectronico.remove(found);
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Busca un útil electrónico por su identificador.
+	 *
+	 * @param toFind Entidad con el id a buscar
+	 * @return La entidad encontrada o null si no existe
+	 */
+	@Override
+	public UtilElectronico find(UtilElectronico toFind) {
+		if (!listaUtilElectronico.isEmpty()) {
+			for (UtilElectronico c : listaUtilElectronico) {
+				if (c.getId() == toFind.getId()) {
+					return c;
 				}
-			} else {
-				return null;
 			}
-			return null; 
-	  }
+		}
+		return null;
+	}
 
-	  @Override
-	  public boolean update(UtilElectronicoDTO previous, UtilElectronicoDTO newData) {
-		  UtilElectronico found = find(DataMapper.utilElectronicoDTOToUtilElectronico(previous));
-			if (found != null) {
-				listaUtilElectronico.remove(found);
-				listaUtilElectronico.add(DataMapper.utilElectronicoDTOToUtilElectronico(newData));
-				return true;
-			} else {
-				return false;
-			}
-	  }
+	/**
+	 * Actualiza los datos de un útil electrónico, reemplazando el existente por uno
+	 * nuevo.
+	 *
+	 * @param previous DTO anterior (para localizar el registro)
+	 * @param newData  DTO con los nuevos datos
+	 * @return true si se actualizó, false en caso contrario
+	 */
+	@Override
+	public boolean update(UtilElectronicoDTO previous, UtilElectronicoDTO newData) {
+		UtilElectronico found = find(DataMapper.utilElectronicoDTOToUtilElectronico(previous));
+		if (found != null) {
+			listaUtilElectronico.remove(found);
+			listaUtilElectronico.add(DataMapper.utilElectronicoDTOToUtilElectronico(newData));
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-	  public ArrayList<UtilElectronico> getListaUtilElectronico() {
-		  return listaUtilElectronico;
-	  }
+	/**
+	 * Obtiene la lista interna de útiles electrónicos.
+	 *
+	 * @return lista de entidades UtilElectronico
+	 */
+	public ArrayList<UtilElectronico> getListaUtilElectronico() {
+		return listaUtilElectronico;
+	}
 
-	  public void setListaUtilElectronico(ArrayList<UtilElectronico> listaUtilElectronico) {
-		  this.listaUtilElectronico = listaUtilElectronico;
-	  }
-      
-      
-      
+	/**
+	 * Establece la lista interna de útiles electrónicos.
+	 *
+	 * @param listaUtilElectronico nueva lista a establecer
+	 */
+	public void setListaUtilElectronico(ArrayList<UtilElectronico> listaUtilElectronico) {
+		this.listaUtilElectronico = listaUtilElectronico;
+	}
 }

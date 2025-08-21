@@ -1,19 +1,29 @@
+/**
+ * Paquete que contiene las clases de persistencia (DAO) del modelo de la aplicación Temu.
+ */
 package co.edu.unbosque.model.persistence;
 
 import java.util.ArrayList;
 
-
 import co.edu.unbosque.model.RopaMujer;
 import co.edu.unbosque.model.RopaMujerDTO;
 
+/**
+ * DAO para la entidad RopaMujer. Gestiona operaciones CRUD en memoria
+ * y realiza el mapeo entre {@link RopaMujerDTO} y {@link RopaMujer} usando {@link DataMapper}.
+ */
 public class RopaMujerDAO implements OperacionDAO<RopaMujerDTO, RopaMujer>{
+	/** Lista interna de prendas para mujer. */
 	private ArrayList<RopaMujer> listaRopaMujer;
+	/** Constructor por defecto. Inicializa la lista interna. */
 	public RopaMujerDAO() {
 		listaRopaMujer = new ArrayList<>();
-		
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Muestra en una cadena todas las prendas para mujer registradas.
+	 * @return Cadena con la representación de los objetos almacenados o un mensaje si no hay registros
+	 */
 	@Override
 	public String showAll() {
 		String rta = "";
@@ -28,12 +38,20 @@ public class RopaMujerDAO implements OperacionDAO<RopaMujerDTO, RopaMujer>{
 		return rta;
 	}
 
+	/**
+	 * Obtiene todas las prendas para mujer como DTO.
+	 * @return Lista de {@link RopaMujerDTO}
+	 */
 	@Override
 	public ArrayList<RopaMujerDTO> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return DataMapper.listaRopaMujerToListaRopaMujerDTO(listaRopaMujer);
 	}
 
+	/**
+	 * Agrega una nueva prenda para mujer si no existe otra con el mismo id.
+	 * @param newData DTO con la información a agregar
+	 * @return true si se agregó, false en caso contrario
+	 */
 	@Override
 	public boolean add(RopaMujerDTO newData) {
 		if (find(DataMapper.ropaMujerDTOToRopaMujer(newData)) == null) {
@@ -44,30 +62,32 @@ public class RopaMujerDAO implements OperacionDAO<RopaMujerDTO, RopaMujer>{
 		}
 	}
 
+	/**
+	 * Elimina una prenda para mujer coincidente con el DTO proporcionado.
+	 * @param toDelete DTO de la prenda a eliminar
+	 * @return true si se eliminó, false en caso contrario
+	 */
 	@Override
 	public boolean delete(RopaMujerDTO toDelete) {
-		// Buscar el objeto en la lista antes de eliminar
-		System.out.println("[DEBUG][DAO] Buscando RopaMujer para eliminar: " + toDelete);
 		RopaMujer found = find(DataMapper.ropaMujerDTOToRopaMujer(toDelete));
 		if (found != null) {
-			System.out.println("[DEBUG][DAO] Encontrado, procediendo a eliminar: " + found);
-			boolean result = listaRopaMujer.remove(found);
-			System.out.println("[DEBUG][DAO] Eliminación exitosa: " + result);
-			return result;
+			return listaRopaMujer.remove(found);
 		} else {
-			System.out.println("[DEBUG][DAO] No se encontró el objeto para eliminar");
 			return false;
 		}
 	}
 
+	/**
+	 * Busca una prenda para mujer por su identificador.
+	 * @param toFind Entidad con el id a buscar
+	 * @return La entidad encontrada o null si no existe
+	 */
 	@Override
 	public RopaMujer find(RopaMujer toFind) {
 		RopaMujer found = null;
 		if (!listaRopaMujer.isEmpty()) {
 			for (RopaMujer c : listaRopaMujer) {
-				System.out.println("[DEBUG] Comparando RopaMujer: listaId=" + c.getId() + " vs buscarId=" + toFind.getId());
 				if (c.getId() == toFind.getId()) {
-					System.out.println("[DEBUG] Coincidencia encontrada: id=" + c.getId());
 					found = c;
 					return found;
 				} else {
@@ -80,16 +100,36 @@ public class RopaMujerDAO implements OperacionDAO<RopaMujerDTO, RopaMujer>{
 		return null;
 	}
 
+	/**
+	 * Actualiza los datos de una prenda para mujer, reemplazando la existente por una nueva.
+	 * @param previous DTO anterior (para localizar el registro)
+	 * @param newData DTO con los nuevos datos
+	 * @return true si se actualizó, false en caso contrario
+	 */
 	@Override
 	public boolean update(RopaMujerDTO previous, RopaMujerDTO newData) {
-		// TODO Auto-generated method stub
-		return false;
+		RopaMujer found = find(DataMapper.ropaMujerDTOToRopaMujer(previous));
+		if (found != null) {
+			listaRopaMujer.remove(found);
+			listaRopaMujer.add(DataMapper.ropaMujerDTOToRopaMujer(newData));
+			return true;
+		} else {
+			return false;
+		}
 	}
 
+	/**
+	 * Obtiene la lista interna de entidades RopaMujer.
+	 * @return lista de entidades
+	 */
 	public ArrayList<RopaMujer> getListaRopaMujer() {
 		return listaRopaMujer;
 	}
 
+	/**
+	 * Establece la lista interna de entidades RopaMujer.
+	 * @param listaRopaMujer lista a establecer
+	 */
 	public void setListaRopaMujer(ArrayList<RopaMujer> listaRopaMujer) {
 		this.listaRopaMujer = listaRopaMujer;
 	}
