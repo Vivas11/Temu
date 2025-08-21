@@ -1,0 +1,54 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template/template.xhtml">
+	<ui:define name="content">
+		<div class="main">
+			<h:form id="perfilForm">
+				<div class="container mt-4">
+					<div class="card shadow p-4">
+						<h2 class="mb-4 text-center">Perfil de Usuario</h2>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<p:outputLabel value="Nombre:" />
+								<p:outputLabel value="#{perfilBean.nombre}" styleClass="form-control" />
+							</div>
+							<div class="col-md-6">
+								<p:outputLabel value="Apellido:" />
+								<p:outputLabel value="#{perfilBean.apellido}" styleClass="form-control" />
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<p:outputLabel value="Fecha de Nacimiento:" />
+								<p:outputLabel value="#{perfilBean.fechaDeNacimiento}" styleClass="form-control" />
+							</div>
+							<div class="col-md-6">
+								<p:outputLabel value="Nombre de Usuario:" />
+								<p:outputLabel value="#{perfilBean.nombreUsuario}" styleClass="form-control" />
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<p:outputLabel value="Correo:" />
+								<p:outputLabel value="#{perfilBean.correo}" styleClass="form-control" />
+							</div>
+							<div class="col-md-6">
+								<p:outputLabel value="Dirección:" />
+								<p:outputLabel value="#{perfilBean.direccion}" styleClass="form-control" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
